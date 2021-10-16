@@ -39,7 +39,7 @@ public class BubbleGum : MonoBehaviour
             jumpCounter = 0;
         }
 
-        if(Input.GetButtonDown("Fire1") && allowedToUseGum == true)  //Click the mouse to deploy bubblegum!
+        if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
         {
             gumActive = true;
             CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //jump
