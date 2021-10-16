@@ -17,10 +17,10 @@ public class CharController : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f; //This is the radius of a sphere that is projected from the player's feet. It checks to see if the ground is anywhere within this sphere. 
     public LayerMask groundMask; //This controls what objects the sphere should check for, so it doesn't collide with the player.
-    bool isGrounded;
+    public static bool isGrounded;
 
     
-    Vector3 velocity; //This is the velocity that controls how gravity effects the player over time, increasing the speed at which he falls, etc. 
+    public static Vector3 velocity; //This is the velocity that controls how gravity effects the player over time, increasing the speed at which he falls, etc. 
     
     void Update()
     {
