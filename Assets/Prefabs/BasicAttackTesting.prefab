@@ -2114,6 +2114,7 @@ GameObject:
   - component: {fileID: 629548321667321661}
   - component: {fileID: 629548321667321659}
   - component: {fileID: 629548321667321658}
+  - component: {fileID: 1639870071}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2180,6 +2181,19 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &1639870071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629548321667321660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12b776153c52cf48b2bdd1f44063839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordPivot: {fileID: 7629818794648727189}
 --- !u!1 &629548321783279487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,6 +2829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7770131198962314755}
+  - component: {fileID: 2036645950}
   m_Layer: 0
   m_Name: SwordPivot
   m_TagString: Untagged
@@ -2837,6 +2852,25 @@ Transform:
   m_Father: {fileID: 629548321667321661}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2036645950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629818794648727189}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a20fc93ee209986479fa7c6dd38c2ae4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4055724231049473088
 PrefabInstance:
   m_ObjectHideFlags: 0
