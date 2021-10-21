@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public Collider basicPlayerAttackBox;
     public LayerMask basicEnemyLayer;
     public float knockbackThrust = 10.0f;
+    //private Collider blockBoundary
 
     void Update()
     {
@@ -17,6 +18,11 @@ public class PlayerCombat : MonoBehaviour
             swordPivot.GetComponent<Animator>().Play("sword_slash");
             BasicAttack(basicPlayerAttackBox);
         }
+        if (Input.GetButton("Block"))
+        {
+            swordPivot.GetComponent<Animator>().Play("sword_block");
+            Block();
+        }    
     }
 
     private void BasicAttack(Collider attackBox)
@@ -29,5 +35,10 @@ public class PlayerCombat : MonoBehaviour
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * knockbackThrust);
         }
+    }
+
+    private void Block()
+    {
+        Debug.Log("Blocking");
     }
 }
