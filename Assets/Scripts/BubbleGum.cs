@@ -17,6 +17,14 @@ public class BubbleGum : MonoBehaviour
     float gumGravity = -40f;
     float gumJumpHeight = 3f;
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Stalactite")
+        {
+            gumActive = false;
+            allowedToUseGum = false;
+        }
+    }
 
 
     
@@ -39,7 +47,13 @@ public class BubbleGum : MonoBehaviour
             jumpCounter = 0;
         }
 
-        if(Input.GetButtonDown("Fire1") && allowedToUseGum == true)  //Click the mouse to deploy bubblegum!
+        if(CharController.isGrounded == true)
+        {
+            gumActive = false;
+            jumpCounter = 0;
+        }
+
+        if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
         {
             gumActive = true;
             CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //jump
