@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 
 {
+    //public Blocking Block { get; set; }
+
     public GameObject swordPivot;
     public Collider basicPlayerAttackBox;
     public LayerMask basicEnemyLayer;
@@ -21,7 +23,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetButton("Block"))
         {
             swordPivot.GetComponent<Animator>().Play("sword_block");
-            Block();
+            
         }    
     }
 
@@ -35,10 +37,5 @@ public class PlayerCombat : MonoBehaviour
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * knockbackThrust);
         }
-    }
-
-    private void Block()
-    {
-        Debug.Log("Blocking");
     }
 }
