@@ -8,7 +8,5 @@ public class DestroyObject : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
             Destroy(gameObject);
-
-
     }
 }
