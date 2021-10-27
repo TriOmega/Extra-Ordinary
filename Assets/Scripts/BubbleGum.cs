@@ -5,13 +5,15 @@ using UnityEngine;
 public class BubbleGum : MonoBehaviour
 {
 
-    float scaleRate = 0.001f;  //How fast the bubblegum fluctuates
+    float scaleRate = 0.0015f;  //How fast the bubblegum fluctuates
     float deployRate =0.3f; //How fast the bubblegum deploys initially
-    float minScale = 5.0f;
-    float maxScale = 5.5f;
+    float minScale = 3.0f;
+    float maxScale = 3.5f;
 
     bool gumActive = false;
-    bool allowedToUseGum = true;
+    public static bool allowedToUseGum = true;
+
+ 
 
     int jumpCounter = 0;
     float gumGravity = -40f;
@@ -19,7 +21,7 @@ public class BubbleGum : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Stalactite")
+        //if(other.gameObject.tag == "Stalactite")
         {
             gumActive = false;
             allowedToUseGum = false;
@@ -30,6 +32,17 @@ public class BubbleGum : MonoBehaviour
     
     public void Update() 
     {
+
+        if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
+        {
+            transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
+            gumActive = true;
+            CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //jump
+            jumpCounter += 1;
+        }
+
+
+
         //if we exceed the defined range then correct the sign of scaleRate.
         if(transform.localScale.x < minScale) 
         {
@@ -40,7 +53,20 @@ public class BubbleGum : MonoBehaviour
             scaleRate = -Mathf.Abs(scaleRate);
         }
 
-        if(jumpCounter >= 5)
+
+        if(gumActive == true)
+        {
+            transform.localScale += (Vector3.one * scaleRate);  //This applies the slow fluxuating size effect.
+        }
+        else
+        {
+            transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);  //makes the gum very very very tiny if its not in use.
+        }
+
+
+
+
+        if(jumpCounter >= 3)
         {
             gumActive = false;
             allowedToUseGum = false;
@@ -52,24 +78,6 @@ public class BubbleGum : MonoBehaviour
             gumActive = false;
             jumpCounter = 0;
         }
-
-        if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
-        {
-            gumActive = true;
-            CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //jump
-            transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
-            jumpCounter += 1;
-        }
-
-        if(gumActive == true)
-        {
-            transform.localScale += (Vector3.one * scaleRate);  //This applies the slow fluxuating size effect.
-        }
-        else
-        {
-            transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);
-        }
-
 
         if ((allowedToUseGum == false) && CharController.isGrounded == true)
         {
