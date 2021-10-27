@@ -77,7 +77,6 @@ public class enemyController : MonoBehaviour
     private void Death()
     {
         Debug.Log("DEFEAT HAS HAPPENED <3");
-        //GetComponent<//Collider>().enabled = false;
-        this.enabled = false;
+        Destroy(this.gameObject, 1);
     }
 }

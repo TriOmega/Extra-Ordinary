@@ -51,5 +51,10 @@ public class CharController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime); //increases fall speed over time.
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 }

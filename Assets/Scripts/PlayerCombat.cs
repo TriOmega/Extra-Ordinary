@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public Collider basicPlayerAttackBox;
     public LayerMask basicEnemyLayer;
     public float knockbackThrust = 10.0f;
+    public enemyController enemy;
 
     void Update()
     {
@@ -24,7 +25,7 @@ public class PlayerCombat : MonoBehaviour
         Collider[] cols = Physics.OverlapBox(attackBox.bounds.center, attackBox.bounds.extents, attackBox.transform.rotation, basicEnemyLayer);
         foreach(Collider col in cols)
         {
-            //DamageEnemyHealth() method here
+            enemy.Damaged(10);
 
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * knockbackThrust);
