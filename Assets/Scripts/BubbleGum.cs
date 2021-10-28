@@ -11,20 +11,22 @@ public class BubbleGum : MonoBehaviour
     float maxScale = 3.5f;
 
     bool gumActive = false;
-    public static bool allowedToUseGum = true;
+    public static bool AttackCanGo = false;
+    bool allowedToUseGum = true;
 
  
 
     int jumpCounter = 0;
     float gumGravity = -40f;
     float gumJumpHeight = 3f;
-
+    
     public void OnTriggerEnter(Collider other)
     {
         //if(other.gameObject.tag == "Stalactite")
         {
             gumActive = false;
             allowedToUseGum = false;
+            AttackCanGo = true;
         }
     }
 
@@ -70,6 +72,7 @@ public class BubbleGum : MonoBehaviour
         {
             gumActive = false;
             allowedToUseGum = false;
+            AttackCanGo = true;
             jumpCounter = 0;
         }
 
@@ -82,6 +85,11 @@ public class BubbleGum : MonoBehaviour
         if ((allowedToUseGum == false) && CharController.isGrounded == true)
         {
             allowedToUseGum = true;
+        }
+
+        if(jumpCounter >= 1)
+        {
+            AttackCanGo = false;
         }
 
     }

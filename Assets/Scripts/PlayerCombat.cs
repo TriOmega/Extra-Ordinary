@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
             BasicAttack(basicPlayerAttackBox);
         }
 
-        if (BubbleGum.allowedToUseGum == false)
+        if (BubbleGum.AttackCanGo == false)
         {
             BubblegumAttack(bubblegumAttackBox);
         }
