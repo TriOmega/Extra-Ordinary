@@ -8,7 +8,7 @@ public class Blocking : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == projectileLayer)
+        if(other.gameObject.tag == "Projectile")
         {
             Debug.Log(other.name + " is at " + other.bounds.center);
         }

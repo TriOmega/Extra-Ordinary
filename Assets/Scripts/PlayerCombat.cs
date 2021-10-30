@@ -59,6 +59,5 @@ public class PlayerCombat : MonoBehaviour
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * bubblegumKnockbackThrust);
         }
-
     }
 }
