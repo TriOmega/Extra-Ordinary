@@ -11,7 +11,7 @@ public class CharController : MonoBehaviour
     public float gravity = -100.81f;
     public float jumpHeight = 6f;
 
-    public float turnSmoothTime = 0.1f; //Speed at which the player turns (rotates) to face the direction he is moving in.
+    public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
     public float turnSmoothVelocity;
 
     public Transform groundCheck;
@@ -51,5 +51,10 @@ public class CharController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime); //increases fall speed over time.
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 }
