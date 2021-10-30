@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 
 {
-    //public Blocking Block { get; set; }
-
     public GameObject swordPivot;
     public Collider basicPlayerAttackBox;
     public Collider bubblegumAttackBox;
@@ -26,7 +24,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetButton("Block"))
         {
             swordPivot.GetComponent<Animator>().Play("sword_block");
-            
+            Block();
         }    
 
         if (BubbleGum.AttackCanGo == false)
@@ -60,4 +58,16 @@ public class PlayerCombat : MonoBehaviour
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * bubblegumKnockbackThrust);
         }
     }
+
+    private void Block()
+    {
+        Transform targetTransform = (Blocking.projectileTransform == null) ? basicPlayerAttackBox.transform : Blocking.projectileTransform;
+        Vector3 tempPosition = targetTransform.position;
+        tempPosition.y = this.transform.position.y;
+        targetTransform.position = tempPosition;
+        Debug.Log(targetTransform);
+        this.transform.LookAt(targetTransform);
+    }
+    /*Current Block() Flaws: 1. Adjusts target transform too (if projectiles get destroyed on block anyways we might not need to worry)
+                             2. Transform doesn't get reset after blocking ends, possible fix is to figure out how to implement OnTriggerEnter for the PlayerCombat script*/
 }

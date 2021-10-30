@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Blocking : MonoBehaviour
 {
-    public LayerMask projectileLayer;
+    //public Vector3 projectilePosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public static Transform projectileTransform;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Projectile")
+        if(other.gameObject.CompareTag("Projectile"))
         {
+           projectileTransform = other.gameObject.transform;
+            //tempPosition.y = 0.0f;
+            //projectilePosition = other.bounds.center;
             Debug.Log(other.name + " is at " + other.bounds.center);
         }
         //RaycastHit hit;
