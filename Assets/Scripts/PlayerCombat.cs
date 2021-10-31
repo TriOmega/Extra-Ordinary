@@ -15,13 +15,13 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetAxis("BasicAttack") == 1)
         {
             swordPivot.GetComponent<Animator>().Play("sword_slash");
             BasicAttack(basicPlayerAttackBox);
         }
         
-        if (Input.GetButton("Block"))
+        if (Input.GetAxis("Block") == 1)
         {
             swordPivot.GetComponent<Animator>().Play("sword_block");
             Block();
