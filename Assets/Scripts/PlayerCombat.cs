@@ -65,7 +65,7 @@ public class PlayerCombat : MonoBehaviour
         Vector3 tempPosition = targetTransform.position;
         tempPosition.y = this.transform.position.y;
         targetTransform.position = tempPosition;
-        Debug.Log(targetTransform);
+        //Debug.Log(targetTransform);
         this.transform.LookAt(targetTransform);
     }
     /*Current Block() Flaws: 1. Adjusts target transform too (if projectiles get destroyed on block anyways we might not need to worry)
