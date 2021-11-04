@@ -1,42 +1,46 @@
+#if !UNITY_2019_3_OR_NEWER
+#define CINEMACHINE_PHYSICS
+#define CINEMACHINE_PHYSICS_2D
+#endif
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using Cinemachine;
+using System;
 
-public class OnRoomEnter : MonoBehaviour
+
+namespace Cinemachine
 {
 
-//THIS CODE DON'T WORK YET! ANGER!
+
+    public class OnRoomEnter : MonoBehaviour
+    {
 
 
-//    public GameObject mainVirtualCamera;
-//     public Collider newBoundingBox;
-//     public GameObject TutorialManager;
+        public GameObject CinemachineCamera;
+        public Collider CameraConfinerBox;
 
-//     private void OnTriggerEnter(Collider other)
-//     { 
-//         if (other.gameObject.CompareTag ("Player"))
-//         {
-//             //Change cinemachine confiner bounding volume property
-//             //Debug.Log("Transferring camera to new bounding box...");
-//             mainVirtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = newBoundingBox;
-//             if (TutorialManager != null)
-//             {
-//                 TutorialManager.GetComponent<SC_TutorialManager>().setCurrentRoom(this.gameObject);
-//             }
-//         }    
-//     }
 
-//     private void OnTriggerStay(Collider other)
-//     {
-//         if (other.gameObject.CompareTag("Player"))
-//         {
-//             //Change cinemachine confiner bounding volume property
-//             //Debug.Log("Transferring camera to new bounding box...");
-//             mainVirtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = newBoundingBox;
-//             if (TutorialManager != null)
-//             {
-//                 TutorialManager.GetComponent<SC_TutorialManager>().setCurrentRoom(this.gameObject);
-//             }
-//         } 
-//     }
+        private void OnTriggerEnter(Collider other)
+        { 
+            if (other.gameObject.CompareTag ("Player"))
+            {
+                //Change cinemachine confiner bounding volume property
+                //Debug.Log("Transferring camera to new bounding box...");
+                CinemachineCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = CameraConfinerBox;
+  
+            }    
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                //Change cinemachine confiner bounding volume property
+                //Debug.Log("Transferring camera to new bounding box...");
+                //mainVirtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = newBoundingBox;
+            } 
+        }
+    }
 }
