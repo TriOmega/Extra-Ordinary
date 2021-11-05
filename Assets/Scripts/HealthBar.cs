@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
         if (slider.value > slider.minValue && fillImage.enabled)
             fillImage.enabled = true;
 
-        float fillValue = playerHealth.CurrentHealth / playerHealth.MaxHealth;
+        float fillValue = playerHealth.currentHealth / playerHealth.maxHealth;
 
         if (fillValue <= slider.maxValue / 3)
             fillImage.color = Color.red;

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float CurrentHealth = 10;
-    public float MaxHealth = 10;
+    public float currentHealth = 10;
+    public float maxHealth = 10;
     public float damageTaken = 1f;
+    public int lives = 3; 
 
     public float regeneration = 0.5f;
 
@@ -17,13 +18,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-            CurrentHealth -= damageTaken;
+            currentHealth -= damageTaken;
             //  StartCoroutine(damageTimeout(damageTimer));
         }
 
-        if (collision.gameObject.tag == "health" && canTakeDamage && CurrentHealth <= 9)
+        if (collision.gameObject.tag == "health" && canTakeDamage && currentHealth <= 9)
         {
-            CurrentHealth++;
+            currentHealth++;
         }
     }
 
@@ -31,8 +32,8 @@ public class PlayerHealth : MonoBehaviour
     {
         AdjustCurrentHealth(0);
 
-        if (CurrentHealth < MaxHealth)
-            CurrentHealth += regeneration * Time.deltaTime;
+        if (currentHealth < maxHealth)
+            currentHealth += regeneration * Time.deltaTime;
     }
 
     private IEnumerator damageTimeout(float timer)
@@ -45,12 +46,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void AdjustCurrentHealth(int adj)
     {
-        CurrentHealth += adj;
-        if (CurrentHealth < 0)
-            CurrentHealth = 0;
-        if (CurrentHealth > MaxHealth)
-            CurrentHealth = MaxHealth;
-        if (MaxHealth < 1)
-            MaxHealth = 1;
+        currentHealth += adj;
+        if (currentHealth < 0)
+            currentHealth = 0;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        if (maxHealth < 1)
+            maxHealth = 1;
     }
 }
