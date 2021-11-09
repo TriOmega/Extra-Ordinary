@@ -63,20 +63,18 @@ public class enemyController : MonoBehaviour
         }
     }
 
-    public void Damaged(int damage)
+    private void OnTriggerEnter(Collider collision)
     {
-        State = "Chase";
-        health -= damage;
-
-        if (health < 0)
+        if(collision.CompareTag("Sword"))
         {
-            Death();
+            State = "Chase";
+            health --;
+            
+            if(health <= 0)
+            {
+                Debug.Log("DEFEAT HAS HAPPENED <3");
+                Destroy(this.gameObject, 1);
+            }
         }
-    }
-
-    private void Death()
-    {
-        Debug.Log("DEFEAT HAS HAPPENED <3");
-        Destroy(this.gameObject, 1);
     }
 }
