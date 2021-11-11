@@ -68,7 +68,7 @@ public class enemyController : MonoBehaviour
         State = "Chase";
         health -= damage;
 
-        if (health < 0)
+        if (health <= 0)
         {
             Death();
         }
