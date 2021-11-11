@@ -16,6 +16,7 @@ public class Darkness : MonoBehaviour
 
     void Start()
     {
+
         bodyLight = GameObject.Find("Point light");
         myBodyLight = bodyLight.GetComponent<Light>();
 

@@ -13,6 +13,27 @@ public class PlayerHealth : MonoBehaviour
     public float damageTimer = 1f;
     private bool canTakeDamage = true;
 
+    private GameObject bodyLight;
+    private Light myBodyLight;
+    public float lightDamage = 0.5f;
+
+    public void Start()
+    {
+        bodyLight = GameObject.Find("Point light");
+        myBodyLight = bodyLight.GetComponent<Light>();
+    }
+
+    public void Update()
+    {
+        AdjustCurrentHealth(0);
+
+        if (CurrentHealth < MaxHealth)
+            CurrentHealth += regeneration * Time.deltaTime;
+
+        if (myBodyLight.range <= 0)
+            CurrentHealth -= lightDamage;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "enemy")
@@ -25,14 +46,6 @@ public class PlayerHealth : MonoBehaviour
         {
             CurrentHealth++;
         }
-    }
-
-    public void Update()
-    {
-        AdjustCurrentHealth(0);
-
-        if (CurrentHealth < MaxHealth)
-            CurrentHealth += regeneration * Time.deltaTime;
     }
 
     private IEnumerator damageTimeout(float timer)

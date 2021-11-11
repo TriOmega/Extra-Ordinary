@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 629548320450776648, guid: a3d99c9a253947247a56bcb863360af4, type: 3}
+      propertyPath: lightDamage
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 1046853260503418367, guid: a3d99c9a253947247a56bcb863360af4, type: 3}
       propertyPath: m_Intensity
       value: 0.27
@@ -2183,7 +2187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0f6bc6f9ffefb4d87acd3f48bee0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1311266813}
   fillImage: {fileID: 1985713005}
 --- !u!114 &976378425
 MonoBehaviour:
@@ -2663,7 +2667,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1177403604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c390c1906753cd9449be31e3f8eb9798, type: 3}
+  m_Script: {fileID: 11500000, guid: 61885593924721d429c203471172b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1177403606
@@ -2743,6 +2747,17 @@ Transform:
   m_Father: {fileID: 1622841431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1311266813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 629548320450776648, guid: a3d99c9a253947247a56bcb863360af4, type: 3}
+  m_PrefabInstance: {fileID: 54113452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93371ceb208d9cb479fe18a879829569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1336282624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,7 +3543,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871469474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c390c1906753cd9449be31e3f8eb9798, type: 3}
+  m_Script: {fileID: 11500000, guid: 61885593924721d429c203471172b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1871469476
@@ -3969,8 +3984,8 @@ Camera:
   m_GameObject: {fileID: 2003225468}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.15864186, g: 0.18132934, b: 0.21698111, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
