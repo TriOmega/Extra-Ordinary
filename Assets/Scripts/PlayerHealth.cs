@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth = 10;
     public float maxHealth = 10;
     public float damageTaken = 1f;
-    public int lives = 3; 
+    public int maxLives = 3;
+    public int currentLives;
 
     public float regeneration = 0.5f;
 
     public float damageTimer = 1f;
     private bool canTakeDamage = true;
+
+    public Text livesText;
+    private CheckpointHandler checkpointHandler;
+
+    PlayerHealth()
+    {
+        currentLives = maxLives;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -26,6 +37,12 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth++;
         }
+    }
+
+    private void Start()
+    {
+        checkpointHandler = GetComponent<CheckpointHandler>();
+        UpdateLivesText();
     }
 
     public void Update()
@@ -48,10 +65,31 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += adj;
         if (currentHealth < 0)
-            currentHealth = 0;
+            NextLife();
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
         if (maxHealth < 1)
             maxHealth = 1;
+    }
+    
+    public void UpdateLivesText()
+    {
+        livesText.text = $"Lives: {currentLives}";
+    }
+
+    public void NextLife()
+    {
+        currentLives--;
+        if (currentLives <= 0)
+        {
+            checkpointHandler.ResetToLevelStart();
+            currentLives = maxLives;
+        }
+        else
+        {
+            checkpointHandler.ResetToLastCheckpoint();
+        }
+        UpdateLivesText();
+        currentHealth = maxHealth;
     }
 }

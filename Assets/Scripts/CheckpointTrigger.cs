@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class CheckpointTrigger : MonoBehaviour
 {
-    List<Object> tagList = new List<Object>();
+    private Transform thisCheckpointRespawn;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    CheckpointTrigger()
     {
-        
+        thisCheckpointRespawn = this.GetComponentInParent<Transform>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        other.GetComponent<CheckpointHandler>().LastCheckpoint = thisCheckpointRespawn;
     }
 }

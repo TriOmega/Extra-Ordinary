@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class CheckpointHandler : MonoBehaviour
 {
-    private GameObject _player
-    {
-        get => _player;
-        set
-        {
-            _player = GameObject.FindGameObjectWithTag("Player");
-        }
-    }
+    private GameObject _player;
     private Transform _levelStart
     {
         get => _levelStart;
@@ -20,15 +13,20 @@ public class CheckpointHandler : MonoBehaviour
             _levelStart = _player.transform;
         }
     }
+    public Transform LastCheckpoint;
 
-    void Update()
+    private void Start()
     {
-        Debug.Log(_player);
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void ResetToLevelStart()
     {
-        //_player.transform = _levelStart;
+        _player.transform.SetPositionAndRotation(_levelStart.transform.position, Quaternion.identity);
     }
 
+    public void ResetToLastCheckpoint()
+    {
+        _player.transform.SetPositionAndRotation(LastCheckpoint.transform.position, Quaternion.identity);
+    }
 }
