@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float currentHealth = 10;
+    public float currentHealth;
     public float maxHealth = 10;
-    public float damageTaken = 1f;
     public int maxLives = 3;
     public int currentLives;
+
+    public float defaultEnemyDamage = -1.0f;
 
     public float regeneration = 0.5f;
 
@@ -21,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
 
     PlayerHealth()
     {
-        currentLives = maxLives;
     }
 
 
@@ -29,28 +29,28 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-            currentHealth -= damageTaken;
+            AdjustCurrentHealth(defaultEnemyDamage);
             //  StartCoroutine(damageTimeout(damageTimer));
         }
 
         if (collision.gameObject.tag == "health" && canTakeDamage && currentHealth <= 9)
         {
-            currentHealth++;
+            AdjustCurrentHealth(1);
         }
     }
 
     private void Start()
     {
+        currentHealth = maxHealth;
+        currentLives = maxLives;
         checkpointHandler = GetComponent<CheckpointHandler>();
         UpdateLivesText();
     }
 
     public void Update()
     {
-        AdjustCurrentHealth(0);
-
-        if (currentHealth < maxHealth)
-            currentHealth += regeneration * Time.deltaTime;
+        //if (currentHealth < maxHealth)
+        //    currentHealth += regeneration * Time.deltaTime;
     }
 
     private IEnumerator damageTimeout(float timer)
@@ -61,11 +61,11 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void AdjustCurrentHealth(int adj)
+    public void AdjustCurrentHealth(float adjustment)
     {
-        currentHealth += adj;
+        currentHealth += adjustment;
         if (currentHealth < 0)
-            NextLife();
+            currentHealth = 0;
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
         if (maxHealth < 1)
