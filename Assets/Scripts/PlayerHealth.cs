@@ -49,8 +49,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Update()
     {
-        //if (currentHealth < maxHealth)
-        //    currentHealth += regeneration * Time.deltaTime;
+        if (currentHealth < maxHealth)
+            currentHealth += regeneration * Time.deltaTime;
     }
 
     private IEnumerator damageTimeout(float timer)
@@ -65,7 +65,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += adjustment;
         if (currentHealth < 0)
-            currentHealth = 0;
+            NextLife();
+            //currentHealth = 0;
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
         if (maxHealth < 1)

@@ -6,12 +6,13 @@ public class CheckpointTrigger : MonoBehaviour
 {
     private Transform thisCheckpointRespawn;
 
-    CheckpointTrigger()
+    private void Awake()
     {
         thisCheckpointRespawn = this.GetComponentInParent<Transform>();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<CheckpointHandler>().LastCheckpoint = thisCheckpointRespawn;
+        other.gameObject.GetComponent<CheckpointHandler>().LastCheckpoint = thisCheckpointRespawn;
     }
 }
