@@ -20,11 +20,6 @@ public class PlayerHealth : MonoBehaviour
     public Text livesText;
     private CheckpointHandler checkpointHandler;
 
-    PlayerHealth()
-    {
-    }
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "enemy")

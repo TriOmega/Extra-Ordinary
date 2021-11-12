@@ -8,8 +8,7 @@ public class CheckpointTrigger : MonoBehaviour
 
     private void Awake()
     {
-        thisCheckpointRespawn = this.GetComponentInParent<Transform>();
-        
+        thisCheckpointRespawn = transform.parent.transform;
     }
     private void OnTriggerEnter(Collider other)
     {
