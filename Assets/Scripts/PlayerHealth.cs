@@ -19,7 +19,30 @@ public class PlayerHealth : MonoBehaviour
 
     public Text livesText;
     private CheckpointHandler checkpointHandler;
+    
+    private GameObject bodyLight;
+    private Light myBodyLight;
+    public float lightDamage = 0.5f;
 
+    public void Start()
+    {
+        currentHealth = maxHealth;
+        currentLives = maxLives;
+        checkpointHandler = GetComponent<CheckpointHandler>();
+        UpdateLivesText();
+        bodyLight = GameObject.Find("Point light");
+        myBodyLight = bodyLight.GetComponent<Light>();
+    }
+
+    public void Update()
+    {
+        if (currentHealth < maxHealth)
+            currentHealth += regeneration * Time.deltaTime;
+
+        if (myBodyLight.range <= 0)
+            CurrentHealth -= lightDamage;
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "enemy")
@@ -32,20 +55,6 @@ public class PlayerHealth : MonoBehaviour
         {
             AdjustCurrentHealth(1);
         }
-    }
-
-    private void Start()
-    {
-        currentHealth = maxHealth;
-        currentLives = maxLives;
-        checkpointHandler = GetComponent<CheckpointHandler>();
-        UpdateLivesText();
-    }
-
-    public void Update()
-    {
-        if (currentHealth < maxHealth)
-            currentHealth += regeneration * Time.deltaTime;
     }
 
     private IEnumerator damageTimeout(float timer)
