@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth += regeneration * Time.deltaTime;
 
         if (myBodyLight.range <= 0)
-            CurrentHealth -= lightDamage;
+            currentHealth -= lightDamage;
     }
     
     private void OnCollisionEnter(Collision collision)
