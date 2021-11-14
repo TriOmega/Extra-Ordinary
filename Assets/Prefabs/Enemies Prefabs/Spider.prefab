@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8965884852051647730}
   - component: {fileID: 5790849455607406699}
   - component: {fileID: 1729622059425217127}
+  - component: {fileID: 164812225195775343}
+  - component: {fileID: 3349046269209356219}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -97,3 +99,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &164812225195775343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229263332438068623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8478522, y: 0.6965678, z: 0.10000002}
+  m_Center: {x: -0.018313771, y: -0.0026493324, z: 0}
+--- !u!114 &3349046269209356219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229263332438068623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bd4e4cf3d89d6479c7edeecc8861fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  distanceFromPlayer: 5
+  enemySpeed: 3
+  health: 2
+  maxHealth: 2

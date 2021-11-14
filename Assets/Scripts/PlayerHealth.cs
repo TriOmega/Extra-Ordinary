@@ -55,6 +55,11 @@ public class PlayerHealth : MonoBehaviour
         {
             AdjustCurrentHealth(1);
         }
+
+        if (collision.gameObject.tag == "puddles")
+        {
+            AdjustCurrentHealth(-5);
+        }
     }
 
     private IEnumerator damageTimeout(float timer)

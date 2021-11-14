@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemy : MonoBehaviour
+public class CrawlingEnemies : MonoBehaviour
 {
-    public GameObject player;
+     public GameObject player;
     private Transform playerPosition;
     private Vector3 currentPosition;
     public float distanceFromPlayer;
@@ -41,7 +41,7 @@ public class FlyingEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Flashlight"))
+        if(collision.CompareTag("BubbleGum"))
         {
             health --;
             

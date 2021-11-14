@@ -20,15 +20,15 @@ public class BubbleGum : MonoBehaviour
     float gumGravity = -40f;
     float gumJumpHeight = 3f;
     
-    // public void OnTriggerEnter(Collider other)
-    // {
-    //     //if(other.gameObject.tag == "Stalactite")
-    //     {
-    //         gumActive = false;
-    //         allowedToUseGum = false;
-    //         AttackCanGo = true;
-    //     }
-    // }
+     public void OnTriggerEnter(Collider other)
+     {
+         if(other.gameObject.tag == "Stalactite")
+         {
+             gumActive = false;
+             allowedToUseGum = false;
+             AttackCanGo = true;
+         }
+     }
 
 
     

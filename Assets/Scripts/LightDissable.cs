@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordDissable : MonoBehaviour
+public class LightDissable : MonoBehaviour
 {
-    public GameObject sword;
+    public GameObject Flashlight;
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            sword.SetActive(false);
+            Flashlight.SetActive(false);
         }
     }
 
@@ -18,7 +18,7 @@ public class SwordDissable : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            sword.SetActive(true);
+            Flashlight.SetActive(true);
         }
     }
 }

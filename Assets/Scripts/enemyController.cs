@@ -5,29 +5,59 @@ using UnityEngine.AI;
 
 public class enemyController : MonoBehaviour
 {
+    //lots of slashes sorry ignore them
 
-    private string State = "Idle";
+   // private string State = "Idle";
     //for animation
-    public NavMeshAgent Enemy;
-    private Transform target;
-    public float spaceDifference = 5;
-    public float attackSpace = 1;
-    public float speed = 5; 
+    //public NavMeshAgent Enemy;
+    //private Transform target;
+    //public float spaceDifference = 5;
+   // public float attackSpace = 1;
+    //public float speed = 5; 
+   // public int health;
+    //public int maxHealth;
+
+    public GameObject player;
+    private Transform playerPosition;
+    private Vector3 currentPosition;
+    public float distanceFromPlayer;
+    public float enemySpeed;
     public int health;
     public int maxHealth;
      
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+       // target = GameObject.FindGameObjectWithTag("Player").transform;
         health = maxHealth;
-        Enemy = GetComponent<NavMeshAgent>();
+        //Enemy = GetComponent<NavMeshAgent>();
+        playerPosition = player.GetComponent<Transform>();
+        currentPosition = GetComponent<Transform>().position;
     }
 
     // Update is called once per frame
     void Update()
     {
-         float distance = Vector3.Distance(transform.position, target.position);
+         
+         if(Vector3.Distance(transform.position, playerPosition.position) < distanceFromPlayer)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, enemySpeed * Time.deltaTime);
+        }
+
+        else
+        {
+            if(Vector3.Distance(transform.position, currentPosition) <= 0)
+            {
+
+            }
+            
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, currentPosition, enemySpeed * Time.deltaTime);
+            }
+        }
+    
+         //float distance = Vector3.Distance(transform.position, target.position);
          
 
         //if(CharController.gameOver)
@@ -35,39 +65,39 @@ public class enemyController : MonoBehaviour
             //aesthetic choices here
         //}
 
-        if(State == "Idle")
-            {
-               if(distance < spaceDifference)
-                {
-                   State = "Chase";
-                }
-            }
-        else if(State == "Chase")
-        {
+        //if(State == "Idle")
+           // {
+             //  if(distance < spaceDifference)
+              //  {
+              //     State = "Chase";
+               // }
+           // }
+       // else if(State == "Chase")
+      //  {
             //animation would go here
-            Enemy.SetDestination(target.position);
+         //   Enemy.SetDestination(target.position);
 
-           if(distance < attackSpace)
-            {
-              State = "Attack";
-            }
+         //  if(distance < attackSpace)
+         //   {
+          //    State = "Attack";
+          //  }
             
-            else if(State == "Attack")
-            {
-                  if(distance > attackSpace)
-                    {
-                        State = "Chase";
-                    }
-            }
+          //  else if(State == "Attack")
+          //  {
+            //      if(distance > attackSpace)
+             //       {
+               //         State = "Chase";
+                //    }
+          //  }
 
-        }
+       // }
     }
 
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Sword"))
         {
-            State = "Chase";
+            //State = "Chase";
             health --;
             
             if(health <= 0)
