@@ -18,7 +18,7 @@ public class PaddleBallMove : MonoBehaviour
 
         position = startingPoint.transform.position;
 
-        if (Input.GetButtonDown("SpecialAttack"))
+        if (Input.GetButtonDown("Fire2"))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

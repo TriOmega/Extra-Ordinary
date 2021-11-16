@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("BuildScene");
+        SceneManager.LoadScene("PCBJodyWhitebox");
     }
 
     public void QuitGame()
