@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("PCBJodyWhitebox");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
