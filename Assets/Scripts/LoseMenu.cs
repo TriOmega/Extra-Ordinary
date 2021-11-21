@@ -1,5 +1,6 @@
-using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseMenu : MonoBehaviour
 {
@@ -18,5 +19,9 @@ public class LoseMenu : MonoBehaviour
         loseStateMenuGameObject.SetActive(true);
         _player.SetActive(false);
         Time.timeScale = 0.0f;
+    }
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
