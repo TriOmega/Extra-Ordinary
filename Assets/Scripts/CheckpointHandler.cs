@@ -27,9 +27,16 @@ public class CheckpointHandler : MonoBehaviour
 
     public void ResetToLastCheckpoint()
     {
-        _player.GetComponent<CharacterController>().enabled = false;
-        _player.transform.SetPositionAndRotation(LastCheckpoint.transform.position, Quaternion.identity);
-        _player.GetComponent<CharacterController>().enabled = true;
+        if(LastCheckpoint == null)
+        {
+            ResetToLevelStart();
+        }
+        else
+        {
+            _player.GetComponent<CharacterController>().enabled = false;
+            _player.transform.SetPositionAndRotation(LastCheckpoint.transform.position, Quaternion.identity);
+            _player.GetComponent<CharacterController>().enabled = true;
+        }
     }
 
     public void PopUpCheckpointText()
