@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
     private GameObject bodyLight;
     private Light myBodyLight;
     public float lightDamage = 0.5f;
+
+    public event EventHandler NoMoreLives;
 
     public void Start()
     {
@@ -92,8 +94,9 @@ public class PlayerHealth : MonoBehaviour
         currentLives--;
         if (currentLives <= 0)
         {
-            checkpointHandler.ResetToLevelStart();
-            currentLives = maxLives;
+            NoMoreLives?.Invoke(this, EventArgs.Empty);
+            //checkpointHandler.ResetToLevelStart();
+            //currentLives = maxLives;
         }
         else
         {
