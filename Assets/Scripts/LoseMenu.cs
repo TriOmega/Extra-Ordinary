@@ -4,17 +4,19 @@ using System;
 public class LoseMenu : MonoBehaviour
 {
     public GameObject loseStateMenuGameObject;
-    private PlayerHealth _playerHealth;
+    private GameObject _player;
 
     public void Start()
     {
-        _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _player.GetComponent<PlayerHealth>().NoMoreLives += LoseScreen;
         loseStateMenuGameObject.SetActive(false);
-        _playerHealth.NoMoreLives += LoseScreen;
     }
 
     public void LoseScreen(object sender, EventArgs e)
     {
         loseStateMenuGameObject.SetActive(true);
+        _player.SetActive(false);
+        Time.timeScale = 0.0f;
     }
 }
