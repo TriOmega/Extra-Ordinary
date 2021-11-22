@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     public float defaultEnemyDamage = -1.0f;
 
-    public float regeneration = 0.5f;
+    //public float regeneration = 0.5f;
 
     public float damageTimer = 1f;
     private bool canTakeDamage = true;
@@ -38,8 +38,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Update()
     {
-        if (currentHealth < maxHealth)
-            currentHealth += regeneration * Time.deltaTime;
+        //Player Auto-Regen
+        //if (currentHealth < maxHealth)
+        //    currentHealth += regeneration * Time.deltaTime;
 
         if (myBodyLight.range <= 0)
             currentHealth -= lightDamage;
