@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 8827618382149959698}
   - component: {fileID: 8827618382149959699}
   - component: {fileID: 8891644395356886143}
+  - component: {fileID: 377558955930694168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -530,6 +531,21 @@ MonoBehaviour:
     m_Bits: 1024
   swordKnockbackThrust: 8
   bubblegumKnockbackThrust: 10
+--- !u!114 &377558955930694168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827618382149959701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d67f56a09925544a305b9fe937ee48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointTextDuration: 3
+  checkpointText: {fileID: 0}
+  LastCheckpoint: {fileID: 0}
 --- !u!1 &8827618382480035983
 GameObject:
   m_ObjectHideFlags: 0
