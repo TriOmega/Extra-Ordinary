@@ -64,6 +64,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag ("Shockwave"))
+        {
+            AdjustCurrentHealth(-10);           
+        }
+    }
+
+
     private IEnumerator damageTimeout(float timer)
     {
         canTakeDamage = false;

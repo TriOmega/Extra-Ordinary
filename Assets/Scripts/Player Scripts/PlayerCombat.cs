@@ -28,7 +28,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (BubbleGum.AttackCanGo == true)
         {
-            BubblegumAttack(bubblegumAttackBox);
+            //BubblegumAttack(bubblegumAttackBox);
             BubbleGum.AttackCanGo = false;
         }
     }

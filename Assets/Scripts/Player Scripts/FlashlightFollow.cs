@@ -23,7 +23,7 @@ public class FlashlightFollow : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            print(hit.collider.name);
+            //print(hit.collider.name);
             transform.LookAt(hit.point);
         }
 
