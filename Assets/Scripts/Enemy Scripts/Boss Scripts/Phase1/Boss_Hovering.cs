@@ -37,6 +37,12 @@ public class Boss_Hovering : StateMachineBehaviour
             canAttack = false;         
         }
 
+        if (Boss.bossHealth < 66)
+        {
+            animator.SetTrigger("GroundPoundAttack");
+            canAttack = false;  
+        }
+
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state

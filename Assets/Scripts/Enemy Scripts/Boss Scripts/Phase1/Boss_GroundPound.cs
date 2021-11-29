@@ -35,8 +35,16 @@ public class Boss_GroundPound : StateMachineBehaviour
             }
         }
 
+        if (Boss.bossHealth < 66)  // if the boss has two thirds of his health, begin phase 2. 
+        {
+            animator.SetTrigger("BeginPhaseTwo");
+        }
+        else
+        {
+            animator.SetTrigger("PoundAttackFinished");  
+        }
 
-        animator.SetTrigger("PoundAttackFinished");         
+       
 
     }
 

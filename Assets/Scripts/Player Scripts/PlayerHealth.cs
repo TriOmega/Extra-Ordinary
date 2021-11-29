@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
     
      void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag ("Shockwave"))
+        if (other.CompareTag ("Shockwave") || other.CompareTag ("Explosion"))
         {
             AdjustCurrentHealth(-10);           
         }

@@ -9,45 +9,45 @@ using UnityEngine;
 using Cinemachine;
 using System;
 
-// namespace Cinemachine
-// {
-//     public class ScreenShake : MonoBehaviour
-//     {        
-//         private CinemachineVirtualCamera cinemachineVirtualCamera;
-//         private float shakeTimer;  //How long the screen shakes for. 
+namespace Cinemachine
+{
+    // public class ScreenShake : MonoBehaviour
+    // {        
+    //     private CinemachineVirtualCamera cinemachineVirtualCamera;
+    //     private float shakeTimer;  //How long the screen shakes for. 
 
-//         private void Awake()
-//         {
-//             cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
-//         }
+    //     private void Awake()
+    //     {
+    //         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+    //     }
 
-//         public void ShakeCamera(float intensity, float time)
-//         {
-//             CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin=
-//             cinemachineVirtualCamera.GetCinemachineComponet<CinemachineBasicMultiChannelPerlin>();
+    //     public void ShakeCamera(float intensity, float time)
+    //     {
+    //         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin=
+    //         cinemachineVirtualCamera.GetCinemachineComponet<CinemachineBasicMultiChannelPerlin>();
 
-//             cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
-//             shakeTimer = time;
-//         }
-
-
+    //         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+    //         shakeTimer = time;
+    //     }
 
 
 
-//         private void Update()
-//         {
-//             if(shakeTimer > 0)
-//             {
-//                 shakeTimer -= Time.deltaTime;
-//                 if(shakeTimer <= 0f)
-//                 {
-//                     CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin=
-//                     cinemachineVirtualCamera.GetCinemachineComponet<CinemachineBasicMultiChannelPerlin>();
 
-//                     cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
-//                 }
-//             }
-//         }
-//     }
 
-// }
+    //     private void Update()
+    //     {
+    //         if(shakeTimer > 0)
+    //         {
+    //             shakeTimer -= Time.deltaTime;
+    //             if(shakeTimer <= 0f)
+    //             {
+    //                 CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin=
+    //                 cinemachineVirtualCamera.GetCinemachineComponet<CinemachineBasicMultiChannelPerlin>();
+
+    //                 cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
+    //             }
+    //         }
+    //     }
+    // }
+
+}
