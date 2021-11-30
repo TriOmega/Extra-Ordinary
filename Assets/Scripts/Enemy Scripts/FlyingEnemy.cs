@@ -41,7 +41,7 @@ public class FlyingEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("BubbleGum"))
+        if(collision.CompareTag("Flashlight"))
         {
             health --;
             

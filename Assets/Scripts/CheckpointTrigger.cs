@@ -12,6 +12,8 @@ public class CheckpointTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<CheckpointHandler>().LastCheckpoint = thisCheckpointRespawn;
+        CheckpointHandler checkpointHandler = other.gameObject.GetComponent<CheckpointHandler>();
+        checkpointHandler.LastCheckpoint = thisCheckpointRespawn;
+        checkpointHandler.PopUpCheckpointText();
     }
 }
