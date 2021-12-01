@@ -8,27 +8,17 @@ public class PaddleBallMove : MonoBehaviour
     public float speed = 10f;
     public bool canClick = true;
 
-    public bool returned; 
-
     Vector3 newPosition;
     private Vector3 position;
-    public GameObject startingPoint = GameObject.Find("BallLocation");
+    public GameObject startingPoint;
 
-    public void Start()
-    {
-        startingPoint = GameObject.Find("BallLocation");
-    }
 
     void Update()
     {
-       if (startingPoint.active == false)
-            Destroy(gameObject);
 
         position = startingPoint.transform.position;
-        if (transform.position == position)
-            returned = true;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -36,11 +26,10 @@ public class PaddleBallMove : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 30f))
             {
 
-                if (hit.transform != null && returned)
+                if (hit.transform != null && transform.position==position)
                 {
                     newPosition = hit.point;
                     moving = true;
-                    returned = false;
 
                 }
             }
