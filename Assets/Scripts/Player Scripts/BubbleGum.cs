@@ -24,9 +24,9 @@ public class BubbleGum : MonoBehaviour
      {
          if(other.gameObject.tag == "Stalactite")
          {
-             gumActive = false;
-             allowedToUseGum = false;
-             AttackCanGo = true;
+            gumActive = false;
+            allowedToUseGum = false;
+            AttackCanGo = true;
          }
      }
 
