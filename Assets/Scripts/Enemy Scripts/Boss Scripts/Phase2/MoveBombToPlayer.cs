@@ -2,21 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToPlayer : MonoBehaviour
+public class MoveBombToPlayer : MonoBehaviour
 {
 
-
-    public float returnSpeed = 10;
-
+    public float returnSpeed = 30;
     private Vector3 moveToPlayer;
     public GameObject startingPoint;
+    public float speed = 30f;
 
     public bool moving = false;
+    public Rigidbody rb;
+
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+
 
 
     public void Update()
     {
-        startingPoint = GameObject.Find("BallLocation");
+        
         moveToPlayer = startingPoint.transform.position;
 
 
@@ -34,6 +41,7 @@ public class MoveToPlayer : MonoBehaviour
 
         if (collision.gameObject.tag == "ball")
         {
+            startingPoint = GameObject.Find("BallLocation");
             moving = true;
         }
 
@@ -43,7 +51,10 @@ public class MoveToPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            //moving = false;
+            rb.useGravity=false;
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, step);
         }
 
     }

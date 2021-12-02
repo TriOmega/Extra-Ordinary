@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 884848836183918911}
   - component: {fileID: 884848836183918910}
   - component: {fileID: 884848836183918904}
+  - component: {fileID: 8291655370935545985}
+  - component: {fileID: 6383962350314384909}
   m_Layer: 12
   m_Name: Bomb
   m_TagString: Untagged
@@ -155,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884848836183918909}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e477ee71544209e429cdeb9acfde1dc0, type: 3}
   m_Name: 
@@ -164,6 +166,36 @@ MonoBehaviour:
   explosionSpawner: {fileID: 884848837071694704}
   explosionSphere: {fileID: 2781242652067080361, guid: d820c51e88bf6b7428025bbae94c4b1b, type: 3}
   WhiteColorSphere: {fileID: 884848836187309096}
+--- !u!135 &8291655370935545985
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884848836183918909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.28
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6383962350314384909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884848836183918909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66578ad9845409d4a88510d9078b826e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnSpeed: 10
+  startingPoint: {fileID: 0}
+  speed: 10
+  moving: 0
+  rb: {fileID: 0}
 --- !u!1 &884848836187309096
 GameObject:
   m_ObjectHideFlags: 0
