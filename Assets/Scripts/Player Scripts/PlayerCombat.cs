@@ -6,6 +6,7 @@ public class PlayerCombat : MonoBehaviour
 
 {
     public GameObject swordPivot;
+    public static bool swordHasSwung = false;
     public Collider basicPlayerAttackBox;
     public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
@@ -18,6 +19,7 @@ public class PlayerCombat : MonoBehaviour
         {
             swordPivot.GetComponent<Animator>().Play("sword_slash");
             BasicAttack(basicPlayerAttackBox);
+            swordHasSwung = true;
         }
         
         if (Input.GetButton("Block"))
@@ -28,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (BubbleGum.AttackCanGo == true)
         {
-            BubblegumAttack(bubblegumAttackBox);
+            //BubblegumAttack(bubblegumAttackBox);
             BubbleGum.AttackCanGo = false;
         }
     }
