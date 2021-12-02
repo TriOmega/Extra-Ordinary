@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToPlayer : MonoBehaviour
+public class MoveBombToPlayer : MonoBehaviour
 {
 
-
     public float returnSpeed = 10;
-
     private Vector3 moveToPlayer;
     public GameObject startingPoint;
+    public float speed = 10f;
 
     public bool moving = false;
 
 
+
+
     public void Update()
     {
-        startingPoint = GameObject.Find("BallLocation");
+        
         moveToPlayer = startingPoint.transform.position;
 
 
@@ -34,6 +35,7 @@ public class MoveToPlayer : MonoBehaviour
 
         if (collision.gameObject.tag == "ball")
         {
+            startingPoint = GameObject.Find("BallLocation");
             moving = true;
         }
 
@@ -43,7 +45,10 @@ public class MoveToPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            moving = false;
+            //Destroy(gameObject);
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, step);
         }
 
     }
