@@ -5,12 +5,18 @@ using UnityEngine;
 public class MoveBombToPlayer : MonoBehaviour
 {
 
-    public float returnSpeed = 10;
+    public float returnSpeed = 30;
     private Vector3 moveToPlayer;
     public GameObject startingPoint;
-    public float speed = 10f;
+    public float speed = 30f;
 
     public bool moving = false;
+    public Rigidbody rb;
+
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
 
 
@@ -45,8 +51,8 @@ public class MoveBombToPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            moving = false;
-            //Destroy(gameObject);
+            //moving = false;
+            rb.useGravity=false;
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, step);
         }
