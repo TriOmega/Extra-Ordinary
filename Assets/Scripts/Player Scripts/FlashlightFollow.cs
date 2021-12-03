@@ -27,7 +27,7 @@ public class FlashlightFollow : MonoBehaviour
             transform.LookAt(hit.point);
         }
 
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetButtonDown("SpecialAttack"))
             myLightComponent.enabled = !myLightComponent.enabled;
     } 
 }
