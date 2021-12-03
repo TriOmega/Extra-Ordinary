@@ -10,7 +10,6 @@ public class FlashlightFollow : MonoBehaviour
 
     private GameObject lightObject;
     private Light myLightComponent;
-  
 
     private void Start()
     {
@@ -19,7 +18,9 @@ public class FlashlightFollow : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
+        float verticalInput = Input.GetAxis("VerticalLookDirection");
+
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
@@ -29,5 +30,10 @@ public class FlashlightFollow : MonoBehaviour
 
         if (Input.GetButtonDown("SpecialAttack"))
             myLightComponent.enabled = !myLightComponent.enabled;
+
+        if (verticalInput != 0.0f)
+        {
+            transform.RotateAround(transform.position, Vector3.forward, verticalInput * 200 * Time.deltaTime);
+        }
     } 
 }
