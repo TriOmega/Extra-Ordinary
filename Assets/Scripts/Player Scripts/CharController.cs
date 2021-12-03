@@ -11,6 +11,7 @@ public class CharController : MonoBehaviour
     public float gravity = -100.81f;
     public float jumpHeight = 6f;
 
+
     public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
     public float turnSmoothVelocity;
 
@@ -18,7 +19,6 @@ public class CharController : MonoBehaviour
     public float groundDistance = 0.4f; //This is the radius of a sphere that is projected from the player's feet. It checks to see if the ground is anywhere within this sphere. 
     public LayerMask groundMask; //This controls what objects the sphere should check for, so it doesn't collide with the player.
     public static bool isGrounded;
-
     
     public static Vector3 velocity; //This is the velocity that controls how gravity effects the player over time, increasing the speed at which he falls, etc. 
     
@@ -58,5 +58,19 @@ public class CharController : MonoBehaviour
             Debug.Log("Game Quit!");
         }
 
+    }
+
+    public void PauseMovement() 
+    
+    {
+        speed = 0f;
+        jumpHeight = 0f;
+        
+    }
+
+    public void ResumeMovement()
+    {
+     speed = 18f; 
+     jumpHeight = 6f;
     }
 }

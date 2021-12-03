@@ -60,7 +60,16 @@ public class PlayerHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "puddles")
         {
-            AdjustCurrentHealth(-5);
+            AdjustCurrentHealth(-10);
+        }
+
+    }
+
+     void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Web"))
+        {
+           AdjustCurrentHealth(-5); 
         }
     }
 
