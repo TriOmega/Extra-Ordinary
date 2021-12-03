@@ -7,15 +7,20 @@ public class MoveBombToPlayer : MonoBehaviour
 
     public float returnSpeed = 30;
     private Vector3 moveToPlayer;
+    private Vector3 throwAtBoss;
     public GameObject startingPoint;
+    public GameObject bossLocation;
     public float speed = 30f;
+    public bool grabbed = false;
 
     public bool moving = false;
-    public Rigidbody rb;
+
 
     public void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        bossLocation = GameObject.Find("Forcefield Spawner");
+        throwAtBoss = bossLocation.transform.position;
+        
     }
 
 
@@ -25,13 +30,21 @@ public class MoveBombToPlayer : MonoBehaviour
     {
         
         moveToPlayer = startingPoint.transform.position;
+        
 
 
-        if (moving)
+        if (moving == true)
         {
             float step = returnSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, step);
         }
+
+        if (grabbed == true)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, throwAtBoss, step);
+        }
+
     }
 
 
@@ -45,16 +58,19 @@ public class MoveBombToPlayer : MonoBehaviour
             moving = true;
         }
 
+        if (collision.gameObject.CompareTag ("Shockwave"))
+        {
+            grabbed = false;
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            //moving = false;
-            rb.useGravity=false;
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, step);
+            moving = false;
+            grabbed = true; 
         }
 
     }
