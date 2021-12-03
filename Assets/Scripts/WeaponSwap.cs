@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponSwap : MonoBehaviour
 {
     public int selectedWeapon = 0;
+    private bool canSwapAbility = false;
 
     void Start()
     {
@@ -17,15 +18,24 @@ public class WeaponSwap : MonoBehaviour
 
         int previousSelectedWeapon = selectedWeapon;
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxis("JoystickAbilitySwap") == 0f)
         {
+            canSwapAbility = true;
+        }
+
+        if (Input.GetAxis("MouseAbilitySwap") > 0f || (Input.GetAxis("JoystickAbilitySwap") > 0f && canSwapAbility == true))
+        {
+            canSwapAbility = false;
+
             if (selectedWeapon >= transform.childCount - 1)
                 selectedWeapon = 0;
             else
                 selectedWeapon++;
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxis("MouseAbilitySwap") < 0f || (Input.GetAxis("JoystickAbilitySwap") < 0f && canSwapAbility == true))
         {
+            canSwapAbility = false;
+
             if (selectedWeapon <= 0)
                 selectedWeapon = transform.childCount - 1;
             else
@@ -36,6 +46,19 @@ public class WeaponSwap : MonoBehaviour
         {
             SelectWeapon();
         }
+
+        //if (Input.GetAxis("Joystick AbilitySwap") != 0f)
+        //{
+        //    canSwapAbility = true;
+        //    canSwapAbility = false;
+
+        //    if(can)
+        //}
+
+        //if()
+        //{
+
+        //}
     }
 
     void SelectWeapon()
@@ -43,7 +66,7 @@ public class WeaponSwap : MonoBehaviour
 
         int i = 0;
 
-        foreach(Transform weapon in transform)
+        foreach (Transform weapon in transform)
         {
             if (i == selectedWeapon)
             {
@@ -56,4 +79,15 @@ public class WeaponSwap : MonoBehaviour
             i++;
         }
     }
+
+    //private bool CanSwapAbility()
+    //{
+    //    if (Input.GetAxis("Joystick AbilitySwap") != 0f)
+    //    {
+    //        canSwapAbility = true;
+    //        return canSwapAbility;
+    //    }
+    //    canSwapAbility = false;
+    //    return canSwapAbility;
+    //}
 }
