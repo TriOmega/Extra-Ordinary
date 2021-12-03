@@ -14,7 +14,7 @@ public class BubbleGum : MonoBehaviour
     public static bool AttackCanGo = false;
     bool allowedToUseGum = true;
 
- 
+    public AudioSource BlowNoise;
 
     int jumpCounter = 0;
     float gumGravity = -40f;
@@ -37,6 +37,7 @@ public class BubbleGum : MonoBehaviour
 
         if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
         {
+            BlowNoise.Play();
             transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
             gumActive = true;
             CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //jump

@@ -5,6 +5,8 @@ using UnityEngine;
 public class FlashlightFollow : MonoBehaviour
 {
 
+    public AudioSource click;
+
     Ray ray;
     RaycastHit hit;
 
@@ -23,11 +25,13 @@ public class FlashlightFollow : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            //print(hit.collider.name);
             transform.LookAt(hit.point);
         }
 
         if (Input.GetKeyUp(KeyCode.F))
+        {
             myLightComponent.enabled = !myLightComponent.enabled;
+            click.Play();
+        }
     } 
 }
