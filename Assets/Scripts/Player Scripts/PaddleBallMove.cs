@@ -44,6 +44,17 @@ public class PaddleBallMove : MonoBehaviour
 
                 }
             }
+
+            if (Physics.Raycast(startingPoint.transform.position, startingPoint.transform.forward, out hit, 30.0f))
+            {
+                if (hit.transform != null && returned)
+                {
+                    newPosition = hit.point;
+                    moving = true;
+                    returned = false;
+
+                }
+            }
         }
 
         Moving();
