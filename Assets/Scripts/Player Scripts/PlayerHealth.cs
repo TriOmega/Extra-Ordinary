@@ -80,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
     public void AdjustCurrentHealth(float adjustment)
     {
         currentHealth += adjustment;
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             LoseLife();
         }
@@ -122,6 +122,7 @@ public class PlayerHealth : MonoBehaviour
     public void LoseLife()
     {
         currentLives--;
+
         if (currentLives <= 0)
         {
             NoMoreLives?.Invoke(this, EventArgs.Empty);
@@ -131,7 +132,9 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             checkpointHandler.ResetToLastCheckpoint();
+            currentHealth = maxHealth;
         }
+
         UpdateLivesText();
         currentHealth = maxHealth;
     }

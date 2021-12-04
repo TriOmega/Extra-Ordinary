@@ -95,10 +95,11 @@ public class enemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Sword"))
+        if(collision.CompareTag("Sword") && PlayerCombat.swordHasSwung == true)
         {
             //State = "Chase";
             health --;
+            PlayerCombat.swordHasSwung = false;
             
             if(health <= 0)
             {
