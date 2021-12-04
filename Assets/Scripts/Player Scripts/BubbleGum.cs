@@ -35,7 +35,7 @@ public class BubbleGum : MonoBehaviour
     public void Update() 
     {
 
-        if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
+        if(Input.GetButtonDown("SpecialAttack") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
         {
             transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
             gumActive = true;
