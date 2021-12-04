@@ -24,11 +24,11 @@ public class PaddleBallMove : MonoBehaviour
        if (startingPoint.active == false)
             Destroy(gameObject);
 
-        position = startingPoint.transform.position;
+        position = startingPoint.transform.position; //ball return location
         if (transform.position == position)
             returned = true;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -53,15 +53,14 @@ public class PaddleBallMove : MonoBehaviour
     {
         if (moving && transform.position != newPosition)
         {
-                float step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, newPosition, step);        
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, step);        
         }
-
         else
         {
             moving = false;
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, position, step);
+            transform.position = Vector3.MoveTowards(transform.position, position, step); //ball transform
         }
     }
 }

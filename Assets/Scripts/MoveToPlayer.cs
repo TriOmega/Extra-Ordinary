@@ -16,6 +16,7 @@ public class MoveToPlayer : MonoBehaviour
 
     public void Update()
     {
+        startingPoint = GameObject.Find("BallLocation");
         moveToPlayer = startingPoint.transform.position;
 
 
@@ -32,12 +33,18 @@ public class MoveToPlayer : MonoBehaviour
         
 
         if (collision.gameObject.tag == "ball")
+        {
             moving = true;
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
             Destroy(gameObject);
+        }
+
     }
 }
