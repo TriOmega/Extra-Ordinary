@@ -12,7 +12,7 @@ public class PaddleBallMove : MonoBehaviour
 
     Vector3 newPosition;
     private Vector3 position;
-    public GameObject startingPoint = GameObject.Find("BallLocation");
+    public GameObject startingPoint;
 
     public void Start()
     {
