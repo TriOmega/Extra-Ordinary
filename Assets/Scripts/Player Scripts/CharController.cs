@@ -21,7 +21,14 @@ public class CharController : MonoBehaviour
     public static bool isGrounded;
     
     public static Vector3 velocity; //This is the velocity that controls how gravity effects the player over time, increasing the speed at which he falls, etc. 
-    
+
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -42,17 +49,28 @@ public class CharController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             controller.Move(direction * speed * Time.deltaTime);
+            anim.SetBool("Walking", true);
+        }
+        else
+        {
+            anim.SetBool("Walking", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetTrigger("Sword");
         }
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            anim.SetTrigger("Jump");
         }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime); //increases fall speed over time.
 
-         if (Input.GetKeyDown("escape"))
+        if (Input.GetButtonDown("Quit"))
         {
             Application.Quit();
             Debug.Log("Game Quit!");
