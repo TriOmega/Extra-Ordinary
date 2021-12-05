@@ -12,7 +12,7 @@ public class PaddleBallMove : MonoBehaviour
 
     Vector3 newPosition;
     private Vector3 position;
-    public GameObject startingPoint = GameObject.Find("BallLocation");
+    public GameObject startingPoint;
 
     public void Start()
     {
@@ -28,7 +28,7 @@ public class PaddleBallMove : MonoBehaviour
         if (transform.position == position)
             returned = true;
 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("SpecialAttack"))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -36,6 +36,17 @@ public class PaddleBallMove : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 30f))
             {
 
+                if (hit.transform != null && returned)
+                {
+                    newPosition = hit.point;
+                    moving = true;
+                    returned = false;
+
+                }
+            }
+
+            if (Physics.Raycast(startingPoint.transform.position, startingPoint.transform.forward, out hit, 30.0f))
+            {
                 if (hit.transform != null && returned)
                 {
                     newPosition = hit.point;

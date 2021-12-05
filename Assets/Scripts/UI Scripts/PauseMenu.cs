@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("Pause"))
         {
             if (gameIsPaused == true)
             {
@@ -22,6 +22,17 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 Pause();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Time.timeScale = 0f;
+            gameIsPaused = true;
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Resume();
             }
         }
     }

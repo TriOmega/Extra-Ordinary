@@ -61,14 +61,18 @@ public class PlayerHealth : MonoBehaviour
     }
 
     
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag ("Shockwave") || other.CompareTag ("Explosion"))
         {
-            AdjustCurrentHealth(-10);           
+            AdjustCurrentHealth(-10);
+        }
+
+        if(other.CompareTag("Web"))
+        {
+           AdjustCurrentHealth(-5); 
         }
     }
-
 
     private IEnumerator damageTimeout(float timer)
     {
