@@ -22,7 +22,7 @@ public class CharController : MonoBehaviour
     
     public static Vector3 velocity; //This is the velocity that controls how gravity effects the player over time, increasing the speed at which he falls, etc. 
 
-    public Animator anim;
+    private Animator anim;
 
     void Start()
     {
