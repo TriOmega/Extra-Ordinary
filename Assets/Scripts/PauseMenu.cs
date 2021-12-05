@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
-    public GameObject pauseMenuUIgameobject;
+    public GameObject pauseMenuGameObject;
 
-    void Start ()
+    void Start()
     {
-        Resume ();   //This is to make sure the game doesn't load initally into a paused state. That was happening (for some reason) until I did this. 
+        Resume();   //This is to make sure the game doesn't load initally into a paused state. That was happening (for some reason) until I did this. 
     }
 
-    void Update ()
+    void Update()
     {
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (gameIsPaused == true)
             {
@@ -28,16 +26,16 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Resume ()
+    public void Resume()
     {
-        pauseMenuUIgameobject.SetActive(false);
+        pauseMenuGameObject.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
 
-    void Pause ()
+    void Pause()
     {
-        pauseMenuUIgameobject.SetActive(true);
+        pauseMenuGameObject.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
@@ -49,7 +47,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("PCBJodyWhitebox");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

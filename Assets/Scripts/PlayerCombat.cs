@@ -11,15 +11,22 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask basicEnemyLayer;
     public float swordKnockbackThrust = 8.0f;
     public float bubblegumKnockbackThrust = 10.0f;
+    public Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            swordPivot.GetComponent<Animator>().Play("sword_slash");
+            swordPivot.GetComponent<Animator>().Play("Sword Slash");
             BasicAttack(basicPlayerAttackBox);
+            anim.SetTrigger("Sword");
         }
-        
+
         if (Input.GetButton("Block"))
         {
             swordPivot.GetComponent<Animator>().Play("sword_block");
