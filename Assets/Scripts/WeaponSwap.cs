@@ -46,19 +46,6 @@ public class WeaponSwap : MonoBehaviour
         {
             SelectWeapon();
         }
-
-        //if (Input.GetAxis("Joystick AbilitySwap") != 0f)
-        //{
-        //    canSwapAbility = true;
-        //    canSwapAbility = false;
-
-        //    if(can)
-        //}
-
-        //if()
-        //{
-
-        //}
     }
 
     void SelectWeapon()
@@ -79,15 +66,4 @@ public class WeaponSwap : MonoBehaviour
             i++;
         }
     }
-
-    //private bool CanSwapAbility()
-    //{
-    //    if (Input.GetAxis("Joystick AbilitySwap") != 0f)
-    //    {
-    //        canSwapAbility = true;
-    //        return canSwapAbility;
-    //    }
-    //    canSwapAbility = false;
-    //    return canSwapAbility;
-    //}
 }

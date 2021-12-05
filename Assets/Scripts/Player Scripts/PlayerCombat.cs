@@ -5,28 +5,32 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 
 {
-    public GameObject swordPivot;
     public static bool swordHasSwung = false;
     public Collider basicPlayerAttackBox;
     public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
     public float swordKnockbackThrust = 8.0f;
     public float bubblegumKnockbackThrust = 10.0f;
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
     {
         if (Input.GetAxis("BasicAttack") == 1)
         {
-            swordPivot.GetComponent<Animator>().Play("sword_slash");
             BasicAttack(basicPlayerAttackBox);
+            anim.SetTrigger("Sword");
             swordHasSwung = true;
         }
         
-        if (Input.GetAxis("Block") == 1)
-        {
-            swordPivot.GetComponent<Animator>().Play("sword_block");
-            Block();
-        }    
+        //if (Input.GetAxis("Block") == 1)
+        //{
+        //    Block();
+        //}    
 
         if (BubbleGum.AttackCanGo == true)
         {
@@ -40,7 +44,6 @@ public class PlayerCombat : MonoBehaviour
         Collider[] cols = Physics.OverlapBox(attackBox.bounds.center, attackBox.bounds.extents, attackBox.transform.rotation, basicEnemyLayer);
         foreach(Collider col in cols)
         {
-
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * swordKnockbackThrust);
         }
