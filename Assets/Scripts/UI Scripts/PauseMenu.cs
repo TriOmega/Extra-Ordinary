@@ -24,6 +24,17 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Time.timeScale = 0f;
+            gameIsPaused = true;
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Resume();
+            }
+        }
     }
 
     public void Resume()
