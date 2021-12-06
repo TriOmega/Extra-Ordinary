@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5452088316025450717}
   - component: {fileID: 8936952533382741880}
   - component: {fileID: 6621023397555915698}
+  - component: {fileID: 7347829899069792480}
   m_Layer: 0
   m_Name: Billboard_2
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4675411253411277415}
-  m_LocalRotation: {x: -0, y: -0.5000004, z: -0, w: 0.8660252}
+  m_LocalRotation: {x: 0, y: -0.5, z: 0, w: 0.8660254}
   m_LocalPosition: {x: -28, y: 0, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7347829899069792480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675411253411277415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9409995, y: 4.928446, z: 3.2070594}
+  m_Center: {x: 0, y: 2.464223, z: 0.00000047683716}
