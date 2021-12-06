@@ -88,7 +88,7 @@ public class CharController : MonoBehaviour
 
     public void ResumeMovement()
     {
-     speed = 18f; 
-     jumpHeight = 6f;
+        speed = 3f; 
+        jumpHeight = 1.5f;
     }
 }

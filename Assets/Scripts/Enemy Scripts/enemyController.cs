@@ -99,13 +99,15 @@ public class enemyController : MonoBehaviour
         {
             //State = "Chase";
             health --;
-            PlayerCombat.swordHasSwung = false;
+            
             
             if(health <= 0)
             {
                 Debug.Log("DEFEAT HAS HAPPENED <3");
                 Destroy(this.gameObject, 1);
             }
+            
+            PlayerCombat.swordHasSwung = false;
         }
     }
 }

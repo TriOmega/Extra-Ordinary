@@ -18,17 +18,27 @@ public class SpiderEnemies : MonoBehaviour
     private float timeBetweenShots;
     public float startTimeBetweenShots;
 
+    private Vector3 moveToPlayer;
+    public GameObject startingPoint;
+
+    public int health;
+    public int maxHealth;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentPosition = GetComponent<Transform>().position;
         timeBetweenShots = startTimeBetweenShots;
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+            startingPoint = GameObject.Find("BallLocation");
+            moveToPlayer = startingPoint.transform.position;
+
          if(Vector3.Distance(transform.position, player.position) < distanceFromPlayer)
         {
              if(Vector3.Distance(transform.position, player.position) > stoppingDistance)
@@ -69,4 +79,30 @@ public class SpiderEnemies : MonoBehaviour
         
         }
     }
+
+     private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "ball")
+        {
+            transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, enemySpeed);
+            enemySpeed = 0f;
+        }
+
+        if(collision.CompareTag("Sword") && PlayerCombat.swordHasSwung == true)
+        {
+            health --;
+            
+            
+            if(health <= 0)
+            {
+                Debug.Log("Death <3");
+                Destroy(this.gameObject, 1);
+            }
+            
+            PlayerCombat.swordHasSwung = false;
+        }
+
+    }
+    
+
 }

@@ -120,7 +120,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateLivesText()
     {
-        livesText.text = $"Lives: {currentLives}";
+        livesText.text = $"{currentLives}";
     }
 
     public void LoseLife()

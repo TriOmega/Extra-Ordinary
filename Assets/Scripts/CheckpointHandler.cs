@@ -11,11 +11,14 @@ public class CheckpointHandler : MonoBehaviour
     public float checkpointTextDuration = 3.0f;
     public Text checkpointText;
     public Transform LastCheckpoint;
+    public Image BG;
 
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _levelStart = _player.transform.position;
+        checkpointText.enabled = false;
+        BG.enabled = false;
     }
 
     public void ResetToLevelStart()
@@ -42,11 +45,13 @@ public class CheckpointHandler : MonoBehaviour
     public void PopUpCheckpointText()
     {
         checkpointText.enabled = true;
+        BG.enabled = true;
         Invoke("DeactivateCheckpointText", checkpointTextDuration);
     }
 
     public void DeactivateCheckpointText()
     {
         checkpointText.enabled = false;
+        BG.enabled = false;
     }
 }
