@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 10;
     public int maxLives = 3;
     public int currentLives;
+    public AudioSource deathMusic;
 
     public float defaultEnemyDamage = -1.0f;
 
@@ -129,6 +130,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentLives <= 0)
         {
+            deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
             //currentLives = maxLives;
