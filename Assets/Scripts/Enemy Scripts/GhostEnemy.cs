@@ -11,7 +11,6 @@ public class GhostEnemy : MonoBehaviour
     float WPradius = 1;
 
     public CharController other;
-    private Rigidbody rgdBody;
 
     public GameObject Flashlight;
 
