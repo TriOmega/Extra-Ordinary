@@ -4,25 +4,41 @@ using UnityEngine;
 
 public class worldRotator : MonoBehaviour
 {
-    public float xAngle, yAngle, zAngle;
-    public GameObject target;
+
+    public GameObject theEntireWorld;
+    bool rotateRequest = false;
+    float rotateAngle = 30f;  //the angle at which the camera rotates every second
+    float rotateTimeAmount;
+    float timeRemaining;  //This is a timer that runs. It will tell the world to stop rotating after the number of seconds reaches a certain amount. 
     
-    // Start is called before the first frame update
+ 
     void Start()
     {
-        yAngle = 90.0f;
+        timeRemaining = 10f;
     }
 
-    // Update is called once per frame
     void Update()
     {
+
+        if((rotateRequest == true) && (timeRemaining > 6.9f))  //6.9 is th enumber of seconds the world rotates before stopping. 
+        {
+            timeRemaining -= Time.deltaTime;
+            theEntireWorld.transform.RotateAround(gameObject.transform.position, Vector3.up, rotateAngle * Time.deltaTime);
+        }
+           
+
+    }
     
-    }
-
-    public void WorldRotation()
+    
+    private void OnTriggerEnter(Collider collision)
     {
-        //transform.Rotate(0.0f, 90.0f, 0.0f, Space.World);
-
-        transform.RotateAround(target.transform.position, Vector3.up, 10);
+        if(collision.CompareTag("Player"))
+        {
+            rotateRequest = true;
+        }
     }
+
+
+
+
 }

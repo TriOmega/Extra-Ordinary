@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43671542, g: 0.48432004, b: 0.56457, a: 1}
+  m_IndirectSpecularColor: {r: 0.43671587, g: 0.4843207, b: 0.56457126, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7413,7 +7413,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 584050078}
-  - component: {fileID: 584050079}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
@@ -7537,22 +7536,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &584050079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584050077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7b67b01d264e9c4cae139361f70d093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xAngle: 0
-  yAngle: 0
-  zAngle: 0
-  target: {fileID: 1004269189}
 --- !u!1001 &586507597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9346,7 +9329,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5996376, y: 1}
+    m_SensorSize: {x: 1.8616852, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20146,9 +20129,10 @@ GameObject:
   - component: {fileID: 1494272998}
   - component: {fileID: 1494272997}
   - component: {fileID: 1494272996}
+  - component: {fileID: 1494272999}
   m_Layer: 2
   m_Name: Turner
-  m_TagString: Turn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20161,8 +20145,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494272994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4309, y: 0.2791, z: 68.1602}
-  m_LocalScale: {x: 4.252923, y: 7.718108, z: 2.1642392}
+  m_LocalPosition: {x: -2.4309, y: 0.2791, z: 67.52}
+  m_LocalScale: {x: 4.252923, y: 7.718108, z: 3.52}
   m_Children: []
   m_Father: {fileID: 1450187518}
   m_RootOrder: 5
@@ -20230,6 +20214,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494272994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1494272999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494272994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b67b01d264e9c4cae139361f70d093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theEntireWorld: {fileID: 584050077}
 --- !u!4 &1498670661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8809352222531351771, guid: 927b26ae978666b46aa2fef713041df9, type: 3}
@@ -26246,7 +26243,7 @@ PrefabInstance:
     - target: {fileID: 1409889241289235207, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: rota
       value: 
-      objectReference: {fileID: 584050079}
+      objectReference: {fileID: 0}
     - target: {fileID: 7571376629834154806, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: livesText
       value: 

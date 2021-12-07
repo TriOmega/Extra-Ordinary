@@ -6,7 +6,7 @@ public class CharController : MonoBehaviour
 {
 
     public CharacterController controller;
-    public worldRotator rota;
+  
 
     public float speed = 18f; //Speed at which the player walks around.
     public float gravity = -100.81f;
@@ -93,11 +93,4 @@ public class CharController : MonoBehaviour
         jumpHeight = 1.5f;
     }
 
-    public void OnTriggerExit(Collider collision)
-    {
-        if(collision.gameObject.tag == "Turn")
-        {
-            rota.WorldRotation();
-        }
-    }
 }
