@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     //public float regeneration = 0.5f;
 
     public float damageTimer = 1f;
-    private bool canTakeDamage = true;
+    //private bool canTakeDamage = true;
 
     public Text livesText;
     private CheckpointHandler checkpointHandler;
@@ -75,12 +75,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private IEnumerator damageTimeout(float timer)
-    {
-        canTakeDamage = false;
-        yield return new WaitForSeconds(timer);
-        canTakeDamage = true;
-    }
+   // private IEnumerator damageTimeout(float timer)
+   // {
+       // canTakeDamage = false;
+      //  yield return new WaitForSeconds(timer);
+       // canTakeDamage = true;
+    //}
 
     public void AdjustCurrentHealth(float adjustment)
     {
@@ -102,6 +102,7 @@ public class PlayerHealth : MonoBehaviour
     public void AdjustCurrentLives(int adjustment)
     {
         currentLives += adjustment;
+
         if (adjustment < 0)
         {
             LoseLife();

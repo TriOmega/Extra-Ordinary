@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3315088871538093638
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377339684159329760}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71967c1e62d357949a334280357a64ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3784111808042348862
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +34,6 @@ GameObject:
   - component: {fileID: 8308372043391984238}
   - component: {fileID: 1308029271753349190}
   - component: {fileID: 2142609326}
-  - component: {fileID: 7551472553554330521}
   m_Layer: 10
   m_Name: Scorpion
   m_TagString: enemy
@@ -148,25 +166,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1, z: 6.1232356e-17}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &7551472553554330521
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3784111808042348862}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 71967c1e62d357949a334280357a64ac, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5923304881578741327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -2313015629282306730, guid: c295a3e77cb88e94492ec896e7f9358c, type: 3}
+--- !u!1 &377339684159329760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6273331872243063727, guid: c295a3e77cb88e94492ec896e7f9358c, type: 3}
+  m_PrefabInstance: {fileID: 5923304881578741327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3171932422824317203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9094801553099480924, guid: c295a3e77cb88e94492ec896e7f9358c, type: 3}

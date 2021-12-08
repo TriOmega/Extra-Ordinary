@@ -85,6 +85,7 @@ public class SpiderEnemies : MonoBehaviour
         if (collision.gameObject.tag == "ball")
         {
             transform.position = Vector3.MoveTowards(transform.position, moveToPlayer, enemySpeed);
+            transform.Rotate(0, 0, 0);
             enemySpeed = 0f;
         }
 

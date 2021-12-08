@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 7099043238599946702}
   - component: {fileID: 7099043238599946703}
   - component: {fileID: 7099043238599946700}
-  - component: {fileID: 7099043238599946706}
   - component: {fileID: 7099043238599946707}
   - component: {fileID: 7813846188780885340}
   m_Layer: 0
@@ -169,21 +168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7099043238599946706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099043238599946704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d9a31c0bcb8a634b9fb925f89143feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnSpeed: 10
-  startingPoint: {fileID: 0}
-  moving: 0
 --- !u!114 &7099043238599946707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85efbd0ec0c93e48b8c6165290a6a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBePaddleBalled: 0
-  pickUpHealthWorth: 5
+  canBePaddleBalled: 1
+  pickUpHealthWorth: 20
 --- !u!65 &7813846188780885340
 BoxCollider:
   m_ObjectHideFlags: 0

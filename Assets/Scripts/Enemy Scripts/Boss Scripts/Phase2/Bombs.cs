@@ -17,7 +17,7 @@ public class Bombs : MonoBehaviour
     void Start()
     {
         bombRigidbody = bomb.GetComponent<Rigidbody>();
-        bombRigidbody.AddForce(0, 300, -80000 * Time.deltaTime);
+        bombRigidbody.AddForce(0, 300, -50000 * Time.deltaTime);
     }
 
 
