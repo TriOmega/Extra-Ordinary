@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthPickUp : PickUps
 {
-    public int pickUpHealthWorth = 5;
+    public int pickUpHealthWorth = 20;
 
     public override void PickUpEffect(GameObject player)
     {

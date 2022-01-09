@@ -11,7 +11,6 @@ public class GhostEnemy : MonoBehaviour
     float WPradius = 1;
 
     public CharController other;
-    private Rigidbody rgdBody;
 
     public GameObject Flashlight;
 
@@ -41,26 +40,24 @@ public class GhostEnemy : MonoBehaviour
                 // current = 0;
                 //}
              other.PauseMovement();
-
-             Flashlight.SetActive(false);
-
-                if (Input.GetKeyDown(KeyCode.F))
-                    {
-                        Flashlight.SetActive(true);
-                        other.ResumeMovement();
-                        DestroyGhost();
-                        Debug.Log("Die!!!");
-                    }
-             
             }
 
             transform.position = Vector3.MoveTowards(transform.position, points[current].transform.position, Time.deltaTime * speed);
         }
     }
 
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Flashlight"))
+             {
+                 other.ResumeMovement();
+                 DestroyGhost();
+             }
+    }
+
      void DestroyGhost()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 1);
         //particle system here
     }
 }

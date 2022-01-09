@@ -7,6 +7,11 @@ public class WeaponSwap : MonoBehaviour
     public int selectedWeapon = 0;
     private bool canSwapAbility = false;
 
+    public GameObject GumIcon;
+    public GameObject FlashlightIcon;
+    public GameObject PaddleballIcon;
+
+
     void Start()
     {
         SelectWeapon();
@@ -45,6 +50,27 @@ public class WeaponSwap : MonoBehaviour
         if (previousSelectedWeapon != selectedWeapon)
         {
             SelectWeapon();
+        }
+
+        if (selectedWeapon == 0)
+        {
+            GumIcon.SetActive(true);
+            FlashlightIcon.SetActive(false);
+            PaddleballIcon.SetActive(false);
+        }
+
+        else if (selectedWeapon == 1)
+        {
+            GumIcon.SetActive(false);
+            FlashlightIcon.SetActive(true);
+            PaddleballIcon.SetActive(false);
+        }
+
+        else 
+        {
+            GumIcon.SetActive(false);
+            FlashlightIcon.SetActive(false);
+            PaddleballIcon.SetActive(true);
         }
     }
 

@@ -13,7 +13,7 @@ public class Doors : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             doorKey.SetActive(false);
-            door.transform.Rotate(new Vector3(0, -75, 0) );
+            door.transform.Rotate(new Vector3(0, 75, 0) );
 
         }
     }

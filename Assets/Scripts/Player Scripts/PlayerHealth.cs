@@ -9,13 +9,14 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 10;
     public int maxLives = 3;
     public int currentLives;
+    public AudioSource deathMusic;
 
     public float defaultEnemyDamage = -1.0f;
 
     //public float regeneration = 0.5f;
 
     public float damageTimer = 1f;
-    private bool canTakeDamage = true;
+    //private bool canTakeDamage = true;
 
     public Text livesText;
     private CheckpointHandler checkpointHandler;
@@ -74,12 +75,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private IEnumerator damageTimeout(float timer)
-    {
-        canTakeDamage = false;
-        yield return new WaitForSeconds(timer);
-        canTakeDamage = true;
-    }
+   // private IEnumerator damageTimeout(float timer)
+   // {
+       // canTakeDamage = false;
+      //  yield return new WaitForSeconds(timer);
+       // canTakeDamage = true;
+    //}
 
     public void AdjustCurrentHealth(float adjustment)
     {
@@ -101,6 +102,7 @@ public class PlayerHealth : MonoBehaviour
     public void AdjustCurrentLives(int adjustment)
     {
         currentLives += adjustment;
+
         if (adjustment < 0)
         {
             LoseLife();
@@ -120,7 +122,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateLivesText()
     {
-        livesText.text = $"Lives: {currentLives}";
+        livesText.text = $"{currentLives}";
     }
 
     public void LoseLife()
@@ -129,6 +131,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentLives <= 0)
         {
+            deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
             //currentLives = maxLives;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sink_into_ground : StateMachineBehaviour
 {
@@ -38,6 +39,11 @@ public class Sink_into_ground : StateMachineBehaviour
         {
             float step = decendSpeed * Time.deltaTime;
             bossTransform.position = Vector3.MoveTowards(bossTransform.position, targetVector, step);
+        }
+
+        if (timeRemaining < 2)
+        {
+            SceneManager.LoadScene("Ending");
         }
     }
 

@@ -6,6 +6,7 @@ public class CharController : MonoBehaviour
 {
 
     public CharacterController controller;
+  
 
     public float speed = 18f; //Speed at which the player walks around.
     public float gravity = -100.81f;
@@ -88,7 +89,8 @@ public class CharController : MonoBehaviour
 
     public void ResumeMovement()
     {
-     speed = 18f; 
-     jumpHeight = 6f;
+        speed = 3f; 
+        jumpHeight = 1.5f;
     }
+
 }

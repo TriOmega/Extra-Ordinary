@@ -4,7 +4,7 @@ public class FlashlightFollow : MonoBehaviour
 {
 
     Ray ray;
-    RaycastHit hit;
+    public RaycastHit hit;
 
     private GameObject lightObject;
     private Light myLightComponent;

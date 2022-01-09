@@ -18,7 +18,7 @@ public class BubbleGum : MonoBehaviour
 
     int jumpCounter = 0;
     float gumGravity = -40f;
-    float gumJumpHeight = 1f;
+    float gumJumpHeight = 0.7f;
     
      public void OnTriggerEnter(Collider other)
      {
