@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class forcefieldScript : MonoBehaviour
+public class BossForceField : MonoBehaviour
 {
 
     public GameObject forcefield;
