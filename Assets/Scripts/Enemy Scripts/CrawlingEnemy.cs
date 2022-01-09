@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrawlingEnemies : MonoBehaviour
+public class CrawlingEnemy : MonoBehaviour
 {
      public GameObject player;
     private Transform playerPosition;

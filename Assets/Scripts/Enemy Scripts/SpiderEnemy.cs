@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderEnemies : MonoBehaviour
+public class SpiderEnemy : MonoBehaviour
 {
     public float enemySpeed;
     public float stoppingDistance;
