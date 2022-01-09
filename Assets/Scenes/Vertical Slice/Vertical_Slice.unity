@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36704522, g: 0.21499437, b: 0.20716271, a: 1}
+  m_IndirectSpecularColor: {r: 0.36704528, g: 0.21499413, b: 0.20716262, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7356,7 +7356,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5197689782568432890, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+    - target: {fileID: 0}
       propertyPath: CinemachineCamera
       value: 
       objectReference: {fileID: 713382514}
@@ -7460,7 +7460,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5197689783525824340, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+    - target: {fileID: 0}
       propertyPath: CinemachineCamera
       value: 
       objectReference: {fileID: 713382514}
@@ -7576,9 +7576,7 @@ PrefabInstance:
       propertyPath: CinemachineCamera
       value: 
       objectReference: {fileID: 713382514}
-    m_RemovedComponents:
-    - {fileID: 5197689782568432890, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
-    - {fileID: 5197689783525824340, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
 --- !u!4 &261567217 stripped
 Transform:
@@ -11767,7 +11765,7 @@ Transform:
   - {fileID: 276959143}
   - {fileID: 944739126}
   m_Father: {fileID: 584050078}
-  m_RootOrder: 130
+  m_RootOrder: 114
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &394965382
 PrefabInstance:
@@ -17784,6 +17782,7 @@ Transform:
   - {fileID: 40927866}
   - {fileID: 448524185}
   - {fileID: 1277182902}
+  - {fileID: 715390545}
   - {fileID: 2136939512}
   - {fileID: 1013858571}
   - {fileID: 1199915438}
@@ -17792,6 +17791,7 @@ Transform:
   - {fileID: 1784670442}
   - {fileID: 661614119}
   - {fileID: 761074602}
+  - {fileID: 394609467}
   - {fileID: 1134118674}
   - {fileID: 2071910515}
   - {fileID: 1547102750}
@@ -17801,7 +17801,6 @@ Transform:
   - {fileID: 1128947081}
   - {fileID: 1731109111}
   - {fileID: 888311619}
-  - {fileID: 715390545}
   - {fileID: 555025874}
   - {fileID: 1856461737}
   - {fileID: 1790087972}
@@ -17809,7 +17808,6 @@ Transform:
   - {fileID: 1117231094}
   - {fileID: 546857702}
   - {fileID: 2063615916}
-  - {fileID: 394609467}
   - {fileID: 1982237272}
   - {fileID: 2073407165}
   - {fileID: 2025806532}
@@ -20912,7 +20910,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.599119, y: 1}
+    m_SensorSize: {x: 2.1845639, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -21107,7 +21105,7 @@ Transform:
   - {fileID: 715129655}
   - {fileID: 535292809}
   m_Father: {fileID: 584050078}
-  m_RootOrder: 122
+  m_RootOrder: 105
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &716542723
 PrefabInstance:
@@ -58362,7 +58360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3924005296211563075, guid: 825d043dafea4c74fa15774d021339c8, type: 3}
       propertyPath: m_RootOrder
-      value: 159
+      value: 158
       objectReference: {fileID: 0}
     - target: {fileID: 3924005296211563075, guid: 825d043dafea4c74fa15774d021339c8, type: 3}
       propertyPath: m_LocalScale.x
