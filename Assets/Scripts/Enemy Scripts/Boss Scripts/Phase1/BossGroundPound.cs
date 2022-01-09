@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_GroundPound : StateMachineBehaviour
+public class BossGroundPound : StateMachineBehaviour
 {
     Rigidbody bossRigidbody;
     public GameObject shockwave;

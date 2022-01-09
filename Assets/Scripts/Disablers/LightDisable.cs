@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightDissable : MonoBehaviour
+public class LightDisable : MonoBehaviour
 {
     public GameObject Flashlight;
 

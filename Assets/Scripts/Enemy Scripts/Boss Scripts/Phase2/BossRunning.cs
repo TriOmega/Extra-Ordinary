@@ -2,41 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Casting : StateMachineBehaviour
+public class BossRunning : StateMachineBehaviour
 {
+    Rigidbody bossRigidbody;
+    Transform bossLocation;
+    float runSpeed = 4f;
 
-    public GameObject forcefield;
-    Transform forcefieldSpawner;
-    float timeRemaining;
-    bool isDone = false;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timeRemaining = 10f;
-        forcefieldSpawner = GameObject.FindGameObjectWithTag("Shockwave").transform;
+        bossRigidbody = animator.GetComponent<Rigidbody>();
+        bossLocation = animator.GetComponent<Transform>();
+        bossLocation.transform.Rotate(0, -90, 0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timeRemaining -= Time.deltaTime;
-        if (timeRemaining < 9)
+        Vector3 runTarget = new Vector3(208.72f, bossRigidbody.position.y, -323f);
+        Vector3 newPosition = Vector3.MoveTowards(bossRigidbody.position, runTarget, runSpeed * Time.fixedDeltaTime);
+        bossRigidbody.MovePosition(newPosition);
+
+        if (bossRigidbody.position.z >= -323.5)
         {
-            if (!isDone)
-            {
-                Instantiate (forcefield, forcefieldSpawner.position, forcefieldSpawner.rotation);
-                isDone = true;
-                animator.SetTrigger("StartThrowingBombs");
-            }
+            animator.SetTrigger("StartCastingMagic");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        isDone = false;
+        bossLocation.transform.Rotate(0, 180, 0);
     }
-
-
 }

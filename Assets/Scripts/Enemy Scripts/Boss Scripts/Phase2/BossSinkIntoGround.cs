@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Sink_into_ground : StateMachineBehaviour
+public class BossSinkIntoGround : StateMachineBehaviour
 {
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Throwing_Bombs : StateMachineBehaviour
+public class BossMoreThrowing : StateMachineBehaviour
 {
 
     Transform BombSpawner;
@@ -27,14 +27,14 @@ public class Boss_Throwing_Bombs : StateMachineBehaviour
             {
                 Instantiate (bombPrefab, BombSpawner.position, BombSpawner.rotation);
                 isDone = true;
+
             }
 
             if(animator.GetBool("HitByBomb") == false)
             {
-                animator.SetTrigger("ThrowMoreBombs");
+                animator.SetTrigger("StartThrowingBombs");
             }
         }
-
             
     }
 
@@ -42,7 +42,7 @@ public class Boss_Throwing_Bombs : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         isDone = false;
-        animator.ResetTrigger("ThrowMoreBombs");
+        animator.ResetTrigger("StartThrowingBombs");
     }
 
 }

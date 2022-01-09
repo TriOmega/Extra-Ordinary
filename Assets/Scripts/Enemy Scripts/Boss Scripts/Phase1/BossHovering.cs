@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Hovering : StateMachineBehaviour
+public class BossHovering : StateMachineBehaviour
 {
     Transform playerTransform;
     Rigidbody bossRigidbody;
