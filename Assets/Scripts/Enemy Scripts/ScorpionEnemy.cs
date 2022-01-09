@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemyController : MonoBehaviour
+public class ScorpionEnemy : MonoBehaviour
 {
     //lots of slashes sorry ignore them
 
