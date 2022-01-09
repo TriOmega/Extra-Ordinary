@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fpCamera : MonoBehaviour
+public class FPCamera : MonoBehaviour
 {   
     
     public float mouseSpeed = 100f;
