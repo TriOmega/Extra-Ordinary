@@ -1016,7 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105213818}
   m_Layer: 0
-  m_Name: Sound Effects
+  m_Name: SoundEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,6 +1037,7 @@ Transform:
   - {fileID: 1757598991}
   - {fileID: 821206951}
   - {fileID: 2102570275}
+  - {fileID: 1033903793}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1139,7 +1140,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (1)
+      value: RestroomCeiling_01
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -1516,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691736403937573872, guid: 3bf1a18c868a6794bbb1490d77ef9cd0, type: 3}
       propertyPath: m_Name
-      value: Mirror (6)
+      value: Mirror_06
       objectReference: {fileID: 0}
     - target: {fileID: 5691736403937573872, guid: 3bf1a18c868a6794bbb1490d77ef9cd0, type: 3}
       propertyPath: m_IsActive
@@ -1581,7 +1582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (10)
+      value: RestroomCeiling_10
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -1726,7 +1727,7 @@ GameObject:
   - component: {fileID: 173798274}
   - component: {fileID: 173798273}
   m_Layer: 2
-  m_Name: Back Invisible Wall (1)
+  m_Name: BackInvisibleWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1770,7 +1771,7 @@ GameObject:
   - component: {fileID: 177817660}
   - component: {fileID: 177817661}
   m_Layer: 0
-  m_Name: monster (7)
+  m_Name: S_Monster_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2645,7 +2646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903869840121852993, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Sink_Mirror (4)
+      value: RestroomWallSinkMirror_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037937812821910571, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
+      propertyPath: m_Name
+      value: ReflectionProbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
@@ -2658,7 +2663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3871504885822157880, guid: 8899b087af793a74c9888d0b36c242d3, type: 3}
       propertyPath: m_Name
-      value: Air_Dryer (2)
+      value: AirDryer_02
       objectReference: {fileID: 0}
     - target: {fileID: 3871504885822157880, guid: 8899b087af793a74c9888d0b36c242d3, type: 3}
       propertyPath: m_Layer
@@ -2761,7 +2766,7 @@ GameObject:
   - component: {fileID: 276839018}
   - component: {fileID: 276839019}
   m_Layer: 0
-  m_Name: monster (14)
+  m_Name: S_Monster_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3098,7 +3103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 304603722}
   m_Layer: 0
-  m_Name: Light w/ light (1)
+  m_Name: LightWithLight_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3178,7 +3183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329277175}
   m_Layer: 0
-  m_Name: Bathroom Model Assets
+  m_Name: BathroomModelAssets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3461,7 +3466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (7)
+      value: RestroomCeiling_07
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -3537,7 +3542,7 @@ GameObject:
   - component: {fileID: 393594239}
   - component: {fileID: 393594240}
   m_Layer: 0
-  m_Name: Forcefield Spawner
+  m_Name: ForcefieldSpawner
   m_TagString: Shockwave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3635,7 +3640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687511881245318020, guid: bc312e399be001f4dbb5891b4755d3f6, type: 3}
       propertyPath: m_Name
-      value: Sink (3)
+      value: Sink_03
       objectReference: {fileID: 0}
     - target: {fileID: 687511881245318020, guid: bc312e399be001f4dbb5891b4755d3f6, type: 3}
       propertyPath: m_IsActive
@@ -3680,7 +3685,7 @@ GameObject:
   - component: {fileID: 398061273}
   - component: {fileID: 398061272}
   m_Layer: 0
-  m_Name: BackWall (2)
+  m_Name: BackWall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3982,7 +3987,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (6)
+      value: RestroomCeiling_06
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -4178,7 +4183,7 @@ GameObject:
   - component: {fileID: 453654010}
   - component: {fileID: 453654011}
   m_Layer: 0
-  m_Name: monster (9)
+  m_Name: S_Monster_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4585,7 +4590,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (2)
+      value: RestroomCeiling_02
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -4894,7 +4899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (3)
+      value: RestroomCeiling_03
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -5151,7 +5156,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (8)
+      value: RestroomCeiling_08
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -5225,7 +5230,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 49930162735501229, guid: 146ad0fd43ab0bd4bbfaaba3a24f3a67, type: 3}
       propertyPath: m_Name
-      value: Paper_Towel_Dispenser (2)
+      value: PaperTowelDispenser_02
       objectReference: {fileID: 0}
     - target: {fileID: 49930162735501229, guid: 146ad0fd43ab0bd4bbfaaba3a24f3a67, type: 3}
       propertyPath: m_Layer
@@ -5631,7 +5636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (2)
+      value: RestroomCeiling_02
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -5802,7 +5807,7 @@ GameObject:
   - component: {fileID: 619210804}
   - component: {fileID: 619210803}
   m_Layer: 2
-  m_Name: Back Invisible Wall
+  m_Name: BackInvisibleWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6212,7 +6217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (9)
+      value: RestroomCeiling_09
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -6347,7 +6352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (4)
+      value: RestroomCeiling_04
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -6623,7 +6628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691736403937573872, guid: 3bf1a18c868a6794bbb1490d77ef9cd0, type: 3}
       propertyPath: m_Name
-      value: Mirror (5)
+      value: Mirror_05
       objectReference: {fileID: 0}
     - target: {fileID: 5691736403937573872, guid: 3bf1a18c868a6794bbb1490d77ef9cd0, type: 3}
       propertyPath: m_IsActive
@@ -6641,7 +6646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 689369849}
   m_Layer: 0
-  m_Name: sinkTarget
+  m_Name: SinkTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6770,7 +6775,7 @@ GameObject:
   - component: {fileID: 727058763}
   - component: {fileID: 727058764}
   m_Layer: 0
-  m_Name: monster (12)
+  m_Name: S_Monster_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6984,7 +6989,7 @@ GameObject:
   - component: {fileID: 735613222}
   - component: {fileID: 735613221}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7099,7 +7104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 744908998}
   m_Layer: 0
-  m_Name: PaddleBall_Section
+  m_Name: PaddleBallSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7129,7 +7134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746622812}
   m_Layer: 0
-  m_Name: Light w/ light (2)
+  m_Name: LightWithLight_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7290,7 +7295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (5)
+      value: RestroomCeiling_05
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -7690,7 +7695,7 @@ GameObject:
   - component: {fileID: 821206951}
   - component: {fileID: 821206952}
   m_Layer: 0
-  m_Name: deathSound
+  m_Name: S_DeathSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7815,7 +7820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4993084238136835295, guid: 9dc64912b086e0b43b5f0893ed2dc4b7, type: 3}
       propertyPath: m_Name
-      value: RestroomFloor_low (79)
+      value: RestroomFloorLow_79
       objectReference: {fileID: 0}
     - target: {fileID: 5620825505789847141, guid: 9dc64912b086e0b43b5f0893ed2dc4b7, type: 3}
       propertyPath: m_RootOrder
@@ -7942,7 +7947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852790335}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RestroomCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8214,7 +8219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (1)
+      value: RestroomCeiling_01
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -8657,7 +8662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (3)
+      value: RestroomCeiling_03
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -8901,7 +8906,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (6)
+      value: RestroomCeiling_06
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -9071,7 +9076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3695316921342123631, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 3695316921714063775, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
       propertyPath: playerHealth
@@ -9271,7 +9276,7 @@ GameObject:
   - component: {fileID: 989526483}
   - component: {fileID: 989526484}
   m_Layer: 0
-  m_Name: monster (8)
+  m_Name: S_Monster_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9766,7 +9771,7 @@ GameObject:
   - component: {fileID: 1033903793}
   - component: {fileID: 1033903792}
   m_Layer: 0
-  m_Name: Death Music
+  m_Name: S_DeathMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9875,12 +9880,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033903791}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -208.02303, y: -165.63487, z: 348.25525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_Father: {fileID: 105213818}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1040891718
 GameObject:
@@ -9946,7 +9951,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0353534, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9981,7 +9986,7 @@ GameObject:
   - component: {fileID: 1042660731}
   - component: {fileID: 1042660732}
   m_Layer: 0
-  m_Name: monster (13)
+  m_Name: S_Monster_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10304,7 +10309,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a51e408c6e26f8345bb075dbddbb9910, type: 2}
     - target: {fileID: 919132149155446097, guid: 0b2411597f703d0429f4d158826659be, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_SinkTable (2)
+      value: RestroomWallSinkTable_02
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b2411597f703d0429f4d158826659be, type: 3}
       propertyPath: m_Layer
@@ -10639,7 +10644,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (8)
+      value: RestroomCeiling_08
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -10775,7 +10780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1134955785}
   m_Layer: 0
-  m_Name: BubbleGum_Section
+  m_Name: BubbleGumSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11074,7 +11079,7 @@ GameObject:
   - component: {fileID: 1192212499}
   - component: {fileID: 1192212500}
   m_Layer: 0
-  m_Name: monster (16)
+  m_Name: S_Monster_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11199,7 +11204,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (7)
+      value: RestroomCeiling_07
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -11359,7 +11364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229132773}
   m_Layer: 0
-  m_Name: Light w/ light
+  m_Name: LightWithLight_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11524,7 +11529,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (5)
+      value: RestroomCeiling_05
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -11654,7 +11659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903869840121852993, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Sink_Mirror (5)
+      value: RestroomWallSinkMirror_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037937812821910571, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
+      propertyPath: m_Name
+      value: ReflectionProbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
@@ -12226,7 +12235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903869840121852993, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Sink_Mirror
+      value: RestroomWallSinkMirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037937812821910571, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
+      propertyPath: m_Name
+      value: ReflectionProbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
@@ -12385,7 +12398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687511881245318020, guid: bc312e399be001f4dbb5891b4755d3f6, type: 3}
       propertyPath: m_Name
-      value: Sink (4)
+      value: Sink_04
       objectReference: {fileID: 0}
     - target: {fileID: 687511881245318020, guid: bc312e399be001f4dbb5891b4755d3f6, type: 3}
       propertyPath: m_IsActive
@@ -12519,7 +12532,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4993084238136835295, guid: 9dc64912b086e0b43b5f0893ed2dc4b7, type: 3}
       propertyPath: m_Name
-      value: RestroomFloor_low (1)
+      value: RestroomFloorLow
       objectReference: {fileID: 0}
     - target: {fileID: 5620825505789847141, guid: 9dc64912b086e0b43b5f0893ed2dc4b7, type: 3}
       propertyPath: m_RootOrder
@@ -12750,7 +12763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7499097899052681782, guid: e9133c807ca12644f95369a77db27df4, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Main_Top
+      value: RestroomWallMainTop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9133c807ca12644f95369a77db27df4, type: 3}
@@ -13070,7 +13083,7 @@ GameObject:
   - component: {fileID: 1451172065}
   - component: {fileID: 1451172064}
   m_Layer: 0
-  m_Name: BackWall (1)
+  m_Name: BackWall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13505,7 +13518,7 @@ GameObject:
   - component: {fileID: 1487966871}
   - component: {fileID: 1487966872}
   m_Layer: 0
-  m_Name: monster (5)
+  m_Name: S_Monster_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14087,7 +14100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (9)
+      value: RestroomCeiling_09
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -14887,7 +14900,7 @@ GameObject:
   - component: {fileID: 1698165250}
   - component: {fileID: 1698165251}
   m_Layer: 0
-  m_Name: monster (11)
+  m_Name: S_Monster_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15014,7 +15027,7 @@ GameObject:
   - component: {fileID: 1707605849}
   - component: {fileID: 1707605850}
   m_Layer: 0
-  m_Name: monster (10)
+  m_Name: S_Monster_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15384,7 +15397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903869840121852993, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Sink_Mirror (3)
+      value: RestroomWallSinkMirror_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037937812821910571, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
+      propertyPath: m_Name
+      value: ReflectionProbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
@@ -15399,7 +15416,7 @@ GameObject:
   - component: {fileID: 1757598991}
   - component: {fileID: 1757598992}
   m_Layer: 0
-  m_Name: awakeSound
+  m_Name: S_AwakeSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15587,7 +15604,7 @@ GameObject:
   - component: {fileID: 1760551701}
   - component: {fileID: 1760551702}
   m_Layer: 0
-  m_Name: monster (6)
+  m_Name: S_Monster_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15768,7 +15785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903869840121852993, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Sink_Mirror (1)
+      value: RestroomWallSinkMirror_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037937812821910571, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
+      propertyPath: m_Name
+      value: ReflectionProbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
@@ -16169,7 +16190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903869840121852993, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
       propertyPath: m_Name
-      value: RestroomWall_Sink_Mirror (2)
+      value: RestroomWallSinkMirror_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037937812821910571, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
+      propertyPath: m_Name
+      value: ReflectionProbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef358c0d6244c24888cbbd3cf638f43, type: 3}
@@ -16232,7 +16257,7 @@ GameObject:
   - component: {fileID: 1868109127}
   - component: {fileID: 1868109128}
   m_Layer: 0
-  m_Name: monster (2)
+  m_Name: S_Monster_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16361,7 +16386,7 @@ GameObject:
   - component: {fileID: 1875770839}
   - component: {fileID: 1875770838}
   m_Layer: 0
-  m_Name: BackWall (3)
+  m_Name: BackWall_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16506,7 +16531,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (10)
+      value: RestroomCeiling_10
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -16903,7 +16928,7 @@ GameObject:
   - component: {fileID: 1940479651}
   - component: {fileID: 1940479652}
   m_Layer: 0
-  m_Name: monster (1)
+  m_Name: S_Monster_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17052,7 +17077,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8268714193586533907, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_Name
-      value: RestroomCeiling (4)
+      value: RestroomCeiling_04
       objectReference: {fileID: 0}
     - target: {fileID: 8758251214187326633, guid: 7e986bd737ed31e48a0ab83b8d818368, type: 3}
       propertyPath: m_RootOrder
@@ -17130,7 +17155,7 @@ GameObject:
   - component: {fileID: 1953359604}
   - component: {fileID: 1953359603}
   m_Layer: 0
-  m_Name: Leftmost Wall
+  m_Name: LeftmostWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17306,7 +17331,7 @@ GameObject:
   - component: {fileID: 1968314736}
   - component: {fileID: 1968314735}
   m_Layer: 0
-  m_Name: bossMusic
+  m_Name: S_BossMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17431,7 +17456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4993084238136835295, guid: 9dc64912b086e0b43b5f0893ed2dc4b7, type: 3}
       propertyPath: m_Name
-      value: RestroomFloor_low (2)
+      value: RestroomFloorLow_02
       objectReference: {fileID: 0}
     - target: {fileID: 5620825505789847141, guid: 9dc64912b086e0b43b5f0893ed2dc4b7, type: 3}
       propertyPath: m_RootOrder
@@ -17490,7 +17515,7 @@ GameObject:
   - component: {fileID: 1975890405}
   - component: {fileID: 1975890406}
   m_Layer: 0
-  m_Name: monster (15)
+  m_Name: S_Monster_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17720,6 +17745,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5197689782568432887, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+      propertyPath: m_Name
+      value: RoomEnterCollider_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197689782568432887, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
@@ -17780,6 +17809,10 @@ PrefabInstance:
       value: -30.326233
       objectReference: {fileID: 0}
     - target: {fileID: 5197689783308837291, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+      propertyPath: m_Name
+      value: CameraConfiner_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197689783308837291, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
@@ -17810,6 +17843,10 @@ PrefabInstance:
     - target: {fileID: 5197689783308837295, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
       propertyPath: m_LocalPosition.z
       value: -22.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197689783525824337, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+      propertyPath: m_Name
+      value: RoomEnterCollider_01
       objectReference: {fileID: 0}
     - target: {fileID: 5197689783525824337, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
       propertyPath: m_Layer
@@ -17846,6 +17883,10 @@ PrefabInstance:
     - target: {fileID: 5197689783525824343, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197689784048158748, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
+      propertyPath: m_Name
+      value: CameraConfiner_01
       objectReference: {fileID: 0}
     - target: {fileID: 5197689784048158748, guid: 88ff700037d0ef540bd305bf1a93387f, type: 3}
       propertyPath: m_Layer
@@ -18060,7 +18101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2102570275}
   m_Layer: 0
-  m_Name: Damage the boss sounds
+  m_Name: DamageTheBossSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18107,7 +18148,7 @@ GameObject:
   - component: {fileID: 2111960435}
   - component: {fileID: 2111960436}
   m_Layer: 0
-  m_Name: monster (3)
+  m_Name: S_Monster_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18700,7 +18741,7 @@ GameObject:
   - component: {fileID: 2141585457}
   - component: {fileID: 2141585458}
   m_Layer: 0
-  m_Name: monster (4)
+  m_Name: S_Monster_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
