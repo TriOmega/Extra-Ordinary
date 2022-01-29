@@ -41,7 +41,7 @@ public class CharController : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(-vertical, 0f, horizontal).normalized;
+        Vector3 direction = new Vector3(horizontal , 0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
