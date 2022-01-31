@@ -48,8 +48,9 @@ public class PlayerCombat : MonoBehaviour
         {
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * swordKnockbackThrust);
-            
-            StandardEnemies e = col.transform.GetComponent<StandardEnemies>(); //Enemies take damage 
+
+            var e = col.GetComponent<IDamageable>();
+            //StandardEnemies e = col.transform.GetComponent<StandardEnemies>(); //Enemies take damage 
             if (e != null)
             {
                 e.TakeDamage(damageAmount);
