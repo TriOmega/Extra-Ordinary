@@ -10,5 +10,6 @@ public class CombatDummy : MonoBehaviour, IDamageable
     {
         EnemyHealth -= damageAmount;
         Debug.Log($"Ow! Dummy took {damageAmount} points of damage and now has {enemyHealth} health.");
+
     }
 }
