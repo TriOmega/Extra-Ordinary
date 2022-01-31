@@ -13,6 +13,8 @@ public class PlayerCombat : MonoBehaviour
     public float bubblegumKnockbackThrust = 10.0f;
     private Animator anim;
 
+    public int damageAmount = 20;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -46,6 +48,13 @@ public class PlayerCombat : MonoBehaviour
         {
             Vector3 moveDirection = col.transform.position - this.transform.position;
             col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * swordKnockbackThrust);
+            
+            StandardEnemies e = col.transform.GetComponent<StandardEnemies>(); //Enemies take damage 
+            if (e != null)
+            {
+                e.TakeDamage(damageAmount);
+                return;
+            }
         }
     }
 

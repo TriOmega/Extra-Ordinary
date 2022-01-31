@@ -57,9 +57,15 @@ public class CharController : MonoBehaviour
             anim.SetBool("Walking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             anim.SetTrigger("Sword");
+            anim.SetBool("isAttacking", true);
+        }
+
+        else
+        {
+            anim.SetBool("isAttacking", false);
         }
 
         if(Input.GetButtonDown("Jump") && isGrounded)
