@@ -1,16 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FlashlightFollow : MonoBehaviour
 {
 
     Ray ray;
-    public RaycastHit hit;
+    RaycastHit hit;
 
     private GameObject lightObject;
     private Light myLightComponent;
-
-    [SerializeField]
-    private float lookTurnSpeed = 180.0f;
+  
 
     private void Start()
     {
@@ -19,9 +19,7 @@ public class FlashlightFollow : MonoBehaviour
     }
 
     void Update()
-    {
-        float verticalInputDirection = Input.GetAxis("VerticalLookDirection");
-
+    {   
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
@@ -29,12 +27,7 @@ public class FlashlightFollow : MonoBehaviour
             transform.LookAt(hit.point);
         }
 
-        if (Input.GetButtonDown("SpecialAttack"))
+        if (Input.GetKeyUp(KeyCode.F))
             myLightComponent.enabled = !myLightComponent.enabled;
-
-        if (verticalInputDirection != 0)
-        {
-            transform.Rotate(Vector3.left, verticalInputDirection * lookTurnSpeed * Time.deltaTime, Space.Self);            //Possible future bug: dependency on Time.deltaTime could cause strange results on slower computers
-        }
     } 
 }

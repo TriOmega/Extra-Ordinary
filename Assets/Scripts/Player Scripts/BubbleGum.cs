@@ -18,7 +18,7 @@ public class BubbleGum : MonoBehaviour
 
     int jumpCounter = 0;
     float gumGravity = -40f;
-    float gumJumpHeight = 0.7f;
+    float gumJumpHeight = 1f;
     
      public void OnTriggerEnter(Collider other)
      {
@@ -35,7 +35,7 @@ public class BubbleGum : MonoBehaviour
     public void Update() 
     {
 
-        if(Input.GetButtonDown("SpecialAttack") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
+        if(Input.GetButtonDown("Fire2") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
         {
             transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
             gumActive = true;

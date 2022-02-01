@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Beginning");
+        SceneManager.LoadScene("PCBJodyWhitebox");
     }
 
     public void QuitGame()

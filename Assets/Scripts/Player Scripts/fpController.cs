@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FPController : MonoBehaviour
+public class fpController : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;

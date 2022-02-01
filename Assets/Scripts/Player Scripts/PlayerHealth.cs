@@ -9,14 +9,13 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 10;
     public int maxLives = 3;
     public int currentLives;
-    public AudioSource deathMusic;
 
     public float defaultEnemyDamage = -1.0f;
 
     //public float regeneration = 0.5f;
 
     public float damageTimer = 1f;
-    //private bool canTakeDamage = true;
+    private bool canTakeDamage = true;
 
     public Text livesText;
     private CheckpointHandler checkpointHandler;
@@ -62,30 +61,26 @@ public class PlayerHealth : MonoBehaviour
     }
 
     
-    void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag ("Shockwave") || other.CompareTag ("Explosion"))
         {
-            AdjustCurrentHealth(-10);
-        }
-
-        if(other.CompareTag("Web"))
-        {
-           AdjustCurrentHealth(-5); 
+            AdjustCurrentHealth(-10);           
         }
     }
 
-   // private IEnumerator damageTimeout(float timer)
-   // {
-       // canTakeDamage = false;
-      //  yield return new WaitForSeconds(timer);
-       // canTakeDamage = true;
-    //}
+
+    private IEnumerator damageTimeout(float timer)
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(timer);
+        canTakeDamage = true;
+    }
 
     public void AdjustCurrentHealth(float adjustment)
     {
         currentHealth += adjustment;
-        if (currentHealth <= 0)
+        if (currentHealth < 0)
         {
             LoseLife();
         }
@@ -102,7 +97,6 @@ public class PlayerHealth : MonoBehaviour
     public void AdjustCurrentLives(int adjustment)
     {
         currentLives += adjustment;
-
         if (adjustment < 0)
         {
             LoseLife();
@@ -122,16 +116,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateLivesText()
     {
-        livesText.text = $"{currentLives}";
+        livesText.text = $"Lives: {currentLives}";
     }
 
     public void LoseLife()
     {
         currentLives--;
-
         if (currentLives <= 0)
         {
-            deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
             //currentLives = maxLives;
@@ -139,9 +131,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             checkpointHandler.ResetToLastCheckpoint();
-            currentHealth = maxHealth;
         }
-
         UpdateLivesText();
         currentHealth = maxHealth;
     }

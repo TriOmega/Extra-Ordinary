@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    public static int bossHealth = 100;
+    public static int bossHealth = 10;
     public AudioSource monster1;
     public AudioSource monster2;
     public AudioSource monster3;
@@ -111,4 +111,9 @@ public class Boss : MonoBehaviour
             monster16.Play();
         }
     }
+
+
+
+
+
 }

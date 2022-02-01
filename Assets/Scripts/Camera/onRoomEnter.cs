@@ -14,7 +14,7 @@ namespace Cinemachine
 {
 
 
-    public class OnRoomEnter : MonoBehaviour
+    public class onRoomEnter : MonoBehaviour
     {
 
         public GameObject CinemachineCamera;
