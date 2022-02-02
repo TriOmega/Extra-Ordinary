@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 
 {
-    public static bool swordHasSwung = false;
+    public static bool isSwordSwinging = false;
     public Collider basicPlayerAttackBox;
     public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
@@ -22,11 +22,16 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("BasicAttack") == 1)
+        if (Input.GetKeyDown(KeyCode.Tilde))
         {
-            BasicAttack(basicPlayerAttackBox);
+             Debug.Log("Debug Activated");
+        }
+
+        if (Input.GetAxis("BasicAttack") == 1 && (isSwordSwinging == false))
+        {
+            isSwordSwinging = true;
             anim.SetTrigger("Sword");
-            swordHasSwung = true;
+            BasicAttack(basicPlayerAttackBox);
         }
         
         //if (Input.GetAxis("Block") == 1)
@@ -40,6 +45,14 @@ public class PlayerCombat : MonoBehaviour
             BubbleGum.AttackCanGo = false;
         }
     }
+    private void SwingDetect(int eventResult)
+    {
+        if (eventResult == 0)
+        {
+            isSwordSwinging = false;
+        }
+        //isSwordSwinging = (eventResult == 1 ? true : false);
+    }
 
     private void BasicAttack(Collider attackBox)
     {
@@ -51,7 +64,7 @@ public class PlayerCombat : MonoBehaviour
 
             var e = col.GetComponent<IDamageable>();
             //StandardEnemies e = col.transform.GetComponent<StandardEnemies>(); //Enemies take damage 
-            if (e != null)
+            if (e != null && (e.HasBeenHit == false))
             {
                 e.TakeDamage(damageAmount);
                 return;
