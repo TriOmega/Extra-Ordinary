@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Collider basicPlayerAttackBox;
+    public Collider playerBasicAttackBox;
     public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
     public float swordKnockbackThrust = 8.0f;
@@ -36,6 +36,19 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    private void ToggleSwordHitBox (int eventResult)
+    {
+        switch (eventResult)
+        {
+            case 0:
+                playerBasicAttackBox.enabled = false; 
+                break;
+            case 1:
+                playerBasicAttackBox.enabled = true; 
+                break;
+        }
+    }
+
     private void BubblegumAttack(Collider bubblegumAttackBox)
     {  
     
@@ -50,7 +63,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void Block()
     {
-        Transform targetTransform = (Blocking.projectileTransform == null) ? basicPlayerAttackBox.transform : Blocking.projectileTransform;
+        Transform targetTransform = (Blocking.projectileTransform == null) ? playerBasicAttackBox.transform : Blocking.projectileTransform;
         Vector3 tempPosition = targetTransform.position;
         tempPosition.y = this.transform.position.y;
         targetTransform.position = tempPosition;

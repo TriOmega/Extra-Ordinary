@@ -33,5 +33,5 @@ public class CombatDummy : MonoBehaviour, IDamageable
 
     private int enemyHealth = 9999;
     private bool isInvincible = false;
-    private float invincibilityDurationSeconds = 5;
+    private float invincibilityDurationSeconds = 2;
 }
