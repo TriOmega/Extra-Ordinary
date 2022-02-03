@@ -24,12 +24,10 @@ public class CombatDummy : MonoBehaviour, IDamageable
 
     private IEnumerator BeginInvincibility()
     {
-        Debug.Log("Dummy Invincible");
         isInvincible = true;
         
         yield return new WaitForSeconds(invincibilityDurationSeconds);
         
-        Debug.Log("Dummy Not Invincible");
         isInvincible = false;
     }
 

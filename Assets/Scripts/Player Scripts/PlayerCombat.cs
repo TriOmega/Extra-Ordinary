@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
-
 {
-    public static bool isSwordSwinging = false;
     public Collider basicPlayerAttackBox;
     public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
@@ -29,7 +27,6 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetAxis("BasicAttack") == 1 )
         {
-            isSwordSwinging = true;
             anim.SetTrigger("Sword");
         }
 
