@@ -128,6 +128,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7751681362117921241, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
   m_PrefabInstance: {fileID: 1997894887}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1388682616 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+  m_PrefabInstance: {fileID: 1997894887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1388682617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +157,10 @@ PrefabInstance:
       value: 1.1167895
       objectReference: {fileID: 0}
     - target: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_Center.x
       value: -0.013130692
       objectReference: {fileID: 0}
@@ -163,6 +172,14 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.0011397001
       objectReference: {fileID: 0}
+    - target: {fileID: 1103628101153337114, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: playerBasicHitBox
+      value: 
+      objectReference: {fileID: 1388682616}
+    - target: {fileID: 1103628101153337114, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: playerBasicAttackBox
+      value: 
+      objectReference: {fileID: 1388682616}
     - target: {fileID: 2100725200313446449, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_RootOrder
       value: 0
