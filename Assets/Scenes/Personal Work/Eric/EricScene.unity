@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 39c01d3a5c3fb1e49a556650e8f76dbc, type: 2}
+--- !u!1 &1388682614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751681362117921241, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+  m_PrefabInstance: {fileID: 1997894887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1388682617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388682614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c877171c455ba654f8a90992ab2eb71a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 20
 --- !u!1001 &1997894887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +148,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1167895
+      objectReference: {fileID: 0}
+    - target: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_Center.x
+      value: -0.013130692
+      objectReference: {fileID: 0}
+    - target: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_Center.y
+      value: 0.6366061
+      objectReference: {fileID: 0}
+    - target: {fileID: 595945888075833467, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0011397001
+      objectReference: {fileID: 0}
     - target: {fileID: 2100725200313446449, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_RootOrder
       value: 0

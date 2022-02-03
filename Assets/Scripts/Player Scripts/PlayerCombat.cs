@@ -13,8 +13,6 @@ public class PlayerCombat : MonoBehaviour
     public float bubblegumKnockbackThrust = 10.0f;
     private Animator anim;
 
-    public int damageAmount = 20;
-
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -27,11 +25,11 @@ public class PlayerCombat : MonoBehaviour
              Debug.Log("Debug Activated");
         }
 
-        if (Input.GetAxis("BasicAttack") == 1 && (isSwordSwinging == false))
+        if (Input.GetAxis("BasicAttack") == 1 /*&& (isSwordSwinging == false)*/)
         {
             isSwordSwinging = true;
             anim.SetTrigger("Sword");
-            BasicAttack(basicPlayerAttackBox);
+            //BasicAttack(basicPlayerAttackBox);
         }
         
         //if (Input.GetAxis("Block") == 1)
@@ -45,32 +43,34 @@ public class PlayerCombat : MonoBehaviour
             BubbleGum.AttackCanGo = false;
         }
     }
-    private void SwingDetect(int eventResult)
-    {
-        if (eventResult == 0)
-        {
-            isSwordSwinging = false;
-        }
-        //isSwordSwinging = (eventResult == 1 ? true : false);
-    }
+    //private void SwingDetect(int eventResult)
+    //{
+    //    if (eventResult == 0)
+    //    {
+    //        isSwordSwinging = false;
+    //    }
+    //    //isSwordSwinging = (eventResult == 1 ? true : false);
+    //}
 
-    private void BasicAttack(Collider attackBox)
-    {
-        Collider[] cols = Physics.OverlapBox(attackBox.bounds.center, attackBox.bounds.extents, attackBox.transform.rotation, basicEnemyLayer);
-        foreach(Collider col in cols)
-        {
-            Vector3 moveDirection = col.transform.position - this.transform.position;
-            col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * swordKnockbackThrust);
+    
 
-            var e = col.GetComponent<IDamageable>();
-            //StandardEnemies e = col.transform.GetComponent<StandardEnemies>(); //Enemies take damage 
-            if (e != null && (e.HasBeenHit == false))
-            {
-                e.TakeDamage(damageAmount);
-                return;
-            }
-        }
-    }
+    //private void BasicAttack(Collider attackBox)
+    //{
+    //    Collider[] cols = Physics.OverlapBox(attackBox.bounds.center, attackBox.bounds.extents, attackBox.transform.rotation, basicEnemyLayer);
+    //    foreach(Collider col in cols)
+    //    {
+    //        Vector3 moveDirection = col.transform.position - this.transform.position;
+    //        col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * swordKnockbackThrust);
+
+    //        var e = col.GetComponent<IDamageable>();
+    //        //StandardEnemies e = col.transform.GetComponent<StandardEnemies>(); //Enemies take damage 
+    //        if (e != null && (e.HasBeenHit == false))
+    //        {
+    //            e.TakeDamage(damageAmount);
+    //            return;
+    //        }
+    //    }
+    //}
 
 
     private void BubblegumAttack(Collider bubblegumAttackBox)

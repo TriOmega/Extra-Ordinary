@@ -30,7 +30,7 @@ public class CharController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
