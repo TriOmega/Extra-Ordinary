@@ -3,7 +3,7 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    int EnemyHealth { get; set; }
+    int Health { get; set; }
     bool IsInvincible { get; }
     float InvincibilityDurationSeconds { get; }
     void TakeDamage(int damageAmount);

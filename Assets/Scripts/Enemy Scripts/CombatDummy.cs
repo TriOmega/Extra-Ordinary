@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CombatDummy : MonoBehaviour, IDamageable
 {
 
-    public int EnemyHealth { get => enemyHealth; set => enemyHealth = value; }
+    public int Health { get => enemyHealth; set => enemyHealth = value; }
     public bool IsInvincible { get => isInvincible; }
     public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
 
@@ -13,7 +13,7 @@ public class CombatDummy : MonoBehaviour, IDamageable
     {
         if (isInvincible) return;
 
-        EnemyHealth -= damageAmount;
+        Health -= damageAmount;
         Debug.Log($"Ow! Dummy took {damageAmount} points of damage and now has {enemyHealth} health.");
 
         if (!isInvincible)
