@@ -59,6 +59,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 damageAmount = damageAmount * heavyDamageMultiplier;
                 anim.SetTrigger("Sword");
+                gameObject.GetComponent<ParticleSystem>().Play();
                 break;
             }
             yield return new WaitForEndOfFrame();
