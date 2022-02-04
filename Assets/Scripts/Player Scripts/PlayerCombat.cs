@@ -9,9 +9,16 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask basicEnemyLayer;
     public float swordKnockbackThrust = 8.0f;
     public float bubblegumKnockbackThrust = 10.0f;
+    public float attackStartTime;
+    public float timeToActivateHeavy = 1.0f;
+    private bool attackPressed = false;
+    [SerializeField]
+    private int heavyDamageMultiplier = 2;
+    [SerializeField]
+    private int lightAttackDamage = 20;
+    [HideInInspector]
+    public int damageAmount;
     private Animator anim;
-
-    public int damageAmount = 20;
 
     void Start()
     {
@@ -20,19 +27,41 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tilde))
+        if (Input.GetKeyDown(KeyCode.BackQuote))
         {
-             Debug.Log("Debug Activated");
+            Debug.Log("Debug Activated");
         }
 
-        if (Input.GetAxis("BasicAttack") == 1 )
+        if (Input.GetAxis("BasicAttack") == 1 && !attackPressed)
         {
+            damageAmount = lightAttackDamage;
+            attackStartTime = Time.time;
             anim.SetTrigger("Sword");
+            attackPressed = true;
+            StartCoroutine(HeavyAttack());
+        }
+        else if (Input.GetAxis("BasicAttack") == 0)
+        {
+            attackPressed = false;
         }
 
         if (BubbleGum.AttackCanGo == true)
         {
             BubbleGum.AttackCanGo = false;
+        }
+    }
+
+    private IEnumerator HeavyAttack()
+    {
+        while (attackPressed)
+        {
+            if (Time.time > attackStartTime + timeToActivateHeavy)
+            {
+                damageAmount = damageAmount * heavyDamageMultiplier;
+                anim.SetTrigger("Sword");
+                break;
+            }
+            yield return new WaitForEndOfFrame();
         }
     }
 
