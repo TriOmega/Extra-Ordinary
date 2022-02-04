@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     public void Start()
     {
         currentHealth = maxHealth;
-        currentLives = maxLives;
+        currentLives = 3;
         checkpointHandler = GetComponent<CheckpointHandler>();
         UpdateLivesText();
         bodyLight = GameObject.Find("Point light");
@@ -108,14 +108,7 @@ public class PlayerHealth : MonoBehaviour
             LoseLife();
             return;
         }
-        if (currentLives > maxLives)
-        {
-            currentLives = maxLives;
-        }
-        if (maxLives < 1)
-        {
-            maxLives = 1;
-        }
+
         UpdateLivesText();
     }
     
