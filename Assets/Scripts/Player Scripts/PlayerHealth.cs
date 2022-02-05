@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     public void Start()
     {
         currentHealth = maxHealth;
-        currentLives = maxLives;
+        currentLives = 3;
         checkpointHandler = GetComponent<CheckpointHandler>();
         UpdateLivesText();
         bodyLight = GameObject.Find("Point light");
@@ -49,29 +49,37 @@ public class PlayerHealth : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "enemy")
+        if(Blocking.isBlocking == false)
         {
-            AdjustCurrentHealth(defaultEnemyDamage);
-            //  StartCoroutine(damageTimeout(damageTimer));
+            if (collision.gameObject.tag == "enemy")
+            {
+                AdjustCurrentHealth(defaultEnemyDamage);
+                //  StartCoroutine(damageTimeout(damageTimer));
+            }
+
+            if (collision.gameObject.tag == "puddles")
+            {
+                AdjustCurrentHealth(-5);
+            }
         }
 
-        if (collision.gameObject.tag == "puddles")
-        {
-            AdjustCurrentHealth(-5);
-        }
     }
 
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag ("Shockwave") || other.CompareTag ("Explosion"))
-        {
-            AdjustCurrentHealth(-10);
-        }
 
-        if(other.CompareTag("Web"))
+        if(Blocking.isBlocking == false)
         {
-           AdjustCurrentHealth(-5); 
+            if (other.CompareTag ("Shockwave") || other.CompareTag ("Explosion"))
+            {
+                AdjustCurrentHealth(-10);
+            }
+
+            if(other.CompareTag("Web"))
+            {
+            AdjustCurrentHealth(-5); 
+            }
         }
     }
 
@@ -108,14 +116,7 @@ public class PlayerHealth : MonoBehaviour
             LoseLife();
             return;
         }
-        if (currentLives > maxLives)
-        {
-            currentLives = maxLives;
-        }
-        if (maxLives < 1)
-        {
-            maxLives = 1;
-        }
+
         UpdateLivesText();
     }
     

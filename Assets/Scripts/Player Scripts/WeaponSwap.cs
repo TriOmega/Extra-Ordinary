@@ -10,6 +10,7 @@ public class WeaponSwap : MonoBehaviour
     public GameObject GumIcon;
     public GameObject FlashlightIcon;
     public GameObject PaddleballIcon;
+    public GameObject KeyIcon;
 
 
     void Start()
@@ -20,6 +21,14 @@ public class WeaponSwap : MonoBehaviour
 
     void Update()
     {
+        if(Doors.UIkey == true)
+        {
+            KeyIcon.SetActive(true);
+        }
+        else
+        {
+            KeyIcon.SetActive(false);
+        }
 
         int previousSelectedWeapon = selectedWeapon;
 
