@@ -62,6 +62,9 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+/*OLD BLOCKING CODE FROM LAST SEMESTER IS BELOW:
+feel free to remove if not needed. 
+
     private void Block()
     {
         Transform targetTransform = (Blocking.projectileTransform == null) ? basicPlayerAttackBox.transform : Blocking.projectileTransform;
@@ -71,6 +74,6 @@ public class PlayerCombat : MonoBehaviour
         //Debug.Log(targetTransform);
         this.transform.LookAt(targetTransform);
     }
-    /*Current Block() Flaws: 1. Adjusts target transform too (if projectiles get destroyed on block anyways we might not need to worry)
+     Block() Flaws: 1. Adjusts target transform too (if projectiles get destroyed on block anyways we might not need to worry)
                              2. Transform doesn't get reset after blocking ends, possible fix is to figure out how to implement OnTriggerEnter for the PlayerCombat script*/
 }
