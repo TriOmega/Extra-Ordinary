@@ -27,12 +27,11 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Sword") && PlayerCombat.swordHasSwung == true)
+        if(collision.CompareTag("Sword"))
         {
             PlayRandomOuchSound();
             bossHealth = bossHealth - 5;
             Debug.Log("health is " +bossHealth);
-            PlayerCombat.swordHasSwung = false;
             
             if(bossHealth <= 0)
             {

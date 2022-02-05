@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
-
 {
-    public static bool swordHasSwung = false;
-    public Collider basicPlayerAttackBox;
+    public Collider playerBasicAttackBox;
     public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
     public float swordKnockbackThrust = 8.0f;
     public float bubblegumKnockbackThrust = 10.0f;
+    public float attackStartTime;
+    public float timeToActivateHeavy = 1.0f;
+    private bool attackPressed = false;
+    [SerializeField]
+    private int heavyDamageMultiplier = 2;
+    [SerializeField]
+    private int lightAttackDamage = 20;
+    [HideInInspector]
+    public int damageAmount;
     private Animator anim;
 
     void Start()
@@ -20,35 +27,57 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("BasicAttack") == 1)
+        if (Input.GetKeyDown(KeyCode.BackQuote))
         {
-            BasicAttack(basicPlayerAttackBox);
-            anim.SetTrigger("Sword");
-            swordHasSwung = true;
+            Debug.Log("Debug Activated");
         }
-        
-        //if (Input.GetAxis("Block") == 1)
-        //{
-        //    Block();
-        //}    
+
+        if (Input.GetAxis("BasicAttack") == 1 && !attackPressed)
+        {
+            damageAmount = lightAttackDamage;
+            attackStartTime = Time.time;
+            anim.SetTrigger("Sword");
+            attackPressed = true;
+            StartCoroutine(HeavyAttack());
+        }
+        else if (Input.GetAxis("BasicAttack") == 0)
+        {
+            attackPressed = false;
+        }
 
         if (BubbleGum.AttackCanGo == true)
         {
-            //BubblegumAttack(bubblegumAttackBox);
             BubbleGum.AttackCanGo = false;
         }
     }
 
-    private void BasicAttack(Collider attackBox)
+    private IEnumerator HeavyAttack()
     {
-        Collider[] cols = Physics.OverlapBox(attackBox.bounds.center, attackBox.bounds.extents, attackBox.transform.rotation, basicEnemyLayer);
-        foreach(Collider col in cols)
+        while (attackPressed)
         {
-            Vector3 moveDirection = col.transform.position - this.transform.position;
-            col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * swordKnockbackThrust);
+            if (Time.time > attackStartTime + timeToActivateHeavy)
+            {
+                damageAmount = damageAmount * heavyDamageMultiplier;
+                anim.SetTrigger("Sword");
+                gameObject.GetComponent<ParticleSystem>().Play();
+                break;
+            }
+            yield return new WaitForEndOfFrame();
         }
     }
 
+    private void ToggleSwordHitBox (int eventResult)
+    {
+        switch (eventResult)
+        {
+            case 0:
+                playerBasicAttackBox.enabled = false; 
+                break;
+            case 1:
+                playerBasicAttackBox.enabled = true; 
+                break;
+        }
+    }
 
     private void BubblegumAttack(Collider bubblegumAttackBox)
     {  
@@ -67,7 +96,7 @@ feel free to remove if not needed.
 
     private void Block()
     {
-        Transform targetTransform = (Blocking.projectileTransform == null) ? basicPlayerAttackBox.transform : Blocking.projectileTransform;
+        Transform targetTransform = (Blocking.projectileTransform == null) ? playerBasicAttackBox.transform : Blocking.projectileTransform;
         Vector3 tempPosition = targetTransform.position;
         tempPosition.y = this.transform.position.y;
         targetTransform.position = tempPosition;

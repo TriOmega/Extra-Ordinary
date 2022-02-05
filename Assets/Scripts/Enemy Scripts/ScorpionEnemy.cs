@@ -95,7 +95,7 @@ public class ScorpionEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Sword") && PlayerCombat.swordHasSwung == true)
+        if(collision.CompareTag("Sword"))
         {
             //State = "Chase";
             health --;
@@ -107,7 +107,6 @@ public class ScorpionEnemy : MonoBehaviour
                 Destroy(this.gameObject, 1);
             }
             
-            PlayerCombat.swordHasSwung = false;
         }
     }
 }
