@@ -20,14 +20,14 @@ public class MediumEnemies : MonoBehaviour
         
     }
 
-    public void BreakShield()                           //Eric: There were compilation errors so I changed this from returning a bool to void
+    public void BreakShield()                           
     {
         activeShield = false;
     }
 
     public void TakeDamage(int damageAmount)
     {
-        if(activeShield == false)                       //Eric: There were compilation errors so I changed this to == from =
+        if(activeShield == false)                       
         {
             enemyHealth -= damageAmount;
         
