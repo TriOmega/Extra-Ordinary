@@ -9,7 +9,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable
     public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
 
     public Animator animator;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +43,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable
         else
         {
             animator.SetTrigger("isDamaged");
+            gameObject.GetComponent<ParticleSystem>().Play();
             //Damage Sound + animation if we need it
         }
     }
@@ -56,7 +57,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable
         isInvincible = false;
     }
 
-    private int enemyHealth = 100;
+    public int enemyHealth = 40;
     private bool isInvincible = false;
     private float invincibilityDurationSeconds = 2;
 }
