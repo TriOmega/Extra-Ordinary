@@ -19,7 +19,7 @@ public class Movables : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("Entered");
-        if (Input.GetAxis("Interact") == 1)
+        if (Input.GetAxis("Interact") == 1 && other.gameObject.layer == movableDestination.layer)
         {
             if (isBeingMoved && !isRecentlyMoved)
             {
