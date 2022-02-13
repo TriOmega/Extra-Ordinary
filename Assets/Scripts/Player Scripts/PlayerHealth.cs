@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
-    public float maxHealth = 100;
-    public int maxLives = 3;
+    public float maxHealth;
+    //public int maxLives = 3;                              //Commented out for now given the sacrifice health changes
     public int currentLives;
     public AudioSource deathMusic;
 
-    public float defaultEnemyDamage = -10f;
+    public float defaultEnemyDamage;
 
     //public float regeneration = 0.5f;
 
@@ -29,8 +29,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void Start()
     {
+        maxHealth = 100;
         currentHealth = maxHealth;
         currentLives = 3;
+        defaultEnemyDamage = -10f;
         checkpointHandler = GetComponent<CheckpointHandler>();
         UpdateLivesText();
         bodyLight = GameObject.Find("Point light");

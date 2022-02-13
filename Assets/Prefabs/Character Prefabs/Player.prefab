@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12b776153c52cf48b2bdd1f44063839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBasicAttackBox: {fileID: 0}
+  playerBasicAttackBox: {fileID: 1540934555863154698}
   bubblegumAttackBox: {fileID: 7391050244440822907}
   basicEnemyLayer:
     serializedVersion: 2
@@ -238,7 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
-  maxLives: 3
   currentLives: 3
   deathMusic: {fileID: 0}
   defaultEnemyDamage: -1
@@ -837,6 +836,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4249646768233083607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553680739723012520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c877171c455ba654f8a90992ab2eb71a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3545707002396413366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1000,6 +1011,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3eb7192766fec7246b95ee87652e38bf, type: 2}
+    - target: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1167895
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+      propertyPath: m_Center.x
+      value: -0.013130692
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+      propertyPath: m_Center.y
+      value: 0.6366061
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0011397001
+      objectReference: {fileID: 0}
     - target: {fileID: 5186550614232252303, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1085,5 +1116,15 @@ PrefabInstance:
 --- !u!4 &950676122905827403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6871657978891307609, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+  m_PrefabInstance: {fileID: 5939247781007118866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1540934555863154698 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+  m_PrefabInstance: {fileID: 5939247781007118866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8553680739723012520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2655071213511949242, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
   m_PrefabInstance: {fileID: 5939247781007118866}
   m_PrefabAsset: {fileID: 0}
