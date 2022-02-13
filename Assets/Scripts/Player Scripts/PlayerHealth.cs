@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
-    public float maxHealth = 10;
+    public float maxHealth = 100;
     public int maxLives = 3;
     public int currentLives;
     public AudioSource deathMusic;
@@ -45,6 +45,13 @@ public class PlayerHealth : MonoBehaviour
 
         if (myBodyLight.range <= 0)
             currentHealth -= lightDamage;
+
+        if (Input.GetAxis("SacrificeHealth") == 1)
+        {
+            currentLives--;
+            UpdateLivesText();
+            currentHealth += 75;
+        }
     }
     
     private void OnCollisionEnter(Collision collision)
