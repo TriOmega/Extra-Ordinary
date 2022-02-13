@@ -8,8 +8,10 @@ public class MediumEnemies : MonoBehaviour, IDamageable
     public bool IsInvincible { get => isInvincible; }
     public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
 
-    private bool activeShield;
+    private bool activeEnemyShield;
     private Rigidbody rb;
+    public GameObject EnemyShieldIndicator;  //HEY SHERRYE i made this pink shield for the rolliepollie just to help myself out while testing.
+                                             // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
     public Animator animator;
     private bool isBouncing = false;
@@ -17,34 +19,40 @@ public class MediumEnemies : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        activeShield = true;
+        activeEnemyShield = true;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
- 
+        if(activeEnemyShield == true)
+        {
+            EnemyShieldIndicator.SetActive(true);
+        }
+        else
+        {
+            EnemyShieldIndicator.SetActive(false);
+        }
     }
 
     public void BreakShield()                           
     {
-        activeShield = false;
+        activeEnemyShield = false;
         animator.SetTrigger("isBroken");
     }
 
-    public void OnCollisionEnter(Collision other) 
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "ForceField")
         {
             BreakShield();
-        }
-     
+        }     
     }
 
     public void TakeDamage(int damageAmount)
     {
-        if(activeShield == false)                       
+        if(activeEnemyShield == false)                       
         {
             enemyHealth -= damageAmount;
         
