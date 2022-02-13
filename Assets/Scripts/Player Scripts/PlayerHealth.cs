@@ -7,9 +7,15 @@ public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
-    //public int maxLives = 3;                              //Commented out for now given the sacrifice health changes
+    //public int maxLives = 3;                                  //Commented out for now given the sacrifice health changes
     public int currentLives;
-    public AudioSource deathMusic;
+
+    private bool canSacrifice;
+    public float sacrificeReward;
+    public float sacrificeCooldownDuration;
+    public Image sacrificeCooldownIndicator;
+    
+    //public AudioSource deathMusic;                            //Commented out unused deathMusic due to null value errors
 
     public float defaultEnemyDamage;
 
@@ -32,11 +38,15 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = 100;
         currentHealth = maxHealth;
         currentLives = 3;
+        canSacrifice = true;
+        sacrificeReward = 75f;
+        sacrificeCooldownDuration = 5f;
         defaultEnemyDamage = -10f;
         checkpointHandler = GetComponent<CheckpointHandler>();
         UpdateLivesText();
-        bodyLight = GameObject.Find("Point light");
-        myBodyLight = bodyLight.GetComponent<Light>();
+        //Old Darkness Damage
+        //bodyLight = GameObject.Find("Point light");
+        //myBodyLight = bodyLight.GetComponent<Light>(); 
     }
 
     public void Update()
@@ -45,14 +55,18 @@ public class PlayerHealth : MonoBehaviour
         //if (currentHealth < maxHealth)
         //    currentHealth += regeneration * Time.deltaTime;
 
-        if (myBodyLight.range <= 0)
-            currentHealth -= lightDamage;
+        //Old Darkness Damage
+        //if (myBodyLight.range <= 0)
+        //{
+        //    currentHealth -= lightDamage;
+        //}
 
-        if (Input.GetAxis("SacrificeHealth") == 1)
+        if (Input.GetAxis("SacrificeHealth") > 0)
         {
-            currentLives--;
-            UpdateLivesText();
-            currentHealth += 75;
+            if ((currentHealth != maxHealth) && canSacrifice && (currentLives > 1))
+            {
+                LoseLife(true);
+            }
         }
     }
     
@@ -92,11 +106,22 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-   // private IEnumerator damageTimeout(float timer)
-   // {
-       // canTakeDamage = false;
-      //  yield return new WaitForSeconds(timer);
-       // canTakeDamage = true;
+    private IEnumerator SacrificeCooldown()
+    {
+        canSacrifice = false;
+        sacrificeCooldownIndicator.color = Color.gray;
+
+        yield return new WaitForSeconds(sacrificeCooldownDuration);
+
+        canSacrifice = true;
+        sacrificeCooldownIndicator.color = Color.white;
+    }
+
+    //private IEnumerator damageTimeout(float timer)
+    //{
+    //    canTakeDamage = false;
+    //    yield return new WaitForSeconds(timer);
+    //    canTakeDamage = true;
     //}
 
     public void AdjustCurrentHealth(float adjustment)
@@ -104,7 +129,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth += adjustment;
         if (currentHealth <= 0)
         {
-            LoseLife();
+            LoseLife(false);
         }
         if (currentHealth > maxHealth)
         {
@@ -122,7 +147,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (adjustment < 0)
         {
-            LoseLife();
+            LoseLife(false);
             return;
         }
 
@@ -135,16 +160,21 @@ public class PlayerHealth : MonoBehaviour
         livesText.text = $"{currentLives}";
     }
 
-    public void LoseLife()
+    public void LoseLife(bool isSacrifice)
     {
         currentLives--;
 
         if (currentLives <= 0)
         {
-            deathMusic.Play();
+            //deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
             //currentLives = maxLives;
+        } 
+        else if (isSacrifice)
+        {
+            currentHealth += sacrificeReward;
+            StartCoroutine(SacrificeCooldown());
         }
         else
         {
@@ -153,6 +183,5 @@ public class PlayerHealth : MonoBehaviour
         }
 
         UpdateLivesText();
-        currentHealth = maxHealth;
     }
 }
