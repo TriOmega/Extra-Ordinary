@@ -33,7 +33,8 @@ public class Movables : MonoBehaviour
                 rb.useGravity = false;
                 rb.constraints = RigidbodyConstraints.FreezeAll;
                 transform.position = movableDestination.transform.position;
-                transform.parent = movableDestination.transform;
+                transform.SetParent(movableDestination.transform, true);
+                transform.rotation = Quaternion.LookRotation(movableDestination.transform.forward);
                 isBeingMoved = true;
                 StartCoroutine(MovingCooldown());
             }
