@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentLives;
     public AudioSource deathMusic;
 
-    public float defaultEnemyDamage = -1.0f;
+    public float defaultEnemyDamage = -10f;
 
     //public float regeneration = 0.5f;
 
