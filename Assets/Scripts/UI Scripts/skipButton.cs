@@ -7,6 +7,6 @@ public class SkipButton : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Vertical_Slice");
+        SceneManager.LoadScene("Sprint5");
     }
 }
