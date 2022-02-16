@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardEnemies : MonoBehaviour
+public class StandardEnemies : MonoBehaviour, IDamageable
 {
-    public int enemyHealth = 100;
+    public int Health { get => enemyHealth; set => enemyHealth = value; }
+    public bool IsInvincible { get => isInvincible; }
+    public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
+
     public Animator animator;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,16 @@ public class StandardEnemies : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        enemyHealth -= damageAmount;
+         if (isInvincible) return;
+
+        Health -= damageAmount;
+        
+
+        if (!isInvincible)
+        {
+            StartCoroutine(BeginInvincibility());
+        }
+
         if(enemyHealth <= 0)
         {
             //Death animation + sound
@@ -31,7 +43,21 @@ public class StandardEnemies : MonoBehaviour
         else
         {
             animator.SetTrigger("isDamaged");
+            gameObject.GetComponent<ParticleSystem>().Play();
             //Damage Sound + animation if we need it
         }
     }
+
+    private IEnumerator BeginInvincibility()
+    {
+        isInvincible = true;
+        
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        
+        isInvincible = false;
+    }
+
+    public int enemyHealth = 40;
+    private bool isInvincible = false;
+    private float invincibilityDurationSeconds = 2;
 }
