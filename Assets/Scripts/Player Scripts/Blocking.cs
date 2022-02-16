@@ -4,22 +4,63 @@ using UnityEngine;
 
 public class Blocking : MonoBehaviour
 {
-    //public Vector3 projectilePosition = new Vector3(0.0f, 0.0f, 0.0f);
-    public static Transform projectileTransform;
 
-    private void OnTriggerEnter(Collider other)
+    float timeRemaining;
+    public static bool isBlocking; //This variable is used in the "PlayerHealth" script, it checks to see if the player is able to take damage. 
+    bool isShiftKeyDown = false;
+    public GameObject forceFieldBubble;
+    public CharController playerCharController;
+    private Animator anim;
+
+
+    void Start () 
     {
-        if(other.gameObject.CompareTag("Projectile"))
-        {
-           projectileTransform = other.gameObject.transform;
-            //tempPosition.y = 0.0f;
-            //projectilePosition = other.bounds.center;
-            Debug.Log(other.name + " is at " + other.bounds.center);
-        }
-        //RaycastHit hit;
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f, basicEnemyLayer))
-        //{
-        //    Debug.Log(hit.collider.gameObject.name + " Point of contact: " + hit.point);
-        //}
+        timeRemaining = 2;
+        isBlocking = false;
+        anim = GetComponent<Animator>();
     }
+    
+
+    void Update () 
+    {
+    
+        timeRemaining -= Time.deltaTime; 
+
+        isShiftKeyDown = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);  
+        //For some reason unity doesn't recognize just "Shift," You have to specify left and right.
+
+        if(isShiftKeyDown == true)
+        {   
+
+            if(timeRemaining > 0)
+            {
+                isBlocking = true;
+                playerCharController.PauseMovement();
+                forceFieldBubble.SetActive(true);
+                anim.SetBool("Blocking", true);
+            }
+            if (timeRemaining <= 0)
+            {
+                isBlocking = false;
+                forceFieldBubble.SetActive(false);
+                anim.SetBool("Blocking", false);
+                playerCharController.ResumeMovement();
+            } 
+
+        }
+        else
+        {
+            isBlocking = false;
+            forceFieldBubble.SetActive(false);
+            anim.SetBool("Blocking", false);
+            playerCharController.ResumeMovement();
+            timeRemaining = 2;
+        }
+
+
+    }
+        
+
+
+
 }

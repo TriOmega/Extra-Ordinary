@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
         if (fillValue <= slider.maxValue / 3)
             fillImage.color = Color.red;
         else if (fillValue > slider.maxValue / 3)
-            fillImage.color = Color.green;
+            fillImage.color = Color.white;
 
         slider.value = fillValue;
     }

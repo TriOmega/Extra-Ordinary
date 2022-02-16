@@ -89,7 +89,7 @@ public class SpiderEnemy : MonoBehaviour
             enemySpeed = 0f;
         }
 
-        if(collision.CompareTag("Sword") && PlayerCombat.swordHasSwung == true)
+        if(collision.CompareTag("Sword"))
         {
             health --;
             
@@ -100,7 +100,6 @@ public class SpiderEnemy : MonoBehaviour
                 Destroy(this.gameObject, 1);
             }
             
-            PlayerCombat.swordHasSwung = false;
         }
 
     }
