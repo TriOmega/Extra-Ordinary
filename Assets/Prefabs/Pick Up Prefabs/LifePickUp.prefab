@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6254322502370473743}
   - component: {fileID: 6254322502370473736}
   - component: {fileID: 6254322502370473739}
+  - component: {fileID: 1847005958}
   m_Layer: 0
   m_Name: LifePickUp
   m_TagString: Untagged
@@ -162,6 +163,23 @@ MonoBehaviour:
   pickUpLifeWorth: 1
   amplitude: 0.1
   speed: 1.4
+  isFloating: 1
+  player: {fileID: 0}
+--- !u!114 &1847005958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6254322502370473740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9a31c0bcb8a634b9fb925f89143feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnSpeed: 10
+  startingPoint: {fileID: 0}
+  moving: 0
 --- !u!1 &6391285495540598046
 GameObject:
   m_ObjectHideFlags: 0
