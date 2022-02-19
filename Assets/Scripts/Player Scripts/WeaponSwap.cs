@@ -63,23 +63,23 @@ public class WeaponSwap : MonoBehaviour
 
         if (selectedWeapon == 0)
         {
-            GumIcon.SetActive(true);
-            FlashlightIcon.SetActive(false);
+            GumIcon.SetActive(false);
+            FlashlightIcon.SetActive(true);
             PaddleballIcon.SetActive(false);
         }
 
         else if (selectedWeapon == 1)
         {
             GumIcon.SetActive(false);
-            FlashlightIcon.SetActive(true);
-            PaddleballIcon.SetActive(false);
+            FlashlightIcon.SetActive(false);
+            PaddleballIcon.SetActive(true);
         }
 
         else 
         {
-            GumIcon.SetActive(false);
+            GumIcon.SetActive(true);
             FlashlightIcon.SetActive(false);
-            PaddleballIcon.SetActive(true);
+            PaddleballIcon.SetActive(false);
         }
     }
 

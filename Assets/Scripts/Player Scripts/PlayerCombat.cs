@@ -5,10 +5,8 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Collider playerBasicAttackBox;
-    public Collider bubblegumAttackBox;
     public LayerMask basicEnemyLayer;
     public float swordKnockbackThrust = 8.0f;
-    public float bubblegumKnockbackThrust = 10.0f;
     public float attackStartTime;
     public float timeToActivateHeavy = 1.0f;
     private bool attackPressed = false;
@@ -45,10 +43,6 @@ public class PlayerCombat : MonoBehaviour
             attackPressed = false;
         }
 
-        if (BubbleGum.AttackCanGo == true)
-        {
-            BubbleGum.AttackCanGo = false;
-        }
     }
 
     private IEnumerator HeavyAttack()
@@ -79,17 +73,6 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    private void BubblegumAttack(Collider bubblegumAttackBox)
-    {  
-    
-        Collider[] cols = Physics.OverlapBox(bubblegumAttackBox.bounds.center, bubblegumAttackBox.bounds.extents, bubblegumAttackBox.transform.rotation, basicEnemyLayer);
-        foreach(Collider col in cols)
-        {
-
-            Vector3 moveDirection = col.transform.position - this.transform.position;
-            col.GetComponent<Rigidbody>().AddForce(moveDirection.normalized * bubblegumKnockbackThrust);
-        }
-    }
 
 /*OLD BLOCKING CODE FROM LAST SEMESTER IS BELOW:
 feel free to remove if not needed. 

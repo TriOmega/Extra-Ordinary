@@ -57,11 +57,33 @@ public class CharController : MonoBehaviour
             anim.SetBool("Walking", false);
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+
+        if(isGrounded == true)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            anim.SetTrigger("Jump");
+            allowedToUseGum = true;
         }
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            if(isGrounded == true)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                anim.SetTrigger("Jump");
+            }
+            else
+            {
+                if(allowedToUseGum == true)
+                {
+                    GumGameObject.transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
+                    GumGameObject.transform.localScale += (Vector3.one * scaleRate);  //This applies the slow fluxuating size effect.
+                    CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //Double jump activates
+                    allowedToUseGum = false;
+                }
+            }
+
+        }
+
+
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime); //increases fall speed over time.
@@ -87,5 +109,68 @@ public class CharController : MonoBehaviour
         speed = 3f; 
         jumpHeight = 1.5f;
     }
+
+
+ //////////////////////////////////BUBBLEGUM DOUBLE JUMP///////////////////////////////////////////////////////////////////////
+
+    public GameObject GumGameObject;
+
+    float scaleRate = 0.0015f;  //How fast the bubblegum fluctuates
+    float deployRate =0.3f; //How fast the bubblegum deploys initially
+    float minScale = 3.0f;
+    float maxScale = 3.5f;
+
+    bool allowedToUseGum = false;
+
+    float gumGravity = -40f;
+    float gumJumpHeight = 0.7f;
+
+
+    void Update()
+    {
+        if(CharController.isGrounded == true)
+        {
+            GumGameObject.transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);  //makes the gum very very very tiny if its not in use.
+        }
+
+        //This is for the gum fluctuating size effect. If it exceeds the defined range then correct the sign of scaleRate.
+        if(GumGameObject.transform.localScale.x < minScale) 
+        {
+            scaleRate = Mathf.Abs(scaleRate);
+        }
+        else if(GumGameObject.transform.localScale.x > maxScale) 
+        {
+            scaleRate = -Mathf.Abs(scaleRate);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
