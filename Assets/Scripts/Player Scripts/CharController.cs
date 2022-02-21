@@ -10,7 +10,8 @@ public class CharController : MonoBehaviour
 
     public float speed = 18f; //Speed at which the player walks around.
     public float gravity = -100.81f;
-    public float jumpHeight = 6f;
+    public float defaultJumpHeight = 3f;
+    private float jumpHeight;
 
 
     public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
@@ -27,6 +28,7 @@ public class CharController : MonoBehaviour
 
     void Start()
     {
+        jumpHeight = defaultJumpHeight;
         anim = GetComponent<Animator>();
     }
 
@@ -107,7 +109,7 @@ public class CharController : MonoBehaviour
     public void ResumeMovement()
     {
         speed = 3f; 
-        jumpHeight = 1.5f;
+        jumpHeight = defaultJumpHeight;
     }
 
 
