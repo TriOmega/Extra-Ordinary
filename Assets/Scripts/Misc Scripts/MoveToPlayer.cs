@@ -30,8 +30,6 @@ public class MoveToPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        
-
         if (collision.gameObject.tag == "ball")
         {
             moving = true;
