@@ -41,7 +41,8 @@ public class MoveToPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            moving = false;
         }
 
     }
