@@ -5,13 +5,16 @@ using UnityEngine;
 public class BubbleGum : MonoBehaviour
 {
 
+    /*
+
+    public GameObject GumGameObject;
+
     float scaleRate = 0.0015f;  //How fast the bubblegum fluctuates
     float deployRate =0.3f; //How fast the bubblegum deploys initially
     float minScale = 3.0f;
     float maxScale = 3.5f;
 
     bool gumActive = false;
-    public static bool AttackCanGo = false;
     bool allowedToUseGum = true;
 
  
@@ -20,15 +23,7 @@ public class BubbleGum : MonoBehaviour
     float gumGravity = -40f;
     float gumJumpHeight = 0.7f;
     
-     public void OnTriggerEnter(Collider other)
-     {
-         if(other.gameObject.tag == "Stalactite")
-         {
-            gumActive = false;
-            allowedToUseGum = false;
-            AttackCanGo = true;
-         }
-     }
+
 
 
     
@@ -37,7 +32,7 @@ public class BubbleGum : MonoBehaviour
 
         if(Input.GetButtonDown("SpecialAttack") && allowedToUseGum == true)  //Click the right mouse button to deploy bubblegum!
         {
-            transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
+            GumGameObject.transform.localScale += (Vector3.one * deployRate);  //Quickly inflate bubble
             gumActive = true;
             CharController.velocity.y = Mathf.Sqrt(gumJumpHeight * -2f * gumGravity); //jump
             jumpCounter += 1;
@@ -46,11 +41,11 @@ public class BubbleGum : MonoBehaviour
 
 
         //if we exceed the defined range then correct the sign of scaleRate.
-        if(transform.localScale.x < minScale) 
+        if(GumGameObject.transform.localScale.x < minScale) 
         {
             scaleRate = Mathf.Abs(scaleRate);
         }
-        else if(transform.localScale.x > maxScale) 
+        else if(GumGameObject.transform.localScale.x > maxScale) 
         {
             scaleRate = -Mathf.Abs(scaleRate);
         }
@@ -58,11 +53,11 @@ public class BubbleGum : MonoBehaviour
 
         if(gumActive == true)
         {
-            transform.localScale += (Vector3.one * scaleRate);  //This applies the slow fluxuating size effect.
+            GumGameObject.transform.localScale += (Vector3.one * scaleRate);  //This applies the slow fluxuating size effect.
         }
         else
         {
-            transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);  //makes the gum very very very tiny if its not in use.
+            GumGameObject.transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);  //makes the gum very very very tiny if its not in use.
         }
 
 
@@ -72,7 +67,6 @@ public class BubbleGum : MonoBehaviour
         {
             gumActive = false;
             allowedToUseGum = false;
-            AttackCanGo = true;
             jumpCounter = 0;
         }
 
@@ -88,14 +82,13 @@ public class BubbleGum : MonoBehaviour
 
         if ((jumpCounter >= 1) && (CharController.isGrounded == true))
         { 
-            AttackCanGo = true;
             jumpCounter = 0;
         }
 
     }
     
 
-
+*/
 
 
 

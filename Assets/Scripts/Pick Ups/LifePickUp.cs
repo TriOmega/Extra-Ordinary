@@ -10,6 +10,8 @@ public class LifePickUp : PickUps
     public float speed;                   
     private float tempVal;
     private Vector3 tempPos;
+    public bool isFloating = true;
+    public GameObject player;
      
      void Start () 
      {
@@ -17,14 +19,33 @@ public class LifePickUp : PickUps
          tempPos = transform.position;
      }
  
-     void Update () 
+     void FixedUpdate () 
      {        
-         tempPos.y = tempVal + amplitude * Mathf.Sin(speed * Time.time);
-         transform.position = tempPos;
+         if(isFloating)
+         {
+             tempPos.y = tempVal + amplitude * Mathf.Sin(speed * Time.time);
+             transform.position = tempPos;
+         }
+        
      }
 
-    public override void PickUpEffect(GameObject player)
-    {
-        player.GetComponent<PlayerHealth>().AdjustCurrentLives(pickUpLifeWorth);
-    }
+     private void OnTriggerEnter(Collider collision)
+     {
+        if (collision.gameObject.tag == "ball")
+        {
+            isFloating = false;
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            player.GetComponent<PlayerHealth>().AdjustCurrentLives(pickUpLifeWorth);
+            Destroy(gameObject);
+        }
+
+     }
+
+     //public override void PickUpEffect(GameObject player)  -- Had to move this up
+     //{
+      //  player.GetComponent<PlayerHealth>().AdjustCurrentLives(pickUpLifeWorth);
+    // }
 }

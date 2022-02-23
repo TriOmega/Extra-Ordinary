@@ -28,11 +28,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7664797888213689336}
   - {fileID: 8862768416777627980}
   - {fileID: 454303036237262687}
   m_Father: {fileID: 1409889241289235200}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &655512739821066438
 MonoBehaviour:
@@ -50,6 +49,7 @@ MonoBehaviour:
   GumIcon: {fileID: 0}
   FlashlightIcon: {fileID: 0}
   PaddleballIcon: {fileID: 0}
+  KeyIcon: {fileID: 0}
 --- !u!1 &1409889241289235201
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +88,7 @@ Transform:
   m_Children:
   - {fileID: 1409889242017893274}
   - {fileID: 1409889241404144449}
+  - {fileID: 7664797888213689336}
   - {fileID: 5487435912239308844}
   - {fileID: 4501026312906843008}
   m_Father: {fileID: 0}
@@ -134,6 +135,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+  GumGameObject: {fileID: 3826333025376742507}
 --- !u!114 &1330701101231918955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,13 +148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12b776153c52cf48b2bdd1f44063839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicPlayerAttackBox: {fileID: 1540934555863154698}
-  bubblegumAttackBox: {fileID: 7391050244440822907}
+  playerBasicAttackBox: {fileID: 0}
   basicEnemyLayer:
     serializedVersion: 2
     m_Bits: 1024
   swordKnockbackThrust: 8
-  bubblegumKnockbackThrust: 10
+  attackStartTime: 0
+  timeToActivateHeavy: 1
+  heavyDamageMultiplier: 2
+  lightAttackDamage: 20
+  damageAmount: 0
 --- !u!114 &7795648701614352652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,59 +447,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474648630367938675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.28000006, z: 0.73}
+  m_LocalPosition: {x: 0, y: 0.28000006, z: 0.7300308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2899015243010603488}
-  - {fileID: 8824715947301569552}
-  m_Father: {fileID: 5487435912239308844}
-  m_RootOrder: 0
+  m_Father: {fileID: 1409889241289235200}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3153167495628396229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8824715947301569552}
-  - component: {fileID: 7391050244440822907}
-  m_Layer: 0
-  m_Name: BubblegumAttackBox
-  m_TagString: BubbleGum
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8824715947301569552
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3153167495628396229}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.48, z: 0.26}
-  m_LocalScale: {x: 1.97124, y: 0.98562, z: 1.97124}
-  m_Children: []
-  m_Father: {fileID: 7664797888213689336}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7391050244440822907
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3153167495628396229}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3826333025376742507
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,9 +465,7 @@ GameObject:
   - component: {fileID: 2899015243010603488}
   - component: {fileID: 8902966744134610392}
   - component: {fileID: 5443191773080712515}
-  - component: {fileID: 7871518141035873957}
   - component: {fileID: 5438814023015010300}
-  - component: {fileID: 1186132679070704124}
   m_Layer: 0
   m_Name: Gum
   m_TagString: Untagged
@@ -580,18 +537,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7871518141035873957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826333025376742507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19eedd2d4adc324e96d74cde67b1bc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &5438814023015010300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -608,19 +553,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1186132679070704124
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826333025376742507}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Center: {x: -0.017640412, y: 0.8378327, z: 0.033649266}
 --- !u!1 &6143780611707330584
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +586,7 @@ Transform:
   m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
   m_Children: []
   m_Father: {fileID: 1409889241289235200}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4957910145951600163
 MeshFilter:
@@ -840,7 +772,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5461178943864366330, guid: 228a306bae1f4bd4482f99bfc456cace, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5461178943864366330, guid: 228a306bae1f4bd4482f99bfc456cace, type: 3}
       propertyPath: m_LocalPosition.x
@@ -902,7 +834,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5451115672418884066, guid: 4b64a627da5dd4742bed6e599b698bc1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5451115672418884066, guid: 4b64a627da5dd4742bed6e599b698bc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1079,10 +1011,5 @@ PrefabInstance:
 --- !u!4 &950676122905827403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6871657978891307609, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
-  m_PrefabInstance: {fileID: 5939247781007118866}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1540934555863154698 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 5120044892368523800, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
   m_PrefabInstance: {fileID: 5939247781007118866}
   m_PrefabAsset: {fileID: 0}
