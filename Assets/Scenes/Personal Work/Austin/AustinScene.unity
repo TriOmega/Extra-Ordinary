@@ -295,7 +295,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.5455, y: 1}
+    m_SensorSize: {x: 2.0094638, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -328,6 +328,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6407787392361830938, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
   m_PrefabInstance: {fileID: 371482929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &585657748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3006392990957170666, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
+  m_PrefabInstance: {fileID: 599337405}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &599337405
 PrefabInstance:
@@ -606,6 +611,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8252216832705640661, guid: e57a8b6b057eafb438c9b15b0e9fb7bf, type: 3}
   m_PrefabInstance: {fileID: 8252216833620254521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1370753999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1606754473473342360, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
+  m_PrefabInstance: {fileID: 599337405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e16835e98aef704c933b7368a374930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1423162798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7649158102538837034, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
+  m_PrefabInstance: {fileID: 599337405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1469365905
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +732,7 @@ GameObject:
   - component: {fileID: 1506620806}
   - component: {fileID: 1506620805}
   - component: {fileID: 1506620804}
+  - component: {fileID: 1506620808}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -817,6 +839,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506620808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506620803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54179148cb2b8e1468cf867d16f51869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 1423162798}
+  - {fileID: 585657748}
+  line: {fileID: 1370753999}
 --- !u!4 &1798748309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8992780140084671175, guid: 7cbad972d583172419059fe75ac3ab51, type: 3}
