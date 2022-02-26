@@ -148,6 +148,52 @@ MonoBehaviour:
   destroyedDestructible: {fileID: 0}
   boxSpawn: {fileID: 0}
   infiniteBoxLOL: 0
+--- !u!1 &1008652083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008652085}
+  - component: {fileID: 1008652084}
+  m_Layer: 0
+  m_Name: PaddleTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008652084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008652083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf8908b32dabee4b98e2e79ecd46361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PaddleHit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1008652085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008652083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38126868, y: 7.4580417, z: -7.660962}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1159924127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,11 +324,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4340d252a12a92a46b4a2f9c41aadacc, type: 3}
---- !u!65 &1749649477 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 263878165325131046, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
-  m_PrefabInstance: {fileID: 1997894887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1873003722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359,10 +400,6 @@ PrefabInstance:
       propertyPath: playerBasicHitBox
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1103628101153337114, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
-      propertyPath: playerBasicAttackBox
-      value: 
-      objectReference: {fileID: 1749649477}
     - target: {fileID: 2100725200313446449, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -427,6 +464,10 @@ PrefabInstance:
       propertyPath: m_Lens.m_SensorSize.x
       value: 2.0268457
       objectReference: {fileID: 0}
+    - target: {fileID: 3260105941569361791, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: PaddleHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 212642171}
     - target: {fileID: 8566674660502528834, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
