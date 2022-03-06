@@ -32,7 +32,7 @@ public class CharController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -96,6 +96,22 @@ public class CharController : MonoBehaviour
             Debug.Log("Game Quit!");
         }
 
+
+        if(CharController.isGrounded == true)
+        {
+            GumGameObject.transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);  //makes the gum very very very tiny if its not in use.
+        }
+
+        //This is for the gum fluctuating size effect. If it exceeds the defined range then correct the sign of scaleRate.
+        if(GumGameObject.transform.localScale.x < minScale) 
+        {
+            scaleRate = Mathf.Abs(scaleRate);
+        }
+        else if(GumGameObject.transform.localScale.x > maxScale) 
+        {
+            scaleRate = -Mathf.Abs(scaleRate);
+        }
+
     }
 
     public void PauseMovement() 
@@ -127,25 +143,6 @@ public class CharController : MonoBehaviour
     float gumGravity = -40f;
     float gumJumpHeight = 0.7f;
 
-
-    void Update()
-    {
-        if(CharController.isGrounded == true)
-        {
-            GumGameObject.transform.localScale = new Vector3(0.0001f,0.0001f,0.0001f);  //makes the gum very very very tiny if its not in use.
-        }
-
-        //This is for the gum fluctuating size effect. If it exceeds the defined range then correct the sign of scaleRate.
-        if(GumGameObject.transform.localScale.x < minScale) 
-        {
-            scaleRate = Mathf.Abs(scaleRate);
-        }
-        else if(GumGameObject.transform.localScale.x > maxScale) 
-        {
-            scaleRate = -Mathf.Abs(scaleRate);
-        }
-
-    }
 
 
 
