@@ -64,4 +64,20 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void DeBug()
+    {
+        SceneManager.LoadScene("Sprint6_01");
+    }
+    
+    public void DeBug1()
+    {
+        SceneManager.LoadScene("Sprint6_02");
+    }
+    public void DeBug2()
+    {
+        SceneManager.LoadScene("Sprint5");
+    }
+
+
+
 }
