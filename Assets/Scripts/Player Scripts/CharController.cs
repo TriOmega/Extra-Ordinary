@@ -133,10 +133,10 @@ public class CharController : MonoBehaviour
 
     public GameObject GumGameObject;
 
-    float scaleRate = 0.0015f;  //How fast the bubblegum fluctuates
-    float deployRate =0.3f; //How fast the bubblegum deploys initially
-    float minScale = 3.0f;
-    float maxScale = 3.5f;
+    float scaleRate = 0.015f;  //How fast the bubblegum fluctuates
+    float deployRate =0.5f; //How fast the bubblegum deploys initially
+    float minScale = 10.0f;
+    float maxScale = 10.5f;
 
     bool allowedToUseGum = false;
 
