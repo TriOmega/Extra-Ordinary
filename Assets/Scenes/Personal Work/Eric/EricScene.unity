@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 39c01d3a5c3fb1e49a556650e8f76dbc, type: 2}
---- !u!1 &159397739 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1207104975314833576, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
-  m_PrefabInstance: {fileID: 1997894887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &212642170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1311170772301450786, guid: daeed3817f53bff4fb0eb1ba1f6caf53, type: 3}
@@ -227,7 +222,11 @@ PrefabInstance:
     - target: {fileID: 1847005958, guid: 4340d252a12a92a46b4a2f9c41aadacc, type: 3}
       propertyPath: startingPoint
       value: 
-      objectReference: {fileID: 159397739}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254322502370473739, guid: 4340d252a12a92a46b4a2f9c41aadacc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894529417}
     - target: {fileID: 6254322502370473740, guid: 4340d252a12a92a46b4a2f9c41aadacc, type: 3}
       propertyPath: m_Name
       value: LifePickUp
@@ -335,6 +334,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daeed3817f53bff4fb0eb1ba1f6caf53, type: 3}
+--- !u!1 &1894529417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6224695626788012006, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+  m_PrefabInstance: {fileID: 1997894887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1894529419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3233742401556539345, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+  m_PrefabInstance: {fileID: 1997894887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894529417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93371ceb208d9cb479fe18a879829569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1894529427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6224695626788012007, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+  m_PrefabInstance: {fileID: 1997894887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1997894887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,6 +370,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 604719059158969991, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1894529419}
     - target: {fileID: 1103628101153337114, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: playerBasicHitBox
       value: 
@@ -407,16 +431,40 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2100725200582215032, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5339662
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100725200582215032, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.390463
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100725200582215032, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.2539485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100725201514887683, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5339662
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100725201514887683, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.390463
       objectReference: {fileID: 0}
     - target: {fileID: 2100725201514887683, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.2539485
       objectReference: {fileID: 0}
     - target: {fileID: 2100725201514887692, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1894529427}
+    - target: {fileID: 2100725201514887692, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1894529427}
+    - target: {fileID: 2100725201514887692, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0268457
+      value: 1.9077181
       objectReference: {fileID: 0}
     - target: {fileID: 3260105941569361791, guid: c1b814123ecc20149bb8e522b40a85ad, type: 3}
       propertyPath: PaddleHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
