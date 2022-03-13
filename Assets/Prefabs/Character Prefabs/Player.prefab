@@ -127,7 +127,7 @@ MonoBehaviour:
   controller: {fileID: 1409889241289235206}
   speed: 3
   gravity: -25
-  jumpHeight: 1.5
+  defaultJumpHeight: 3
   turnSmoothTime: 0.1
   turnSmoothVelocity: 0
   groundCheck: {fileID: 1409889241404144449}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12b776153c52cf48b2bdd1f44063839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBasicAttackBox: {fileID: 0}
+  playerBasicAttackBox: {fileID: 2201765144829873495}
   basicEnemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -237,9 +237,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
-  maxLives: 3
   currentLives: 3
-  deathMusic: {fileID: 0}
+  sacrificeReward: 0
+  sacrificeCooldownDuration: 0
+  sacrificeCooldownIndicator: {fileID: 0}
   defaultEnemyDamage: -1
   damageTimer: 1
   livesText: {fileID: 0}
@@ -1011,5 +1012,10 @@ PrefabInstance:
 --- !u!4 &950676122905827403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6871657978891307609, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
+  m_PrefabInstance: {fileID: 5939247781007118866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2201765144829873495 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5540078282690469701, guid: cc621ce6e9f978542bd433fef9ba79ad, type: 3}
   m_PrefabInstance: {fileID: 5939247781007118866}
   m_PrefabAsset: {fileID: 0}
