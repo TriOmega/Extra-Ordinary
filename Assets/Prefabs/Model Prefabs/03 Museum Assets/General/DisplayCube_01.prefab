@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 120532993219128217}
   - component: {fileID: 3892204689697367100}
   - component: {fileID: 1290022645086392566}
+  - component: {fileID: 443183876043661017}
   m_Layer: 0
   m_Name: DisplayCube_01
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785852515466490147}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0542452, y: 0, z: 9.703572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3929027142713543026, guid: 5d0f339ef16ca8a4482985e478ed6772, type: 3}
+  - {fileID: 2100000, guid: e3dc36f8554d9094fb79e40ba843a226, type: 2}
   - {fileID: 231630853409238740, guid: 5d0f339ef16ca8a4482985e478ed6772, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &443183876043661017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785852515466490147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7831466, y: 3.7306836, z: 1.8173525}
+  m_Center: {x: 0, y: 1.8653418, z: 0.000000029802322}
