@@ -117,6 +117,7 @@ public class CharController : MonoBehaviour
     public void PauseMovement() 
     
     {
+        Debug.Log("This script was called");
         speed = 0f;
         jumpHeight = 0f;
         

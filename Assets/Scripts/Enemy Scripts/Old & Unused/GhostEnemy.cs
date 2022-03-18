@@ -27,7 +27,7 @@ public class GhostEnemy : MonoBehaviour
            
     }
 
-    void OnTriggerStay(Collider collision)
+   /* void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Player"))
         {
@@ -44,10 +44,27 @@ public class GhostEnemy : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, points[current].transform.position, Time.deltaTime * speed);
         }
-    }
+    }*/
 
     void OnTriggerEnter(Collider collider)
     {
+
+        if(collider.CompareTag("Player"))
+        {
+
+           if (Vector3.Distance(points[current].transform.position, transform.position) < WPradius)
+            {
+             current++;
+                //if (current >= points.Length)
+                //{
+                // current = 0;
+                //}
+             other.PauseMovement();
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, points[current].transform.position, Time.deltaTime * speed);
+        }
+
         if (collider.CompareTag("Flashlight"))
              {
                  other.ResumeMovement();
