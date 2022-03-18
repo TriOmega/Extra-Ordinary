@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class MediumEnemies : MonoBehaviour, IDamageable
+public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
 {
     public int Health { get => enemyHealth; set => enemyHealth = value; }
     public bool IsInvincible { get => isInvincible; }
     public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
+    public bool IsStunned { get => isStunned; }
+    public float StunDurationSeconds { get => stunDurationSeconds; }
 
     private bool activeEnemyShield;
     private Rigidbody rb;
+    private NavMeshAgent navMeshAgent;
     //public GameObject EnemyShieldIndicator;  //HEY SHERRYE i made this pink shield for the rolliepollie just to help myself out while testing.
-                                             // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
+    // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
     public Animator animator;
     private bool isBouncing = false;
@@ -21,6 +25,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable
     {
         activeEnemyShield = true;
         rb = GetComponent<Rigidbody>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -71,9 +76,31 @@ public class MediumEnemies : MonoBehaviour, IDamageable
         }
     }
 
+    public void Stun()
+    {
+        if (!isStunned)
+        {
+            StartCoroutine(StunTimer());
+        }
+    }
+    private IEnumerator StunTimer()
+    {
+        isStunned = true;
+        animator.enabled = false;
+        navMeshAgent.enabled = false;
+
+        yield return new WaitForSeconds(stunDurationSeconds);
+
+        isStunned = false;
+        animator.enabled = true;
+        navMeshAgent.enabled = true;
+    }
+
     private int enemyHealth = 100;
     private bool isInvincible = false;
     private float invincibilityDurationSeconds = 2;
+    private bool isStunned = false;
+    private float stunDurationSeconds = 5f;
 
 }
      

@@ -1,5 +1,7 @@
 using UnityEngine;
 
+public delegate void StunEventHandler();
+
 public class FlashlightFollow : MonoBehaviour
 {
 
@@ -11,6 +13,8 @@ public class FlashlightFollow : MonoBehaviour
 
     [SerializeField]
     private float lookTurnSpeed = 180.0f;
+
+    public event StunEventHandler StunEvent;
 
     private void Start()
     {
@@ -27,6 +31,10 @@ public class FlashlightFollow : MonoBehaviour
         {
             //print(hit.collider.name);
             transform.LookAt(hit.point);
+            if (hit.collider.gameObject.GetComponent<IStunnable>() != null)
+            {
+                hit.collider.gameObject.GetComponent<IStunnable>().Stun();
+            }
         }
 
         if (Input.GetButtonDown("SpecialAttack"))

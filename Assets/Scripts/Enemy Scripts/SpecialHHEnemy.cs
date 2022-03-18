@@ -42,7 +42,7 @@ public class SpecialHHEnemy : MonoBehaviour, IDamageable
         }
         else
         {
-            animator.SetTrigger("isDamaged");
+            //animator.SetTrigger("isDamaged");
             gameObject.GetComponent<ParticleSystem>().Play();
             //Damage Sound + animation if we need it
         }
