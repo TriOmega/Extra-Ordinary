@@ -14,6 +14,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
     public Animator animator;
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
+    public GameObject tempStunIndicatorObject;              //Remove temp indicator as soon as official stun indication is added
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
     {
         if (!isStunned)
         {
+            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, 1.1f, 0f), Quaternion.identity);
             StartCoroutine(StunTimer());
         }
     }

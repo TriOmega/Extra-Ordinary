@@ -14,6 +14,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     private bool activeEnemyShield;
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
+    public GameObject tempStunIndicatorObject;              //Remove temp indicator as soon as official stun indication is added
     //public GameObject EnemyShieldIndicator;  //HEY SHERRYE i made this pink shield for the rolliepollie just to help myself out while testing.
     // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
@@ -80,6 +81,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     {
         if (!isStunned)
         {
+            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, 1.1f, 0f), Quaternion.identity);
             StartCoroutine(StunTimer());
         }
     }
