@@ -7,7 +7,7 @@ public class WorldRotator : MonoBehaviour
 
     public GameObject theEntireWorld;
     bool rotateRequest = false;
-    float rotateAngle = 30f;  //the angle at which the camera rotates every second
+    float rotateAngle = 60f;  //the angle at which the camera rotates every second
     float rotateTimeAmount;
     float timeRemaining;  //This is a timer that runs. It will tell the world to stop rotating after the number of seconds reaches a certain amount. 
     
