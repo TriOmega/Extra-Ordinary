@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 822966120210024397}
   - component: {fileID: 4378651977454962792}
   - component: {fileID: 1954825639317159074}
+  - component: {fileID: 8137309977033675470}
   m_Layer: 0
   m_Name: Chandelier_01
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9029189017312631}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 19.153, y: 5.09, z: 7.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5330968312606964497, guid: ee45eee9e21257d40b98772f9ad52626, type: 3}
+  - {fileID: 2100000, guid: 3c850e9aa4fbf30419364213652ed752, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,3 +83,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8137309977033675470
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029189017312631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 4.7370086
+  m_Direction: 1
+  m_Center: {x: -0.020116806, y: -2.3685043, z: 0.04185468}

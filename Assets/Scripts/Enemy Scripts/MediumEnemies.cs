@@ -10,7 +10,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable
 
     private bool activeEnemyShield;
     private Rigidbody rb;
-    public GameObject EnemyShieldIndicator;  //HEY SHERRYE i made this pink shield for the rolliepollie just to help myself out while testing.
+    //public GameObject EnemyShieldIndicator;  //HEY SHERRYE i made this pink shield for the rolliepollie just to help myself out while testing.
                                              // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
     public Animator animator;
@@ -26,14 +26,14 @@ public class MediumEnemies : MonoBehaviour, IDamageable
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(activeEnemyShield == true)
-        {
-            EnemyShieldIndicator.SetActive(true);
-        }
-        else
-        {
-            EnemyShieldIndicator.SetActive(false);
-        }
+        //if(activeEnemyShield == true)
+        //{
+            //EnemyShieldIndicator.SetActive(true);
+        //}
+        //else
+        //{
+            //EnemyShieldIndicator.SetActive(false);
+        //}
     }
 
     public void BreakShield()                           

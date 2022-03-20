@@ -35,7 +35,7 @@ using UnityEngine;
 
 
 			
-			if(Input.GetKey(KeyCode.E))
+			if(Input.GetButtonDown("Interact"))
 			{
 				oneKeyIsPressedDown = true;
 			}

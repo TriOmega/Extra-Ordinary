@@ -13,7 +13,7 @@ public class Doors : MonoBehaviour
     public Vector3 offset;
     bool IsKeyObtained;
     bool shouldTimerBeStarted;
-    float rotateAngle = 30f; 
+    float rotateAngle = 15f; 
     bool oneKeyIsPressedDown;
     bool ableToOpen;
 
@@ -44,7 +44,7 @@ public class Doors : MonoBehaviour
 
 
 
-        if(Input.GetKey(KeyCode.E))
+        if(Input.GetButtonDown("Interact"))
         {
             oneKeyIsPressedDown = true;
         }
