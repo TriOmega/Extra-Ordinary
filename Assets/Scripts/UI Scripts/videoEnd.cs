@@ -4,7 +4,7 @@ using UnityEngine;
  using UnityEngine.Video;
  using UnityEngine.SceneManagement;
 
-public class VideoEnd : MonoBehaviour
+public class videoEnd : MonoBehaviour
 {
     public VideoPlayer VideoPlayer;
     public string SceneName ;
