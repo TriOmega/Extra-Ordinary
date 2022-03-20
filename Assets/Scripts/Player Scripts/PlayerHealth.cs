@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public float sacrificeCooldownDuration;
     public Image sacrificeCooldownIndicator;
     
-    //public AudioSource deathMusic;                            //Commented out unused deathMusic due to null value errors
+    public AudioSource deathMusic; 
 
     public float defaultEnemyDamage;
 
@@ -166,7 +166,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentLives <= 0)
         {
-            //deathMusic.Play();
+            deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
             //currentLives = maxLives;

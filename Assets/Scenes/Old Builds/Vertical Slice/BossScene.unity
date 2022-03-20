@@ -4274,6 +4274,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8531248215242998404, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5cd32cf8cc8ddb14a99c868c1e9b2744, type: 2}
+    - target: {fileID: -7823293702887809713, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05845d84b1f6df54d9fcf024a6a38e72, type: 2}
+    - target: {fileID: -4396642182433536433, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1d0fdc6748b11b498e778533e26d47a, type: 2}
     - target: {fileID: -3602927797655225239, guid: 2d36134867844694982860c693b6febc, type: 3}
       propertyPath: m_Name
       value: QuickRigCharacter_Hips
@@ -4294,6 +4306,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 2321523695958950486, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ed443f1fb37cd94da267f9e49fe5360, type: 2}
+    - target: {fileID: 4800545675622748477, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b8c1ed8bb31593d438bf0a18febaaaf7, type: 2}
+    - target: {fileID: 5128063986421979777, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad54ed2ac2544984385012f39617f964, type: 2}
+    - target: {fileID: 5797384429611982230, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2914ed5eee09299458365904674b5c92, type: 2}
     - target: {fileID: 5866666021909216657, guid: 2d36134867844694982860c693b6febc, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4310,6 +4338,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761708314861323176, guid: 2d36134867844694982860c693b6febc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b353ce581ee619b408ffd076b3057740, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d36134867844694982860c693b6febc, type: 3}
 --- !u!1001 &456847397
@@ -6221,6 +6253,10 @@ PrefabInstance:
       propertyPath: GumIcon
       value: 
       objectReference: {fileID: 1438901614}
+    - target: {fileID: 655512739821066438, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
+      propertyPath: KeyIcon
+      value: 
+      objectReference: {fileID: 1837740087}
     - target: {fileID: 655512739821066438, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: FlashlightIcon
       value: 
@@ -9347,7 +9383,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 05f36e0474d85524a945df1474225b9c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dbc58f9d7e38d09499aac6396007d0a6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.44
   m_Pitch: 1
@@ -9516,7 +9552,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8102564, y: 1}
+    m_SensorSize: {x: 2.0805502, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15138,6 +15174,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1837740087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6407787392361830938, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
+  m_PrefabInstance: {fileID: 963332114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1849271999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16349,9 +16390,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 43b62bcb10a2a0f46afaaadbb3be9edb, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_audioClip: {fileID: 8300000, guid: 5163905b6c49de1458703ac68d3bbf9c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
