@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2341453183887400539}
   - component: {fileID: 1716250611934024190}
   - component: {fileID: 3473875786359842100}
+  - component: {fileID: 2878990103722628859}
+  - component: {fileID: 2878990103722628860}
   m_Layer: 0
   m_Name: DisplayRound_02
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3113487005395223777}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.403, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -60,8 +62,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: db3930bf0fc94db448d25ac7fd0fcf84, type: 3}
-  - {fileID: 231630853409238740, guid: 5d0f339ef16ca8a4482985e478ed6772, type: 3}
+  - {fileID: 2100000, guid: 637aa6ebacfa13942affe32563f36524, type: 2}
+  - {fileID: 2100000, guid: 64cf05c937de9c6478375fbca9b13de5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2878990103722628859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3113487005395223777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6860852, y: 0.7946074, z: 1.0861373}
+  m_Center: {x: -0.003804922, y: 0.3973037, z: 0}
+--- !u!65 &2878990103722628860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3113487005395223777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0861366, y: 0.30274892, z: 1.0861373}
+  m_Center: {x: 0, y: 0.94817305, z: 0}

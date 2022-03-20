@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4749257465799651371}
   - component: {fileID: 8522810600686043022}
   - component: {fileID: 5882805418421635908}
+  - component: {fileID: 823962058}
   m_Layer: 0
   m_Name: UfoBeam
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5378160162138516113}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.986578, y: 1, z: 16.36142}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &823962058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378160162138516113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019894585, y: 0.017808367, z: 0.019854067}
+  m_Center: {x: -0.000018014573, y: -0.011116063, z: -0.0000047907233}
