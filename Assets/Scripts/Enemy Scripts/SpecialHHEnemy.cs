@@ -57,6 +57,14 @@ public class SpecialHHEnemy : MonoBehaviour, IDamageable
         isInvincible = false;
     }
 
+    void OnTriggerEnter(Collider collision)
+    {
+        if(collision.CompareTag("Flashlight"))
+        {
+            TakeDamage(10);
+        }
+    }
+
     public int enemyHealth = 50;
     private bool isInvincible = false;
     private float invincibilityDurationSeconds = 2;
