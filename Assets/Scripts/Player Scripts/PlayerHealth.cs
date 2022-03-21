@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     
     public AudioSource deathMusic; 
     public AudioSource LevelBackgroundMusic;
+    public AudioSource JamesHasBeenInjuredSound;
 
     public float defaultEnemyDamage;
 
@@ -78,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
             if (collision.gameObject.tag == "enemy")
             {
                 AdjustCurrentHealth(defaultEnemyDamage);
+                JamesHasBeenInjuredSound.Play();
                 //  StartCoroutine(damageTimeout(damageTimer));
             }
 

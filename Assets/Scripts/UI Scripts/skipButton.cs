@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SkipButton : MonoBehaviour
+public class skipButton : MonoBehaviour
 {
     public void PlayGame()
     {
