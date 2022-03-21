@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public Image sacrificeCooldownIndicator;
     
     public AudioSource deathMusic; 
+    public AudioSource LevelBackgroundMusic;
 
     public float defaultEnemyDamage;
 
@@ -166,6 +167,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentLives <= 0)
         {
+            LevelBackgroundMusic.Pause();
             deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
