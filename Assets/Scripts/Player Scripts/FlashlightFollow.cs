@@ -58,7 +58,7 @@ public class FlashlightFollow : MonoBehaviour
 
         if (didHit)
         {
-            print(ray.direction);
+            //print(ray.direction);
             transform.LookAt(hit.point);
             if (hit.collider.gameObject.GetComponent<IStunnable>() != null)
             {

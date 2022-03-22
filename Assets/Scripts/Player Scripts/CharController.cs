@@ -13,7 +13,7 @@ public class CharController : MonoBehaviour
     public float defaultJumpHeight = 3f;
     private float jumpHeight;
 
-
+    public Transform cameraTransform;
     public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
     public float turnSmoothVelocity;
 
@@ -47,11 +47,19 @@ public class CharController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            Vector3 cameraForward = cameraTransform.forward;
+            Vector3 cameraRight = cameraTransform.right;
+            cameraForward.y = 0;
+            cameraRight.y = 0;
+            cameraForward = cameraForward.normalized;
+            cameraRight = cameraRight.normalized;
+            Vector3 cameraRelativeDirection = cameraForward * direction.z + cameraRight * direction.x;
+
+            float targetAngle = Mathf.Atan2(cameraRelativeDirection.x, cameraRelativeDirection.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            controller.Move(direction * speed * Time.deltaTime);
+            
+            controller.Move(cameraRelativeDirection * speed * Time.deltaTime);
             anim.SetBool("Walking", true);
         }
         else
