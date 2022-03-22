@@ -13,9 +13,11 @@ public class CharController : MonoBehaviour
     public float defaultJumpHeight = 3f;
     private float jumpHeight;
 
-    public Transform cameraTransform;
+    public GameObject dollyCamera;
+    private CinemachineCameraOffset cameraOffset;
     public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
     public float turnSmoothVelocity;
+    private float playerOriginalWorldHeight;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f; //This is the radius of a sphere that is projected from the player's feet. It checks to see if the ground is anywhere within this sphere. 
@@ -30,6 +32,8 @@ public class CharController : MonoBehaviour
     {
         jumpHeight = defaultJumpHeight;
         anim = GetComponent<Animator>();
+        playerOriginalWorldHeight = transform.position.y;
+        cameraOffset = dollyCamera.GetComponent<CinemachineCameraOffset>();
     }
 
     void Update()
@@ -41,14 +45,15 @@ public class CharController : MonoBehaviour
             velocity.y = -2f;
         }
 
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal , 0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
-            Vector3 cameraForward = cameraTransform.forward;
-            Vector3 cameraRight = cameraTransform.right;
+            Vector3 cameraForward = dollyCamera.transform.forward;
+            Vector3 cameraRight = dollyCamera.transform.right;
             cameraForward.y = 0;
             cameraRight.y = 0;
             cameraForward = cameraForward.normalized;
@@ -120,6 +125,11 @@ public class CharController : MonoBehaviour
             scaleRate = -Mathf.Abs(scaleRate);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        cameraOffset.m_Offset.y = transform.position.y - playerOriginalWorldHeight;
     }
 
     public void PauseMovement() 
