@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LifePickUp : PickUps
 {
-    public int pickUpLifeWorth = 1;
+    //public int pickUpLifeWorth = 1;
 
     public float amplitude;          
     public float speed;                   
     private float tempVal;
     private Vector3 tempPos;
     public bool isFloating = true;
-    public GameObject player;
+    //public GameObject player;
      
      void Start () 
      {
@@ -38,7 +38,7 @@ public class LifePickUp : PickUps
 
         if (collision.gameObject.tag == "Player")
         {
-            player.GetComponent<PlayerHealth>().AdjustCurrentLives(pickUpLifeWorth);
+            //player.GetComponent<PlayerHealth>().AdjustCurrentLives(pickUpLifeWorth);
             Destroy(gameObject);
         }
 
