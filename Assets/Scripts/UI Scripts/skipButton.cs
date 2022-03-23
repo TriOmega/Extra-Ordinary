@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SkipButton : MonoBehaviour
+public class skipButton : MonoBehaviour
 {
+    public string SceneName ;
+    
     public void PlayGame()
     {
-        SceneManager.LoadScene("Sprint6_01");
+        SceneManager.LoadScene( SceneName );
     }
 }

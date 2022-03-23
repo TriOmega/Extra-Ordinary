@@ -11,13 +11,14 @@ public class SpecialFlyingEnemy : MonoBehaviour
     public Transform ground;
 
     private Vector3 moveToGround;
-    public GameObject startingPoint;
+    public ParticleSystem poof;
+    //public GameObject startingPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         ground = GameObject.FindGameObjectWithTag("Ground").transform;
-        startingPoint = GameObject.Find("BallLocation");
+        //startingPoint = GameObject.Find("BallLocation");
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class SpecialFlyingEnemy : MonoBehaviour
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             //Death animation + sound
             //animator.SetTrigger("isKilled");
+            poof.Play();
             Destroy(this.gameObject, 1);
         }
 

@@ -2,10 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, IDamageable
 {
 
-    public static int bossHealth = 100;
+    public int Health { get => bossHealth; set => bossHealth = value; }
+    public bool IsInvincible { get => isInvincible; }
+    public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
+    public bool IsStunned { get => isStunned; }
+    public float StunDurationSeconds { get => stunDurationSeconds; }
+
+    public static int bossHealth = 10;
+    private bool isInvincible = false;
+    private float invincibilityDurationSeconds = 2;
+    private bool isStunned = false;
+    private float stunDurationSeconds = 5f;
+    public GameObject tempStunIndicatorObject;              
+    public ParticleSystem poof;
+    public ParticleSystem burn;
+    public float yaxis = 1.5f;
+
     public AudioSource monster1;
     public AudioSource monster2;
     public AudioSource monster3;
@@ -30,15 +45,70 @@ public class Boss : MonoBehaviour
         if(collision.CompareTag("Sword"))
         {
             PlayRandomOuchSound();
-            bossHealth = bossHealth - 5;
+            TakeDamage(5);
+            poof.Play();
             Debug.Log("health is " +bossHealth);
-            
-            if(bossHealth <= 0)
-            {
-                //Destroy(this.gameObject, 1);
-            }
+        }
+
+        if(collision.CompareTag("Flashlight"))
+        {
+            PlayRandomOuchSound();
+            TakeDamage(10);
+            burn.Play();
+            Stun();
         }
     }
+
+    public void TakeDamage(int damageAmount)
+    {
+         if (isInvincible) return;
+
+        Health -= damageAmount;
+        
+
+        if (!isInvincible)
+        {
+            StartCoroutine(BeginInvincibility());
+        }
+
+        if(bossHealth <= 0)
+        {
+            //Death animation + sound
+            //animator.SetTrigger("isKilled");
+            //poof.Play();
+            //Destroy(this.gameObject, 1);
+        }
+
+    }
+
+     private IEnumerator BeginInvincibility()
+    {
+        isInvincible = true;
+        
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        
+        isInvincible = false;
+    }
+
+    public void Stun()
+    {
+        if (!isStunned)
+        {
+            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, yaxis, 0f), Quaternion.identity);
+            StartCoroutine(StunTimer());
+        }
+    }
+
+    private IEnumerator StunTimer()
+    {
+        isStunned = true;
+
+        yield return new WaitForSeconds(stunDurationSeconds);
+
+        isStunned = false;
+
+    }
+
 
 
 

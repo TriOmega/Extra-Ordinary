@@ -10,12 +10,16 @@ public class PlayerHealth : MonoBehaviour
     //public int maxLives = 3;                                  //Commented out for now given the sacrifice health changes
     public int currentLives;
 
+    public int pickUpLifeWorth = 1;
+
     private bool canSacrifice;
     public float sacrificeReward;
     public float sacrificeCooldownDuration;
     public Image sacrificeCooldownIndicator;
     
-    //public AudioSource deathMusic;                            //Commented out unused deathMusic due to null value errors
+    public AudioSource deathMusic; 
+    public AudioSource LevelBackgroundMusic;
+    public AudioSource JamesHasBeenInjuredSound;
 
     public float defaultEnemyDamage;
 
@@ -77,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
             if (collision.gameObject.tag == "enemy")
             {
                 AdjustCurrentHealth(defaultEnemyDamage);
+                JamesHasBeenInjuredSound.Play();
                 //  StartCoroutine(damageTimeout(damageTimer));
             }
 
@@ -104,6 +109,13 @@ public class PlayerHealth : MonoBehaviour
             AdjustCurrentHealth(-5); 
             }
         }
+
+        if(other.CompareTag("health"))
+        {
+            AdjustCurrentLives(pickUpLifeWorth);
+        }
+
+
     }
 
     private IEnumerator SacrificeCooldown()
@@ -166,7 +178,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentLives <= 0)
         {
-            //deathMusic.Play();
+            LevelBackgroundMusic.Pause();
+            deathMusic.Play();
             NoMoreLives?.Invoke(this, EventArgs.Empty);
             //checkpointHandler.ResetToLevelStart();
             //currentLives = maxLives;

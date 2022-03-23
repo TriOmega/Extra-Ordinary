@@ -9,6 +9,8 @@ public class SpecialHHEnemy : MonoBehaviour, IDamageable
     public float InvincibilityDurationSeconds { get => invincibilityDurationSeconds; }
 
     public Animator animator;
+    public ParticleSystem burn;
+    public ParticleSystem poof;
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +40,13 @@ public class SpecialHHEnemy : MonoBehaviour, IDamageable
         {
             //Death animation + sound
             animator.SetTrigger("isKilled");
+            poof.Play();
             Destroy(this.gameObject, 1);
         }
         else
         {
             //animator.SetTrigger("isDamaged");
-            gameObject.GetComponent<ParticleSystem>().Play();
+            burn.Play();
             //Damage Sound + animation if we need it
         }
     }
@@ -55,6 +58,14 @@ public class SpecialHHEnemy : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(invincibilityDurationSeconds);
         
         isInvincible = false;
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if(collision.CompareTag("Flashlight"))
+        {
+            TakeDamage(10);
+        }
     }
 
     public int enemyHealth = 50;

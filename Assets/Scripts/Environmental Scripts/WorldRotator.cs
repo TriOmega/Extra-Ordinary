@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WorldRotator : MonoBehaviour
 {
 
     public GameObject theEntireWorld;
+    //public NavMeshData data;
     bool rotateRequest = false;
-    float rotateAngle = 30f;  //the angle at which the camera rotates every second
+    public float rotateAngle = 60f;  //the angle at which the camera rotates every second
     float rotateTimeAmount;
     float timeRemaining;  //This is a timer that runs. It will tell the world to stop rotating after the number of seconds reaches a certain amount. 
     
@@ -24,6 +26,7 @@ public class WorldRotator : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             theEntireWorld.transform.RotateAround(gameObject.transform.position, Vector3.up, rotateAngle * Time.deltaTime);
+            //NavMesh.AddNavMeshData(data, new Vector3(0, 0, 0), Quaternion.AngleAxis(90, Vector3.right * Time.deltaTime));
         }
            
 

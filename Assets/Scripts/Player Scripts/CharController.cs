@@ -13,9 +13,12 @@ public class CharController : MonoBehaviour
     public float defaultJumpHeight = 3f;
     private float jumpHeight;
 
-
+    public GameObject camerasParentObject;
+    public GameObject viewingCamera;
+    private CinemachineCameraOffset cameraOffset;
     public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
     public float turnSmoothVelocity;
+    private float playerOriginalWorldHeight;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f; //This is the radius of a sphere that is projected from the player's feet. It checks to see if the ground is anywhere within this sphere. 
@@ -30,6 +33,8 @@ public class CharController : MonoBehaviour
     {
         jumpHeight = defaultJumpHeight;
         anim = GetComponent<Animator>();
+        playerOriginalWorldHeight = transform.position.y;
+        cameraOffset = viewingCamera.GetComponent<CinemachineCameraOffset>();
     }
 
     void Update()
@@ -41,17 +46,26 @@ public class CharController : MonoBehaviour
             velocity.y = -2f;
         }
 
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal , 0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            Vector3 cameraForward = viewingCamera.transform.forward;
+            Vector3 cameraRight = viewingCamera.transform.right;
+            cameraForward.y = 0;
+            cameraRight.y = 0;
+            cameraForward = cameraForward.normalized;
+            cameraRight = cameraRight.normalized;
+            Vector3 cameraRelativeDirection = cameraForward * direction.z + cameraRight * direction.x;
+
+            float targetAngle = Mathf.Atan2(cameraRelativeDirection.x, cameraRelativeDirection.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            controller.Move(direction * speed * Time.deltaTime);
+            
+            controller.Move(cameraRelativeDirection * speed * Time.deltaTime);
             anim.SetBool("Walking", true);
         }
         else
@@ -112,6 +126,11 @@ public class CharController : MonoBehaviour
             scaleRate = -Mathf.Abs(scaleRate);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        camerasParentObject.transform.position = new Vector3(camerasParentObject.transform.position.x, transform.position.y, camerasParentObject.transform.position.z);
     }
 
     public void PauseMovement() 
