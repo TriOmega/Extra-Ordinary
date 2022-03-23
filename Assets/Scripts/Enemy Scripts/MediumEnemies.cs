@@ -48,7 +48,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
         animator.SetTrigger("isBroken");
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "ForceField")
         {
