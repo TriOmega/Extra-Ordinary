@@ -81,7 +81,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     {
         if (!isStunned)
         {
-            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, 1.1f, 0f), Quaternion.identity);
+            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
             StartCoroutine(StunTimer());
         }
     }
