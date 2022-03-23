@@ -36241,7 +36241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419532696}
-  m_LocalRotation: {x: 0.12716742, y: -0.04477606, z: 0.018377287, w: 0.99069965}
+  m_LocalRotation: {x: 0.12716742, y: -0.04477604, z: 0.01837728, w: 0.99069965}
   m_LocalPosition: {x: 0.6800003, y: 1.9318517, z: -0.51763797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -36278,7 +36278,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7533113, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38792,7 +38792,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506620803}
-  m_LocalRotation: {x: 0.12716742, y: -0.04477606, z: 0.018377287, w: 0.99069965}
+  m_LocalRotation: {x: 0.12716742, y: -0.04477604, z: 0.01837728, w: 0.99069965}
   m_LocalPosition: {x: 0.6800003, y: 1.9318517, z: -0.51763797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -55869,6 +55869,7 @@ GameObject:
   - component: {fileID: 1958593916159630623}
   - component: {fileID: 6558745477912807338}
   - component: {fileID: 4934524415876261578}
+  - component: {fileID: 579362718747294500}
   m_Layer: 9
   m_Name: SM_Door_01
   m_TagString: Untagged
@@ -55876,6 +55877,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &579362718747294500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579362718747294499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a7cdf38a716fc44a7614744caf6221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: JodyScene
 --- !u!1 &579362719227735456
 GameObject:
   m_ObjectHideFlags: 0
@@ -56665,8 +56679,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579362718747294499}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
