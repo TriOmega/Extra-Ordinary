@@ -5,23 +5,17 @@ using UnityEngine;
 public class PlayerTeleporter : MonoBehaviour
 {
     
-    Transform PlayerTransform;
-    public Transform TeleportGoal;
-
-
-    void Start()
-    {
-        PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    
+    public GameObject player;
+    public Transform teleportGoal;
 
     void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Player"))
         {
             Debug.Log("hey hey hey hey hey hey hey");
-            PlayerTransform.position = TeleportGoal.position;
+            player.GetComponent<CharacterController>().enabled = false;
+            player.transform.position = teleportGoal.position;
+            player.GetComponent<CharacterController>().enabled = true;
         }
     }
 
