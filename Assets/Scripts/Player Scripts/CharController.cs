@@ -13,7 +13,8 @@ public class CharController : MonoBehaviour
     public float defaultJumpHeight = 3f;
     private float jumpHeight;
 
-    public GameObject dollyCamera;
+    public GameObject camerasParentObject;
+    public GameObject viewingCamera;
     private CinemachineCameraOffset cameraOffset;
     public float turnSmoothTime = 0.15f; //Speed at which the player turns (rotates) to face the direction he is moving in.
     public float turnSmoothVelocity;
@@ -33,7 +34,7 @@ public class CharController : MonoBehaviour
         jumpHeight = defaultJumpHeight;
         anim = GetComponent<Animator>();
         playerOriginalWorldHeight = transform.position.y;
-        cameraOffset = dollyCamera.GetComponent<CinemachineCameraOffset>();
+        cameraOffset = viewingCamera.GetComponent<CinemachineCameraOffset>();
     }
 
     void Update()
@@ -52,8 +53,8 @@ public class CharController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            Vector3 cameraForward = dollyCamera.transform.forward;
-            Vector3 cameraRight = dollyCamera.transform.right;
+            Vector3 cameraForward = viewingCamera.transform.forward;
+            Vector3 cameraRight = viewingCamera.transform.right;
             cameraForward.y = 0;
             cameraRight.y = 0;
             cameraForward = cameraForward.normalized;
@@ -129,7 +130,7 @@ public class CharController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cameraOffset.m_Offset.y = transform.position.y - playerOriginalWorldHeight;
+        camerasParentObject.transform.position = new Vector3(camerasParentObject.transform.position.x, transform.position.y, camerasParentObject.transform.position.z);
     }
 
     public void PauseMovement() 
