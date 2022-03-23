@@ -15,8 +15,8 @@ public class PickUps : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameObject _player = other.gameObject;
-            PickUpEffect(_player);
+            //GameObject _player = other.gameObject;
+            //PickUpEffect(_player);
             Destroy(gameObject);
         }
     }

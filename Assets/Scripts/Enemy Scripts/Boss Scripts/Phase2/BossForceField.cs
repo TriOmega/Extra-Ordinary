@@ -20,6 +20,12 @@ public class BossForceField : MonoBehaviour
             GameObject.FindGameObjectWithTag("Boss").GetComponent<Animator>().SetBool("HitByBomb", true);
             Destroy(forcefield, 0.1f);
         }
+
+        if(other.gameObject.tag == "Flashlight")
+        {
+            GameObject.FindGameObjectWithTag("Boss").GetComponent<Animator>().SetBool("HitByBomb", true);
+            Destroy(forcefield, 0.1f);
+        }
     }
 
 

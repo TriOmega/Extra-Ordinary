@@ -21,11 +21,11 @@ public class BossSinkIntoGround : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        sinkTarget = GameObject.Find("sinkTarget");
+        sinkTarget = GameObject.Find("MateoSinksIntoTheFloorHere");
         targetVector = sinkTarget.transform.position;
         bossTransform = GameObject.FindGameObjectWithTag("Boss").transform;
-        deathSound = GameObject.Find("deathSound").GetComponent<AudioSource>();
-        bossMusic = GameObject.Find("bossMusic").GetComponent<AudioSource>();
+        deathSound = GameObject.Find("S_DeathSound").GetComponent<AudioSource>();
+        bossMusic = GameObject.Find("S_BossMusic").GetComponent<AudioSource>();
         timeRemaining = 10f;
         deathSound.Play();
         bossMusic.Stop();

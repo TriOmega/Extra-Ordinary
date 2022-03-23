@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class skipButton : MonoBehaviour
 {
+    public string SceneName ;
+    
     public void PlayGame()
     {
-        SceneManager.LoadScene("DwightScene");
+        SceneManager.LoadScene( SceneName );
     }
 }

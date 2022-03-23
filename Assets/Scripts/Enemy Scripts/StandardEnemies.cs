@@ -16,6 +16,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
     private NavMeshAgent navMeshAgent;
     public GameObject tempStunIndicatorObject;              //Remove temp indicator as soon as official stun indication is added
     public ParticleSystem poof;
+    public float yaxis = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
         else
         {
             animator.SetTrigger("isDamaged");
-            gameObject.GetComponent<ParticleSystem>().Play();
+            //gameObject.GetComponent<ParticleSystem>().Play();
             //Damage Sound + animation if we need it
         }
     }
@@ -70,7 +71,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
     {
         if (!isStunned)
         {
-            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
+            Instantiate(tempStunIndicatorObject, transform.position + new Vector3(0f, yaxis, 0f), Quaternion.identity);
             StartCoroutine(StunTimer());
         }
     }

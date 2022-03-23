@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossDying : StateMachineBehaviour
 {
@@ -21,6 +22,7 @@ public class BossDying : StateMachineBehaviour
         if(Boss.bossHealth <= 0)
         {
             animator.SetTrigger("ActivateDeath");
+            //KillBoss();
         }
         if(Boss.bossHealth > 0)
         {
@@ -34,5 +36,12 @@ public class BossDying : StateMachineBehaviour
     {
 
     }
+
+
+   /* IEnumerator KillBoss()
+    {
+        yield return new WaitForSeconds (3f);
+        SceneManager.LoadScene("AustinScene");
+    }*/
 
 }
