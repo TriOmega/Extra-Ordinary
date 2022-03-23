@@ -11,6 +11,7 @@ public class SpecialFlyingEnemy : MonoBehaviour
     public Transform ground;
 
     private Vector3 moveToGround;
+    public ParticleSystem poof;
     //public GameObject startingPoint;
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class SpecialFlyingEnemy : MonoBehaviour
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             //Death animation + sound
             //animator.SetTrigger("isKilled");
+            poof.Play();
             Destroy(this.gameObject, 1);
         }
 

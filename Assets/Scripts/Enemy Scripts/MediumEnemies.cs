@@ -20,6 +20,8 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
 
     public Animator animator;
     private bool isBouncing = false;
+
+    public ParticleSystem poof;
     
     // Start is called before the first frame update
     void Start()
@@ -66,6 +68,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
             {
                 //Death animation + sound
                 animator.SetTrigger("isKilled");
+                poof.Play();
                 Destroy(this.gameObject, 1);
             }
 

@@ -114,6 +114,8 @@ public class PlayerHealth : MonoBehaviour
         {
             AdjustCurrentLives(pickUpLifeWorth);
         }
+
+
     }
 
     private IEnumerator SacrificeCooldown()

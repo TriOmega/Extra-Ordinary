@@ -15,6 +15,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     public GameObject tempStunIndicatorObject;              //Remove temp indicator as soon as official stun indication is added
+    public ParticleSystem poof;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class StandardEnemies : MonoBehaviour, IDamageable, IStunnable
         {
             //Death animation + sound
             animator.SetTrigger("isKilled");
+            poof.Play();
             Destroy(this.gameObject, 1);
         }
         else
