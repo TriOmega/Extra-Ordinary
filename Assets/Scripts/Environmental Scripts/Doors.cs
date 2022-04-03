@@ -14,8 +14,8 @@ public class Doors : MonoBehaviour
     bool IsKeyObtained;
     bool shouldTimerBeStarted;
     float rotateAngle = 15f; 
-    bool oneKeyIsPressedDown;
-    bool ableToOpen;
+   // bool oneKeyIsPressedDown;
+   // bool ableToOpen;
 
     
 
@@ -26,8 +26,7 @@ public class Doors : MonoBehaviour
         objectToFollow = GameObject.Find("Player").transform;
         timeRemaining = 160f;
         shouldTimerBeStarted = false;
-        ableToOpen = false;
-
+        //ableToOpen = false;
     }
 
     void Update()
@@ -43,7 +42,7 @@ public class Doors : MonoBehaviour
         }
 
 
-
+/*
         if(Input.GetButtonDown("Interact"))
         {
             oneKeyIsPressedDown = true;
@@ -52,17 +51,14 @@ public class Doors : MonoBehaviour
         {
             oneKeyIsPressedDown = false;
         }
+  */      
+
+    
 
 
-
-        if(timeRemaining <= 2)
-        {
-            //objectToFollow = door.transform;
-        }
 
         if((timeRemaining <= 1.5) && (timeRemaining >= -4))
         {
-            GameObject.FindWithTag("Door").GetComponent<Outline>().enabled = false;
             holder.SetActive(false);  //this makes the key invisible 
             UIkey = false;
             door.transform.Rotate(Vector3.up * rotateAngle * Time.deltaTime);  //This opens the door
@@ -77,11 +73,9 @@ public class Doors : MonoBehaviour
             Destroy(this.gameObject); 
         }
 
-        if((oneKeyIsPressedDown == true) && (ableToOpen == true))   //This makes you press the "1" key before the door opens.
-        {
-            timeRemaining = 2.2f;
-            shouldTimerBeStarted = true;
-        }
+        //Debug.Log("ableToOpen="+ableToOpen);
+
+
 
 
 
@@ -101,23 +95,20 @@ public class Doors : MonoBehaviour
         {
             holder.SetActive(true); 
             UIkey = false;  
-            GameObject.FindWithTag("Door").GetComponent<Outline>().enabled = true;
-            ableToOpen = true;
-
-
+            //ableToOpen = true;
+            timeRemaining = 2.2f;
+            shouldTimerBeStarted = true;
         }
 
         
  
     }
 
-
-
+/*
     public void OnTriggerExit(Collider other)
     {
         if((other.gameObject.tag == "Door") && (IsKeyObtained = true))
         {
-            GameObject.FindWithTag("Door").GetComponent<Outline>().enabled = false;
             holder.SetActive(false);  //This makes the key invisible in the overworld       
             UIkey = true;  //this turns on the UI
             ableToOpen = false;
@@ -125,6 +116,7 @@ public class Doors : MonoBehaviour
     }
 
 
+*/
     
 
 
