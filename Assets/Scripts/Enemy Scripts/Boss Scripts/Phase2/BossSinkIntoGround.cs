@@ -43,7 +43,7 @@ public class BossSinkIntoGround : StateMachineBehaviour
 
         if (timeRemaining < 2)
         {
-            SceneManager.LoadScene("AustinScene");
+            SceneManager.LoadScene("2_MuseumScene");
         }
     }
 
