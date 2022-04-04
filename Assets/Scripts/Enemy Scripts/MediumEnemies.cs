@@ -19,7 +19,6 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
     public Animator animator;
-    private bool isBouncing = false;
 
     public ParticleSystem poof;
     
