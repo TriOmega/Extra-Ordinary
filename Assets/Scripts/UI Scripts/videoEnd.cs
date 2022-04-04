@@ -7,16 +7,23 @@ using UnityEngine;
 public class videoEnd : MonoBehaviour
 {
     public VideoPlayer VideoPlayer;
+    public VideoPlayer VideoPlayer2;
     public string SceneName ;
 
 
     void Start() 
     {
-          VideoPlayer.loopPointReached += LoadScene;
+          VideoPlayer.loopPointReached += PlaySecond;
+          VideoPlayer2.loopPointReached += LoadScene;
     }
 
-    void LoadScene(VideoPlayer vp)
+    void LoadScene(VideoPlayer vp2)
     {
           SceneManager.LoadScene( SceneName );
+    }
+
+    void PlaySecond(VideoPlayer vp)
+    {
+          VideoPlayer2.Play();
     }
 }

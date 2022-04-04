@@ -25,8 +25,8 @@ public class PlayerHealth : MonoBehaviour
 
     //public float regeneration = 0.5f;
 
-    public float damageTimer = 1f;
-    //private bool canTakeDamage = true;
+    //public float damageTimer = 1f;
+    private bool canTakeDamage = true;
 
     public Text livesText;
     private CheckpointHandler checkpointHandler;
@@ -160,11 +160,12 @@ public class PlayerHealth : MonoBehaviour
     {
         if(Blocking.isBlocking == false)
         {
-            if (collision.gameObject.tag == "enemy")
+
+             if (collision.gameObject.tag == "enemy")
             {
-                AdjustCurrentHealth(defaultEnemyDamage);
-                JamesHasBeenInjuredSound.Play();
-                //  StartCoroutine(damageTimeout(damageTimer));
+                    AdjustCurrentHealth(defaultEnemyDamage);
+                    JamesHasBeenInjuredSound.Play();
+                    //StartCoroutine(damageTimeout(damageTimer));
             }
 
             if (collision.gameObject.tag == "puddles")
@@ -211,12 +212,12 @@ public class PlayerHealth : MonoBehaviour
         sacrificeCooldownIndicator.color = Color.white;
     }
 
-    //private IEnumerator damageTimeout(float timer)
-    //{
-    //    canTakeDamage = false;
-    //    yield return new WaitForSeconds(timer);
-    //    canTakeDamage = true;
-    //}
+   /* private IEnumerator damageTimeout(float timer)
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(timer);
+        canTakeDamage = true;
+    }*/
 
     public void AdjustCurrentHealth(float adjustment)
     {
