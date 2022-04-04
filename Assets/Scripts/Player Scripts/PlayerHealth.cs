@@ -37,6 +37,16 @@ public class PlayerHealth : MonoBehaviour
 
     public event EventHandler NoMoreLives;
 
+    Image NewHealthbarUI100;
+    Image NewHealthbarUI80;
+    Image NewHealthbarUI60;
+    Image NewHealthbarUI40;
+    Image NewHealthbarUI20;
+    Image NewHealthbarUI0;
+
+
+
+
     public void Start()
     {
         maxHealth = 100;
@@ -51,6 +61,15 @@ public class PlayerHealth : MonoBehaviour
         //Old Darkness Damage
         //bodyLight = GameObject.Find("Point light");
         //myBodyLight = bodyLight.GetComponent<Light>(); 
+
+
+        NewHealthbarUI100 = GameObject.Find("UI_Healthbar100_01").GetComponent<Image>();
+        NewHealthbarUI80 = GameObject.Find("UI_Healthbar80_01").GetComponent<Image>();
+        NewHealthbarUI60 = GameObject.Find("UI_Healthbar60_01").GetComponent<Image>();
+        NewHealthbarUI40 = GameObject.Find("UI_Healthbar40_01").GetComponent<Image>();
+        NewHealthbarUI20 = GameObject.Find("UI_Healthbar20_01").GetComponent<Image>();
+        NewHealthbarUI0 = GameObject.Find("UI_Healthbar0_01").GetComponent<Image>();
+
     }
 
     public void Update()
@@ -72,6 +91,69 @@ public class PlayerHealth : MonoBehaviour
                 LoseLife(true);
             }
         }
+
+        if(currentHealth >= 95)
+        {
+            NewHealthbarUI100.enabled = true;
+            NewHealthbarUI80.enabled = false;
+            NewHealthbarUI60.enabled = false;
+            NewHealthbarUI40.enabled = false;
+            NewHealthbarUI20.enabled = false;
+            NewHealthbarUI0.enabled = false;
+        }
+
+        if((currentHealth < 94) && (currentHealth > 71))
+        {
+            NewHealthbarUI100.enabled = false;
+            NewHealthbarUI80.enabled = true;
+            NewHealthbarUI60.enabled = false;
+            NewHealthbarUI40.enabled = false;
+            NewHealthbarUI20.enabled = false;
+            NewHealthbarUI0.enabled = false;
+        }
+
+        if((currentHealth < 70) && (currentHealth > 51))
+        {
+            NewHealthbarUI100.enabled = false;
+            NewHealthbarUI80.enabled = false;
+            NewHealthbarUI60.enabled = true;
+            NewHealthbarUI40.enabled = false;
+            NewHealthbarUI20.enabled = false;
+            NewHealthbarUI0.enabled = false;
+        }
+
+        if((currentHealth < 50) && (currentHealth > 31))
+        {
+            NewHealthbarUI100.enabled = false;
+            NewHealthbarUI80.enabled = false;
+            NewHealthbarUI60.enabled = false;
+            NewHealthbarUI40.enabled = true;
+            NewHealthbarUI20.enabled = false;
+            NewHealthbarUI0.enabled = false;
+        }
+
+        if((currentHealth < 30) && (currentHealth > 1))
+        {
+            NewHealthbarUI100.enabled = false;
+            NewHealthbarUI80.enabled = false;
+            NewHealthbarUI60.enabled = false;
+            NewHealthbarUI40.enabled = false;
+            NewHealthbarUI20.enabled = true;
+            NewHealthbarUI0.enabled = false;
+        }
+
+        if(currentHealth < 1)
+        {
+            NewHealthbarUI100.enabled = false;
+            NewHealthbarUI80.enabled = false;
+            NewHealthbarUI60.enabled = false;
+            NewHealthbarUI40.enabled = false;
+            NewHealthbarUI20.enabled = false;
+            NewHealthbarUI0.enabled = true;
+        }
+
+
+
     }
     
     private void OnCollisionEnter(Collision collision)
