@@ -7,7 +7,7 @@ public class Blocking : MonoBehaviour
 
     float timeRemaining;
     public static bool isBlocking; //This variable is used in the "PlayerHealth" script, it checks to see if the player is able to take damage. 
-    bool isShiftKeyDown = false;
+    float isShiftKeyDown = 0f;
     public GameObject forceFieldBubble;
     public CharController playerCharController;
     private Animator anim;
@@ -24,12 +24,11 @@ public class Blocking : MonoBehaviour
     void Update () 
     {
     
-        timeRemaining -= Time.deltaTime; 
-
-        isShiftKeyDown = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);  
+        timeRemaining -= Time.deltaTime;
+        isShiftKeyDown = Input.GetAxis("Block");
         //For some reason unity doesn't recognize just "Shift," You have to specify left and right.
 
-        if(isShiftKeyDown == true)
+        if(isShiftKeyDown == 1)
         {   
 
             if(timeRemaining > 0)
