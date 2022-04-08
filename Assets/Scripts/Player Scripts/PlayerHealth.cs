@@ -10,8 +10,6 @@ public class PlayerHealth : MonoBehaviour
     //public int maxLives = 3;                                  //Commented out for now given the sacrifice health changes
     public int currentLives;
 
-    public int pickUpLifeWorth = 1;
-
     private bool canSacrifice;
     public float sacrificeReward;
     public float sacrificeCooldownDuration;
@@ -192,13 +190,6 @@ public class PlayerHealth : MonoBehaviour
             AdjustCurrentHealth(-5); 
             }
         }
-
-        if(other.CompareTag("health"))
-        {
-            AdjustCurrentLives(pickUpLifeWorth);
-        }
-
-
     }
 
     private IEnumerator SacrificeCooldown()
