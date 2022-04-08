@@ -5,6 +5,8 @@ public delegate void StunEventHandler();
 
 public class FlashlightFollow : MonoBehaviour
 {
+    [SerializeField]
+    private GamepadCursor gamepadCursor;
 
     Ray ray;
     public RaycastHit hit;
@@ -49,9 +51,7 @@ public class FlashlightFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        float verticalInputDirection = Input.GetAxis("VerticalLookDirection");
-
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        ray = Camera.main.ScreenPointToRay(gamepadCursor.IsGamepadConnected == true ? gamepadCursor.CursorRectTransform.position : Input.mousePosition);
         bool didHit = Physics.Raycast(ray, out hit);
         //Vector3 directionToTarget = transform.position - hit.point;
         //float angle = Vector3.Angle(transform.forward, directionToTarget);
@@ -64,11 +64,6 @@ public class FlashlightFollow : MonoBehaviour
             {
                 hit.collider.gameObject.GetComponent<IStunnable>().Stun();
             }
-        }
-
-        if (verticalInputDirection != 0)
-        {
-            transform.Rotate(Vector3.left, verticalInputDirection * lookTurnSpeed * Time.deltaTime, Space.Self);            //Possible future bug: dependency on Time.deltaTime could cause strange results on slower computers
         }
     } 
 }
