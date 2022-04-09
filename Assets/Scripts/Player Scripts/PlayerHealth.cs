@@ -260,7 +260,7 @@ public class PlayerHealth : MonoBehaviour
         } 
         else if (isSacrifice)
         {
-            currentHealth += sacrificeReward;
+            AdjustCurrentHealth(sacrificeReward);
             StartCoroutine(SacrificeCooldown());
         }
         else
