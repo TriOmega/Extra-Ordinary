@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PaddleBallMove : MonoBehaviour
 {
+    [SerializeField]
+    private GamepadCursor gamepadCursor;
+
     public bool moving;
     public float speed = 10f;
     public bool canClick = true;
@@ -31,7 +34,7 @@ public class PaddleBallMove : MonoBehaviour
         if (Input.GetButtonDown("SpecialAttack"))
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(gamepadCursor.IsGamepadConnected == true ? gamepadCursor.CursorRectTransform.position : Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit, 30f))
             {
