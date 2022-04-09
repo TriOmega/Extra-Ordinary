@@ -12389,6 +12389,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1207460529}
+    - target: {fileID: 4595679448387700154, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5357421720942181903, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
       propertyPath: levelBackgroundMusic
       value: 
@@ -12406,6 +12410,21 @@ PrefabInstance:
 --- !u!224 &371482930 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3695316921342123627, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
+  m_PrefabInstance: {fileID: 371482929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371482931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7574603711915690826, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
+  m_PrefabInstance: {fileID: 371482929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371482932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 538215535504252355, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
+  m_PrefabInstance: {fileID: 371482929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371482933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468802382910517375, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
   m_PrefabInstance: {fileID: 371482929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &374740333
@@ -16852,11 +16871,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &525913999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6407787392361830938, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
-  m_PrefabInstance: {fileID: 371482929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &527219412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7476530300815461004, guid: 14dd0ce3ff96cbb499cd77ab50d4f1e0, type: 3}
@@ -18948,15 +18962,15 @@ PrefabInstance:
     - target: {fileID: 655512739821066438, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: KeyIcon
       value: 
-      objectReference: {fileID: 525913999}
+      objectReference: {fileID: 371482931}
     - target: {fileID: 655512739821066438, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: FlashlightIcon
       value: 
-      objectReference: {fileID: 2011551122}
+      objectReference: {fileID: 371482933}
     - target: {fileID: 655512739821066438, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: PaddleballIcon
       value: 
-      objectReference: {fileID: 1956568517}
+      objectReference: {fileID: 371482932}
     - target: {fileID: 1409889241289235200, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -47454,7 +47468,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.8075709, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -64672,11 +64686,6 @@ Transform:
   m_Father: {fileID: 386272047}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 180}
---- !u!1 &1956568517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1150625252, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
-  m_PrefabInstance: {fileID: 371482929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1957883615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66594,11 +66603,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7476530300815461004, guid: 14dd0ce3ff96cbb499cd77ab50d4f1e0, type: 3}
   m_PrefabInstance: {fileID: 644918142}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2011551122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 275138767, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
-  m_PrefabInstance: {fileID: 371482929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2012031456
 GameObject:
