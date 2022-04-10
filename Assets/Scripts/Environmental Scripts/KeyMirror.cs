@@ -8,10 +8,11 @@ public class KeyMirror : MonoBehaviour
     private GameObject key;
 
     [SerializeField]
-    private List<ReflectingMirror> reflectingMirrors = new List<ReflectingMirror>();
+    public List<ReflectingMirror> reflectingMirrors = new List<ReflectingMirror>();
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.transform.parent.GetComponent<ReflectingMirror>() == reflectingMirrors[0])
         {
             Destroy(this.gameObject.transform.GetChild(0).gameObject);
