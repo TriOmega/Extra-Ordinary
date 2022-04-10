@@ -1,13 +1,21 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[Serializable]
+public class ButtonEvent : UnityEvent { }
 
 public class Buttons : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public ButtonEvent ButtonPressed;
+
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log($"{this.gameObject.name} Pressed!");
         this.gameObject.transform.Find("ButtonPressable").gameObject.SetActive(false);
+        ButtonPressed?.Invoke();
     }
     private void OnTriggerExit(Collider other)
     {

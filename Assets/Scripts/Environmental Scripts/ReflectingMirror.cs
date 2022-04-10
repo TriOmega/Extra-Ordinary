@@ -32,6 +32,10 @@ public class ReflectingMirror : MonoBehaviour
         }
         reflectionBeamPivot.gameObject.SetActive(false);
         lineRenderer = GetComponent<LineRenderer>();
+    }
+
+    private void FixedUpdate()
+    {
         lineRenderer.SetPosition(0, reflectionBeamPivot.position);
     }
 
