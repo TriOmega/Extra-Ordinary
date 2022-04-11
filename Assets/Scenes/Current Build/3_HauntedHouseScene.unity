@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.24647538, g: 0.28234535, b: 0.3457032, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -496,16 +496,22 @@ MonoBehaviour:
   m_Looped: 0
   m_Waypoints:
   - position: {x: 0, y: 0, z: 0}
-    tangent: {x: 0, y: 0, z: 0}
+    tangent: {x: 1, y: 0, z: 0}
     roll: 0
-  - position: {x: 62, y: 0, z: 0}
-    tangent: {x: 0, y: 0, z: 0}
+  - position: {x: 61, y: 0, z: 0}
+    tangent: {x: 1, y: 0, z: 0}
     roll: 0
-  - position: {x: 62, y: 0, z: -60}
-    tangent: {x: 0, y: 0, z: 0}
+  - position: {x: 62, y: 0, z: -1}
+    tangent: {x: 0, y: 0, z: -1}
+    roll: 0
+  - position: {x: 62, y: 0, z: -58}
+    tangent: {x: 0, y: 0, z: -2.2}
+    roll: 0
+  - position: {x: 59, y: 0, z: -60}
+    tangent: {x: -1, y: 0, z: 0}
     roll: 0
   - position: {x: -3, y: 0, z: -60}
-    tangent: {x: 0, y: 0, z: 0}
+    tangent: {x: -1, y: 0, z: 0}
     roll: 0
 --- !u!4 &18787094
 Transform:
@@ -4362,8 +4368,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321248025}
-  m_LocalRotation: {x: -0.018938899, y: 0.67917675, z: 0.017535781, w: 0.7335208}
-  m_LocalPosition: {x: 114.5802, y: 1.5500003, z: 28.582638}
+  m_LocalRotation: {x: -0.01764073, y: 0.7301868, z: 0.018866137, w: 0.68275917}
+  m_LocalPosition: {x: 114.58022, y: 1.5500003, z: 30.253242}
   m_LocalScale: {x: 0.47438, y: 0.47438, z: 0.47438}
   m_Children:
   - {fileID: 881633828}
@@ -4399,7 +4405,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6003604, y: 1}
+    m_SensorSize: {x: 2.0268457, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12916,7 +12922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 18787093}
-  m_PathPosition: 1.1128894
+  m_PathPosition: 2.0374334
   m_PositionUnits: 0
   m_PathOffset: {x: 1.6454449, y: 0.40322304, z: 0.44386148}
   m_XDamping: 0
@@ -16848,8 +16854,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149812674}
-  m_LocalRotation: {x: -0.018938899, y: 0.67917675, z: 0.017535781, w: 0.7335208}
-  m_LocalPosition: {x: 114.5802, y: 1.5500003, z: 28.582638}
+  m_LocalRotation: {x: -0.01764073, y: 0.7301868, z: 0.018866137, w: 0.68275917}
+  m_LocalPosition: {x: 114.58022, y: 1.5500003, z: 30.253242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1148663177}
