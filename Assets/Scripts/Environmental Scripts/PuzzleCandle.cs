@@ -16,12 +16,9 @@ public class PuzzleCandle : MonoBehaviour
     {
         if (other.CompareTag("Flashlight"))
         {
-            if (!isCandleLit)
-            {
-                isCandleLit = true;
-                candleLights.SetActive(true);
-                onCandleLit?.Invoke(this, EventArgs.Empty);
-            }
+            isCandleLit = true;
+            candleLights.SetActive(true);
+            onCandleLit?.Invoke(this, EventArgs.Empty);
         }
     }
 

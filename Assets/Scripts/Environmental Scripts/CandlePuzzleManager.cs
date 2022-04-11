@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CandlePuzzleManager : MonoBehaviour
 {
+    [Header("Candle Puzzle Controls")]
     [SerializeField]
     private float candleTimerSeconds;
     [SerializeField]
@@ -13,7 +14,16 @@ public class CandlePuzzleManager : MonoBehaviour
     [SerializeField]
     private AudioClip candleBlowOutSFX;
     [SerializeField]
+    private AudioClip successSFX;
+    [SerializeField]
     private AudioSource candlePuzzleAudioSource;
+    
+    [Header("Door Controls")]
+    [SerializeField]
+    private GameObject door;
+    [SerializeField]
+    private float rotateAngle = 90f;
+    private bool hasDoorUnlocked = false;
 
     [SerializeField, Tooltip("Place all puzzle candles used in this puzzle here.")]
     List<PuzzleCandle> candlesInPuzzle = new List<PuzzleCandle>();
@@ -41,11 +51,18 @@ public class CandlePuzzleManager : MonoBehaviour
     {
         int litCandleCount = HowManyCandlesAreLit();
 
+        if (hasDoorUnlocked)
+        {
+            return;
+        }
+
         if (litCandleCount == candlesInPuzzle.Count)
         {
             StopCoroutine(timerCoroutine);
-            candlePuzzleAudioSource.enabled = false;
-            Debug.Log("Door Unlocked!");
+            candlePuzzleAudioSource.clip = null;
+            candlePuzzleAudioSource.PlayOneShot(successSFX);
+            hasDoorUnlocked = true;
+            door.transform.Rotate(Vector3.up * rotateAngle);  //This opens the door
         }
         else if (litCandleCount > 1)
         {
@@ -63,8 +80,16 @@ public class CandlePuzzleManager : MonoBehaviour
         candlePuzzleAudioSource.clip = candleFlickerSFX;
         candlePuzzleAudioSource.Play();
 
-        yield return new WaitForSecondsRealtime(candleTimerSeconds);
+        float f = 0f;
+        
+        while (f < candleTimerSeconds)
+        {
+            yield return new WaitForSecondsRealtime(candleTimerSeconds / 5);
+            candlePuzzleAudioSource.volume -= .2f;
+            f += candleTimerSeconds / 5;
+        }
 
+        candlePuzzleAudioSource.volume = 1f;
         candlePuzzleAudioSource.loop = false;
         candlePuzzleAudioSource.clip = candleBlowOutSFX;
         candlePuzzleAudioSource.Play();
