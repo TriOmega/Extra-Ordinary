@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
     private Light myBodyLight;
     public float lightDamage = 0.5f;
 
-    public event EventHandler NoMoreLives;
+    public event EventHandler NoMoreLives;//
 
     Image NewHealthbarUI100;
     Image NewHealthbarUI80;
