@@ -7,6 +7,9 @@ public class FlashlightFollow : MonoBehaviour
 {
     [SerializeField]
     private GamepadCursor gamepadCursor;
+    [SerializeField]
+    private GameObject lightContainer;
+    private bool isLightOn = true;
 
     Ray ray;
     public RaycastHit hit;
@@ -46,7 +49,10 @@ public class FlashlightFollow : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("SpecialAttack"))
-            myLightComponent.enabled = !myLightComponent.enabled;
+        {
+            isLightOn = !isLightOn;
+            lightContainer.SetActive(isLightOn);
+        }
     }
 
     void FixedUpdate()
