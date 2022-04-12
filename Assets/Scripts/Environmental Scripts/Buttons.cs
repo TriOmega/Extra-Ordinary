@@ -13,9 +13,12 @@ public class Buttons : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log($"{this.gameObject.name} Pressed!");
-        this.gameObject.transform.Find("ButtonPressable").gameObject.SetActive(false);
-        ButtonPressed?.Invoke();
+        if (other.CompareTag("Player")) 
+        {
+            Debug.Log($"{this.gameObject.name} Pressed!");
+            this.gameObject.transform.Find("ButtonPressable").gameObject.SetActive(false);
+            ButtonPressed?.Invoke();
+        }
     }
     private void OnTriggerExit(Collider other)
     {
