@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1169333267766689153}
   - component: {fileID: 1240329403602766262}
   - component: {fileID: 1444458152684501710}
+  - component: {fileID: 8401986271560843036}
   m_Layer: 0
   m_Name: DB_Gate_01
   m_TagString: Untagged
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8401986271560843036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348934973500248152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.61, y: 5.6745377, z: 0.41265848}
+  m_Center: {x: -0.009897056, y: 2.7891045, z: -0.00000003725291}
 --- !u!1 &1947007321218025928
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +140,7 @@ GameObject:
   - component: {fileID: 9086106285503754838}
   - component: {fileID: 705890861901217799}
   - component: {fileID: 4377995118281426644}
+  - component: {fileID: 8219094983508552818}
   m_Layer: 0
   m_Name: DB_Tower_01
   m_TagString: Untagged
@@ -197,6 +212,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8219094983508552818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2365736270546766981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1366938350250899506, guid: 33dca5324ec6d2e468ce2eaa3c6e9c38, type: 3}
 --- !u!1 &6372483683395860183
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +237,8 @@ GameObject:
   - component: {fileID: 5536770919416759890}
   - component: {fileID: 2568445265491483883}
   - component: {fileID: 5488299091934257461}
+  - component: {fileID: 8410094013348074224}
+  - component: {fileID: 7341353151685632758}
   m_Layer: 0
   m_Name: DB_Crank_01
   m_TagString: Untagged
@@ -279,3 +310,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8410094013348074224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372483683395860183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26740387, y: 1.1267037, z: 1.169331}
+  m_Center: {x: -0.005632803, y: 0, z: -2.4535805e-17}
+--- !u!65 &7341353151685632758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372483683395860183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6593737, y: 0.17352295, z: 0.1983382}
+  m_Center: {x: -0.4955873, y: 0.022270203, z: -0.48549646}

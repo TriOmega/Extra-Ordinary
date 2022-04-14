@@ -17,7 +17,14 @@ public class MoveToPlayer : MonoBehaviour
     public void Update()
     {
         startingPoint = GameObject.Find("BallLocation");
-        moveToPlayer = startingPoint.transform.position;
+        if (startingPoint != null)
+        {
+            moveToPlayer = startingPoint.transform.position;
+        }
+        else
+        {
+            Debug.Log("Starting Point \"BallLocation\" could not be found.");
+        }
 
 
         if (moving)
