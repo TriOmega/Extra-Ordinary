@@ -5,6 +5,8 @@ using UnityEngine;
 public class FinalBoss : MonoBehaviour
 {
 
+
+    public static bool BossTookDamage = false;
    
 
 
@@ -18,7 +20,24 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(BossTookDamage == true)
+        {
+            
+        }
+    }
 
+
+    
+    private void OnTriggerEnter(Collider collision)
+    {
+
+        if(collision.CompareTag("Sword"))
+        {
+            if(PlayerCombat.AttackPressed == true)
+            {
+                BossTookDamage = true;
+            }
+        }
     }
 
 
