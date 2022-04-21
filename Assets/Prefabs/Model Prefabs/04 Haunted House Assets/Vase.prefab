@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3104426025912691850}
   - component: {fileID: 2070240278438994735}
   - component: {fileID: 4277874122444183525}
+  - component: {fileID: 6132839513348083367}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -28,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 46.853, y: 1.136, z: 21.28}
   m_LocalScale: {x: 0.124155805, y: 0.6673918, z: 0.13029328}
-  m_Children: []
+  m_Children:
+  - {fileID: 2023786222655805023}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,3 +84,90 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6132839513348083367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332569565553276464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0653877, y: 1.1418502, z: 2.06174}
+  m_Center: {x: 0, y: 0.059686743, z: 0.00000011436631}
+--- !u!1001 &3294329660530327971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3104426025912691850}
+    m_Modifications:
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.054396
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4983703
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.674993
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245189290909977926, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+      propertyPath: m_Name
+      value: VaseFlowers_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+--- !u!4 &2023786222655805023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3576457920244291580, guid: ff7952b0e3342e743b5d5365a7a1e22f, type: 3}
+  m_PrefabInstance: {fileID: 3294329660530327971}
+  m_PrefabAsset: {fileID: 0}
