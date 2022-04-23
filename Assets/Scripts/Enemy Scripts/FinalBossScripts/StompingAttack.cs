@@ -8,23 +8,29 @@ public class StompingAttack : StateMachineBehaviour
     GameObject foot;
     public GameObject shockwave;
     bool isDone;
+    float timeRemaining;
 
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         foot = GameObject.Find("QuickRigCharacter_RightToeBase"); 
+        timeRemaining = 10f; 
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Vector3 shockwaveLocation = new Vector3(foot.transform.position.x, foot.transform.position.y, foot.transform.position.z);
+        timeRemaining -= Time.deltaTime;
 
-        if (!isDone)
+        if (timeRemaining <= 9.3)
         {
-            Instantiate (shockwave, shockwaveLocation, foot.transform.rotation);
-            isDone = true;
+            if (!isDone)
+            {
+                Instantiate (shockwave, shockwaveLocation, foot.transform.rotation);
+                isDone = true;
+            }
         }
 
 
@@ -35,6 +41,7 @@ public class StompingAttack : StateMachineBehaviour
     {
 
         //animator.ResetTrigger("ActivatePunchingAttack");
+        isDone = false;
     }
 
 }
