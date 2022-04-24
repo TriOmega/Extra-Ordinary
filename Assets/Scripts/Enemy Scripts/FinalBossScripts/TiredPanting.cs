@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SadWalk : StateMachineBehaviour
+public class TiredPanting : StateMachineBehaviour
 {
     GameObject player;
     
     private Transform playerPosition;
     private Rigidbody BossCurrentPosition;
-    float distanceFromPlayer = 1f;
-    float timeRemaining;
+    float timeRemaining =35;
 
 
 
@@ -19,8 +18,8 @@ public class SadWalk : StateMachineBehaviour
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         BossCurrentPosition = animator.GetComponent<Rigidbody>();
-        animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 1;  //Slow Mateo down while he's doing the sad walk. 
-        timeRemaining = 10f; 
+        animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0.1f;  //Slow Mateo down 
+ 
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,10 +29,15 @@ public class SadWalk : StateMachineBehaviour
         animator.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = playerPosition.position;  //Follow the player
 
         timeRemaining -= Time.deltaTime;
-        if (timeRemaining <= 6.5)
+        if (timeRemaining <= 5)
         {
-            animator.SetTrigger("Transition4");
-            timeRemaining = 10f;
+            animator.SetTrigger("Transition5");
+            timeRemaining = 8f;
+        }
+
+        if(FinalBoss.BossTookDamage == true)
+        {
+            animator.SetTrigger("BossTookDamage");
         }
 
     }
@@ -41,6 +45,6 @@ public class SadWalk : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Transition4");
+        animator.ResetTrigger("BossTookDamage");
     }
 }
