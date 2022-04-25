@@ -19,12 +19,14 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
     public Animator animator;
-
+    private AudioSource pillbugAudioSource;
+    public AudioClip enemyHitSFX;
     public ParticleSystem poof;
     
     // Start is called before the first frame update
     void Start()
     {
+        pillbugAudioSource = gameObject.GetComponent<AudioSource>();
         activeEnemyShield = true;
         rb = GetComponent<Rigidbody>();
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -65,16 +67,16 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
         
             if(enemyHealth <= 0)
             {
-                //Death animation + sound
-                animator.SetTrigger("isKilled");
                 poof.Play();
+                gameObject.GetComponent<SphereCollider>().enabled = false;
+                Transform pillbugBody = gameObject.transform.Find("PillbugBody");
+                pillbugBody.gameObject.SetActive(false);
                 Destroy(this.gameObject, 1);
             }
 
             else
             {
-                animator.SetTrigger("isDamaged");
-                //Damage Sound + animation if we need it
+                pillbugAudioSource.PlayOneShot(enemyHitSFX);
             }
         }
     }
