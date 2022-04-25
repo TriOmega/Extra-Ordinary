@@ -2238,6 +2238,7 @@ GameObject:
   - component: {fileID: 898819786}
   - component: {fileID: 898819783}
   - component: {fileID: 898819784}
+  - component: {fileID: 3120148524707132516}
   m_Layer: 0
   m_Name: ShadowPillbugRigged
   m_TagString: enemy
@@ -2345,8 +2346,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempStunIndicatorObject: {fileID: 6094817448510992718, guid: 7b7f067ea006aa140baedd16de858184, type: 3}
+  wayPoints: []
   animator: {fileID: 6593258614064175050}
   poof: {fileID: 1710918556595822872}
+--- !u!114 &3120148524707132516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322662549600430745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4368a44f1f53bce48a3ecdd8bfd02782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
 --- !u!1 &6331319580140340215
 GameObject:
   m_ObjectHideFlags: 0

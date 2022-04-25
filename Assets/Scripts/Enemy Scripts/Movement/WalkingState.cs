@@ -6,22 +6,20 @@ using UnityEngine.AI;
 public class WalkingState : StateMachineBehaviour
 {
     float timer;
-    List<Transform> wayPoints = new List<Transform>();
     NavMeshAgent agent;
     Transform player;
     float chaseRange = 7;
+    WaypointRefs waypointScript;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer = 0;
-        Transform wayPointsOject = GameObject.FindGameObjectWithTag("WayPoints").transform;
-        foreach(Transform t in wayPointsOject)
-        {
-            wayPoints.Add(t);
-        }
-        
+
+        waypointScript = animator.GetComponent<WaypointRefs>();
+
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.SetDestination(wayPoints[0].position);
+        agent.SetDestination(waypointScript.waypoints[0].position);
         player = GameObject.FindGameObjectWithTag("Feet").transform;
     }
 
@@ -38,7 +36,7 @@ public class WalkingState : StateMachineBehaviour
 
         if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count)].position);
+                agent.SetDestination(waypointScript.waypoints[Random.Range(0, waypointScript.waypoints.Count)].position);
             }
 
         if (distance < chaseRange)
