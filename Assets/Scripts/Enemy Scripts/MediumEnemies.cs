@@ -11,7 +11,6 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     public bool IsStunned { get => isStunned; }
     public float StunDurationSeconds { get => stunDurationSeconds; }
 
-    private bool activeEnemyShield;
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     public GameObject tempStunIndicatorObject;              //Remove temp indicator as soon as official stun indication is added
@@ -27,7 +26,6 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     void Start()
     {
         pillbugAudioSource = gameObject.GetComponent<AudioSource>();
-        activeEnemyShield = true;
         rb = GetComponent<Rigidbody>();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -47,7 +45,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
 
     public void BreakShield()                           
     {
-        activeEnemyShield = false;
+        animator.SetBool("isBlocking", false);
         animator.SetTrigger("isBroken");
     }
 
@@ -61,7 +59,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
 
     public void TakeDamage(int damageAmount)
     {
-        if(activeEnemyShield == false)                       
+        if(!animator.GetBool("isBlocking"))                       
         {
             enemyHealth -= damageAmount;
         

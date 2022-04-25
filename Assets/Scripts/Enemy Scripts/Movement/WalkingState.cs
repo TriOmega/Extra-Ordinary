@@ -21,6 +21,7 @@ public class WalkingState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.SetDestination(waypointScript.waypoints[0].position);
         player = GameObject.FindGameObjectWithTag("Feet").transform;
+        animator.SetBool("isBlocking", false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
