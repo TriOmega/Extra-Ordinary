@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public float swordKnockbackThrust = 8.0f;
     public float attackStartTime;
     public float timeToActivateHeavy = 1.0f;
+    public static bool AttackPressed = false; //I just added this on 4/19/22 please leave it here. 
     private bool attackPressed = false;
     [SerializeField]
     private int heavyDamageMultiplier = 2;
@@ -36,11 +37,13 @@ public class PlayerCombat : MonoBehaviour
             attackStartTime = Time.time;
             anim.SetTrigger("Sword");
             attackPressed = true;
+            AttackPressed = true;
             StartCoroutine(HeavyAttack());
         }
         else if (Input.GetAxis("BasicAttack") == 0)
         {
             attackPressed = false;
+            AttackPressed = false;
         }
 
     }

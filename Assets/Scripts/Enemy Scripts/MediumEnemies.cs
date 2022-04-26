@@ -11,41 +11,33 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     public bool IsStunned { get => isStunned; }
     public float StunDurationSeconds { get => stunDurationSeconds; }
 
-    private bool activeEnemyShield;
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     public GameObject tempStunIndicatorObject;              //Remove temp indicator as soon as official stun indication is added
-    //public GameObject EnemyShieldIndicator;  //HEY SHERRYE i made this pink shield for the rolliepollie just to help myself out while testing.
-    // Its just a visual indicator of weather or not the shield is broken or not. Feel free to delete. 
 
     public Animator animator;
-
+    private AudioSource pillbugAudioSource;
+    public AudioClip enemyHitSFX;
+    public AudioClip enemyDeathSFX;
     public ParticleSystem poof;
-    
-    // Start is called before the first frame update
+    [SerializeField]
+    private float rushSpeed = 8f;
+    [SerializeField]
+    private float slowedSpeed = 2f;
+    [SerializeField]
+    private float slowedTimerDuration = 2f;
+
     void Start()
     {
-        activeEnemyShield = true;
+        pillbugAudioSource = gameObject.GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //if(activeEnemyShield == true)
-        //{
-            //EnemyShieldIndicator.SetActive(true);
-        //}
-        //else
-        //{
-            //EnemyShieldIndicator.SetActive(false);
-        //}
+        navMeshAgent.speed = rushSpeed;
     }
 
     public void BreakShield()                           
     {
-        activeEnemyShield = false;
+        animator.SetBool("isBlocking", false);
         animator.SetTrigger("isBroken");
     }
 
@@ -54,27 +46,32 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
         if (other.gameObject.tag == "ForceField")
         {
             BreakShield();
+        }
+        
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine("SlowedTimer");
         }     
     }
 
     public void TakeDamage(int damageAmount)
     {
-        if(activeEnemyShield == false)                       
+        if(!animator.GetBool("isBlocking"))                       
         {
             enemyHealth -= damageAmount;
         
             if(enemyHealth <= 0)
             {
-                //Death animation + sound
-                animator.SetTrigger("isKilled");
+                pillbugAudioSource.PlayOneShot(enemyDeathSFX);
                 poof.Play();
+                gameObject.GetComponent<SphereCollider>().enabled = false;
+                Transform pillbugBody = gameObject.transform.Find("PillbugBody");
+                pillbugBody.gameObject.SetActive(false);
                 Destroy(this.gameObject, 1);
             }
-
             else
             {
-                animator.SetTrigger("isDamaged");
-                //Damage Sound + animation if we need it
+                pillbugAudioSource.PlayOneShot(enemyHitSFX);
             }
         }
     }
@@ -98,6 +95,13 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
         isStunned = false;
         animator.enabled = true;
         navMeshAgent.enabled = true;
+    }
+
+    private IEnumerator SlowedTimer()
+    {
+        navMeshAgent.speed = slowedSpeed;
+        yield return new WaitForSecondsRealtime(slowedTimerDuration);
+        navMeshAgent.speed = rushSpeed;
     }
 
     private int enemyHealth = 100;
