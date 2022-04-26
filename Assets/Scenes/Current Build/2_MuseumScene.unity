@@ -21757,6 +21757,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1479807560}
     - target: {fileID: 7571376629834154806, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
+      propertyPath: invincibilityTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571376629834154806, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: LevelBackgroundMusic
       value: 
       objectReference: {fileID: 989948202}
@@ -21764,6 +21768,10 @@ PrefabInstance:
       propertyPath: JamesHasBeenInjuredSound
       value: 
       objectReference: {fileID: 1002611958}
+    - target: {fileID: 7571376629834154806, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
+      propertyPath: sacrificeCooldownIndicator
+      value: 
+      objectReference: {fileID: 859358662}
     - target: {fileID: 7795648701614352652, guid: 69aab8a80fa01ca46a67068214d56b89, type: 3}
       propertyPath: BG
       value: 
@@ -32270,6 +32278,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859005124}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &859358662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4032557351607767368, guid: 2a8f22abab86706458b32f38ddcef82c, type: 3}
+  m_PrefabInstance: {fileID: 371482929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &859596976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7476530300815461004, guid: 14dd0ce3ff96cbb499cd77ab50d4f1e0, type: 3}
@@ -76687,10 +76706,6 @@ PrefabInstance:
     - target: {fileID: 898819784, guid: dad9723ddc5680544b3d33a19a509a4e, type: 3}
       propertyPath: personalWayPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 898819785, guid: dad9723ddc5680544b3d33a19a509a4e, type: 3}
-      propertyPath: m_Mass
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3120148524707132516, guid: dad9723ddc5680544b3d33a19a509a4e, type: 3}
       propertyPath: waypoints.Array.size

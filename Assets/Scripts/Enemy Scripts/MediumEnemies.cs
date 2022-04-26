@@ -20,6 +20,7 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
     public Animator animator;
     private AudioSource pillbugAudioSource;
     public AudioClip enemyHitSFX;
+    public AudioClip enemyDeathSFX;
     public ParticleSystem poof;
     
     // Start is called before the first frame update
@@ -65,13 +66,13 @@ public class MediumEnemies : MonoBehaviour, IDamageable, IStunnable
         
             if(enemyHealth <= 0)
             {
+                pillbugAudioSource.PlayOneShot(enemyDeathSFX);
                 poof.Play();
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 Transform pillbugBody = gameObject.transform.Find("PillbugBody");
                 pillbugBody.gameObject.SetActive(false);
                 Destroy(this.gameObject, 1);
             }
-
             else
             {
                 pillbugAudioSource.PlayOneShot(enemyHitSFX);
