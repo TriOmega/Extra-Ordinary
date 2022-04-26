@@ -10,7 +10,8 @@ public class WalkingState : StateMachineBehaviour
     Transform player;
     float chaseRange = 7;
     WaypointRefs waypointScript;
-
+    [SerializeField]
+    string quickAttackStateName;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -43,6 +44,11 @@ public class WalkingState : StateMachineBehaviour
         if (distance < chaseRange)
             {
                 animator.SetBool("isChasing", true);
+                if (!string.IsNullOrEmpty(quickAttackStateName))
+                {
+                    animator.Play(quickAttackStateName);
+                }
+                
             }
 
     }
