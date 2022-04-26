@@ -8,7 +8,7 @@ public class TiredPanting : StateMachineBehaviour
     
     private Transform playerPosition;
     private Rigidbody BossCurrentPosition;
-    float timeRemaining =35;
+    float timeRemaining =10;
 
 
 

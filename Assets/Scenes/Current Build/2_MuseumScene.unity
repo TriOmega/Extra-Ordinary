@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06788347, g: 0.20470929, b: 0.27537185, a: 1}
+  m_IndirectSpecularColor: {r: 0.06789363, g: 0.20471948, b: 0.27538207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8112,26 +8112,28 @@ Transform:
   - {fileID: 1164530589}
   - {fileID: 1476861171}
   - {fileID: 1700908903}
-  - {fileID: 1623699918}
+  - {fileID: 1735587830}
   - {fileID: 624894816}
+  - {fileID: 312807369}
   - {fileID: 1818154771}
   - {fileID: 281094247}
-  - {fileID: 577462775}
-  - {fileID: 1735587830}
-  - {fileID: 312807369}
   - {fileID: 790764019}
+  - {fileID: 577462775}
   - {fileID: 683938503}
+  - {fileID: 1623699918}
   - {fileID: 793489392}
   - {fileID: 966917605}
   - {fileID: 1169054264}
   - {fileID: 1133573806}
   - {fileID: 1880474312}
+  - {fileID: 1283138040}
+  - {fileID: 519132752}
   - {fileID: 1436580499}
   - {fileID: 165547008}
   - {fileID: 490900242}
   - {fileID: 1769036863}
   - {fileID: 1878596132}
-  - {fileID: 1283138040}
+  - {fileID: 1343244783}
   - {fileID: 780326730}
   - {fileID: 1296929512}
   - {fileID: 386186087}
@@ -8142,8 +8144,6 @@ Transform:
   - {fileID: 595956098}
   - {fileID: 21610807}
   - {fileID: 1823610209}
-  - {fileID: 519132752}
-  - {fileID: 1343244783}
   - {fileID: 1146291486}
   - {fileID: 1729724197}
   - {fileID: 1881387606}
@@ -8165,8 +8165,8 @@ Transform:
   - {fileID: 514008726}
   - {fileID: 1175149760630670454}
   - {fileID: 1009226199}
-  - {fileID: 2117672388}
   - {fileID: 2125298388}
+  - {fileID: 2117672388}
   - {fileID: 1568133278}
   m_Father: {fileID: 1827228770}
   m_RootOrder: 13
@@ -11816,7 +11816,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.08121, z: 0.15}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 19
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 42.73, y: 0, z: 0}
 --- !u!1 &315673211
 GameObject:
@@ -18951,7 +18951,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.08121, z: 0.15}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 43
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 42.73, y: 90, z: 0}
 --- !u!136 &519132753
 CapsuleCollider:
@@ -25190,7 +25190,7 @@ Transform:
   m_LocalScale: {x: 0.12012815, y: 0.16207, z: 0.08517471}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 41.459, z: 0}
 --- !u!64 &683938504
 MeshCollider:
@@ -28680,7 +28680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a7cdf38a716fc44a7614744caf6221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: 3_HauntedHouseScene
+  SceneName: Cutscene_05
 --- !u!65 &785165979
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29384,7 +29384,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.08121, z: 0.15}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 42.73, y: 0, z: 0}
 --- !u!4 &790878118 stripped
 Transform:
@@ -46693,7 +46693,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.08121, z: 0.15}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 32
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 42.73, y: 90, z: 0}
 --- !u!136 &1283138041
 CapsuleCollider:
@@ -49026,7 +49026,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.08121, z: 0.15}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 44
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 42.73, y: 90, z: 0}
 --- !u!136 &1343244784
 CapsuleCollider:
@@ -51882,7 +51882,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0268457, y: 1}
+    m_SensorSize: {x: 2.0031948, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -64337,7 +64337,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.08121, z: 0.15}
   m_Children: []
   m_Father: {fileID: 219533399}
-  m_RootOrder: 18
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 42.73, y: 0, z: 0}
 --- !u!1001 &1736818559
 PrefabInstance:
