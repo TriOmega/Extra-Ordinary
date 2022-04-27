@@ -24,7 +24,7 @@ public class BossDying : StateMachineBehaviour
             animator.SetTrigger("ActivateDeath");
             //KillBoss();
         }
-        if(Boss.bossHealth > 0)
+        if(Boss.bossHealth > 1)
         {
             animator.SetTrigger("Continue");
         }

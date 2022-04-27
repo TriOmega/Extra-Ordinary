@@ -11,7 +11,7 @@ public class Boss : MonoBehaviour, IDamageable
     public bool IsStunned { get => isStunned; }
     public float StunDurationSeconds { get => stunDurationSeconds; }
 
-    public static int bossHealth = 10;
+    public static int bossHealth = 50;
     private bool isInvincible = false;
     private float invincibilityDurationSeconds = 2;
     private bool isStunned = false;
@@ -53,7 +53,7 @@ public class Boss : MonoBehaviour, IDamageable
         if(collision.CompareTag("Flashlight"))
         {
             PlayRandomOuchSound();
-            TakeDamage(10);
+            TakeDamage(1);
             burn.Play();
             Stun();
         }
