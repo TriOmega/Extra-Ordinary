@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
     private bool canTakeDamage = true;
 
     public Text livesText;
-    private CheckpointHandler checkpointHandler;
+    public CheckpointHandler checkpointHandler;
     
     private GameObject bodyLight;
     private Light myBodyLight;
