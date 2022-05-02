@@ -21,13 +21,12 @@ public class PlayerHealth : MonoBehaviour
 
     public float defaultEnemyDamage;
 
-    //public float regeneration = 0.5f;
-
-    //public float damageTimer = 1f;
+    [SerializeField]
+    private float invincibilityTime = 1f;
     private bool canTakeDamage = true;
 
     public Text livesText;
-    private CheckpointHandler checkpointHandler;
+    public CheckpointHandler checkpointHandler;
     
     private GameObject bodyLight;
     private Light myBodyLight;
@@ -56,9 +55,6 @@ public class PlayerHealth : MonoBehaviour
         defaultEnemyDamage = -10f;
         checkpointHandler = GetComponent<CheckpointHandler>();
         UpdateLivesText();
-        //Old Darkness Damage
-        //bodyLight = GameObject.Find("Point light");
-        //myBodyLight = bodyLight.GetComponent<Light>(); 
 
 
         NewHealthbarUI100 = GameObject.Find("UI_Healthbar100_01").GetComponent<Image>();
@@ -72,16 +68,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void Update()
     {
-        //Player Auto-Regen
-        //if (currentHealth < maxHealth)
-        //    currentHealth += regeneration * Time.deltaTime;
-
-        //Old Darkness Damage
-        //if (myBodyLight.range <= 0)
-        //{
-        //    currentHealth -= lightDamage;
-        //}
-
         if (Input.GetAxis("SacrificeHealth") > 0)
         {
             if ((currentHealth != maxHealth) && canSacrifice && (currentLives > 1))
@@ -149,12 +135,9 @@ public class PlayerHealth : MonoBehaviour
             NewHealthbarUI20.enabled = false;
             NewHealthbarUI0.enabled = true;
         }
-
-
-
     }
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(Blocking.isBlocking == false)
         {
@@ -162,8 +145,6 @@ public class PlayerHealth : MonoBehaviour
              if (collision.gameObject.tag == "enemy")
             {
                     AdjustCurrentHealth(defaultEnemyDamage);
-                    JamesHasBeenInjuredSound.Play();
-                    //StartCoroutine(damageTimeout(damageTimer));
             }
 
             if (collision.gameObject.tag == "puddles")
@@ -203,16 +184,28 @@ public class PlayerHealth : MonoBehaviour
         sacrificeCooldownIndicator.color = Color.white;
     }
 
-   /* private IEnumerator damageTimeout(float timer)
+    private IEnumerator InvincibilityTimer()
     {
         canTakeDamage = false;
-        yield return new WaitForSeconds(timer);
+
+        yield return new WaitForSeconds(invincibilityTime);
+
         canTakeDamage = true;
-    }*/
+    }
 
     public void AdjustCurrentHealth(float adjustment)
     {
-        currentHealth += adjustment;
+        if (adjustment < 0 && canTakeDamage)
+        {
+            currentHealth += adjustment;
+            JamesHasBeenInjuredSound.Play();
+            StartCoroutine("InvincibilityTimer");
+        }
+        else if (adjustment > 0)
+        {
+            currentHealth += adjustment;
+        }
+
         if (currentHealth <= 0)
         {
             LoseLife(false);

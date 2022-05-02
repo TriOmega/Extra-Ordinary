@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class DeathValley : MonoBehaviour
 {
+    [SerializeField]
+    PlayerHealth playerHealthScript;
+
     void OnTriggerEnter(Collider player)
     {
         if (player.gameObject.tag == "Player")
         {
-            Debug.Log("Reset");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, 0);
+            playerHealthScript.checkpointHandler.ResetToLastCheckpoint();
         }
     }
 }

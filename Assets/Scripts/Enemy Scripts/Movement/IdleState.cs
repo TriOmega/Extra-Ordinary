@@ -7,6 +7,8 @@ public class IdleState : StateMachineBehaviour
     float timer;
     Transform player;
     float chaseRange = 7;
+    [SerializeField]
+    string quickAttackStateName;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,14 +24,18 @@ public class IdleState : StateMachineBehaviour
         float distance = Vector3.Distance(animator.transform.position, player.position);
 
         if (timer > 5)
-            {
-                animator.SetBool("isPatrolling", true);
-            }
+        {
+            animator.SetBool("isPatrolling", true);
+        }
 
         if (distance < chaseRange)
+        {
+            animator.SetBool("isChasing", true);
+            if (!string.IsNullOrEmpty(quickAttackStateName))
             {
-                animator.SetBool("isChasing", true);
+                animator.Play(quickAttackStateName);
             }
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
